@@ -3,8 +3,8 @@ import { useRef, useEffect } from "react";
 export default function Tts(props) {
   const ref = useRef(null);
 
-  // We have to check if the window object exists to make sure Next runs this client-side
-  // if (typeof window !== "undefined") {
+  // We use useEffect to make sure Next runs this client-side
+  // (so that the window object exists)
   useEffect(() => {
     const synth = window.speechSynthesis;
 
@@ -12,32 +12,53 @@ export default function Tts(props) {
     const utterThis = new SpeechSynthesisUtterance(props.children);
 
     // Slow the rate a bit.
-    utterThis.rate = 0.7;
+    utterThis.rate = 0.85;
 
-    // Get all available voices, and filter to just Hazel (Microsoft UK English) for now
-    const voicesUk = synth.getVoices();
-    // .filter((voice) => voice.lang === "en-GB");
-    // .filter((voice) => voice.name.includes("Hazel"));
-    console.log(voicesUk);
+    // An empty array to hold the list of voices
+    let voicesUk = [];
 
-    // Hazel is the only item in the area. Set the voice to this
-    utterThis.voice = voicesUk[0];
+    function populateAndFilterVoiceList() {
+      // Get all available voices, and filter to just Hazel (Microsoft UK English) for now
+      voicesUk = synth
+        .getVoices()
+        // .filter((voice) => voice.lang === "en-GB");
+        .filter((voice) => voice.name.includes("Hazel"));
 
-    const readOut = () => {
+      // Todo: handle cases without Hazel!
+
+      // console.log(voicesUk);
+
+      // Hazel is the only item in the area. Set the voice to this
+      utterThis.voice = voicesUk[0];
+    }
+
+    populateAndFilterVoiceList();
+
+    // The list of voices is(/may be?) populated by the browser asynchronously.
+    // We can use the onvoiceschanged event to find out when it has finished loading.
+    // (If we don't do this, Chrome (only?) will think the list is empty until
+    // "some unspecified time later".)
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = populateAndFilterVoiceList;
+    }
+    // (This follows the pattern set out here:
+    // https://github.com/mdn/dom-examples/blob/master/web-speech-api/speak-easy-synthesis/script.js)
+
+    // The function to run when the TTS component is clicked:
+    function readOut() {
+      // Actually do the TTS! :)
       synth.speak(utterThis);
-    };
-    // When the TTS div is clicked, do the speaking!
-    //   document.querySelector(".tts").addEventListener("click", () => {
-    //     synth.speak(utterThis);
-    //     // console.log("hello");
-    //   });
+    }
+
     const element = ref.current;
 
     element.addEventListener("click", readOut);
 
-    return () => {
+    function cleanup() {
       element.removeEventListener("click", readOut);
-    };
+    }
+
+    return cleanup;
   }, [props.children]);
 
   return (
