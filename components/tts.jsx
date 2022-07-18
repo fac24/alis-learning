@@ -1,6 +1,11 @@
+import { useRef, useEffect } from "react";
+
 export default function Tts(props) {
+  const ref = useRef(null);
+
   // We have to check if the window object exists to make sure Next runs this client-side
-  if (typeof window !== "undefined") {
+  // if (typeof window !== "undefined") {
+  useEffect(() => {
     const synth = window.speechSynthesis;
 
     // props.children contains the text we want to be read aloud
@@ -10,21 +15,34 @@ export default function Tts(props) {
     utterThis.rate = 0.7;
 
     // Get all available voices, and filter to just Hazel (Microsoft UK English) for now
-    const voicesUk = synth
-      .getVoices()
-      //.filter((voice) => voice.lang === "en-GB");
-      .filter((voice) => voice.name.includes("Hazel"));
+    const voicesUk = synth.getVoices();
+    // .filter((voice) => voice.lang === "en-GB");
+    // .filter((voice) => voice.name.includes("Hazel"));
     console.log(voicesUk);
 
     // Hazel is the only item in the area. Set the voice to this
     utterThis.voice = voicesUk[0];
 
-    // When the TTS div is clicked, do the speaking!
-    document.querySelector(".tts").addEventListener("click", () => {
+    const readOut = () => {
       synth.speak(utterThis);
-      // console.log("hello");
-    });
-  }
+    };
+    // When the TTS div is clicked, do the speaking!
+    //   document.querySelector(".tts").addEventListener("click", () => {
+    //     synth.speak(utterThis);
+    //     // console.log("hello");
+    //   });
+    const element = ref.current;
 
-  return <div className="tts">[speaker icon goes here] {props.children}</div>;
+    element.addEventListener("click", readOut);
+
+    return () => {
+      element.removeEventListener("click", readOut);
+    };
+  }, [props.children]);
+
+  return (
+    <div className="tts" ref={ref}>
+      [speaker icon goes here] {props.children}
+    </div>
+  );
 }
