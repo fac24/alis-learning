@@ -15,7 +15,7 @@ export default function AdultsNext({ page, firstPage }) {
 
   return (
     <AdultNext onClick={navigateNext}>
-      {firstPage ? "Get a learner started" : "next"}
+      {firstPage ? "Get a learner started" : "Next"}
     </AdultNext>
   );
 }
