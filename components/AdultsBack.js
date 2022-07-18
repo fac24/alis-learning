@@ -1,6 +1,5 @@
 import AdultBack from "./Styled-Components/AdultBack";
 import { Router, useRouter } from "next/router";
-import { useState } from "react";
 
 export default function AdultsBack({ page }) {
   const router = useRouter();
