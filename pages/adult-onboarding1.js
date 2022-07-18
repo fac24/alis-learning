@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import AdultsBack from "../components/AdultsBack";
 import AdultsNext from "../components/AdultsNext";
+import AdultText from "../components/Styled-Components/AdultText";
 
 export default function Adult() {
   return (
@@ -12,7 +13,7 @@ export default function Adult() {
     // &apos; is html code for apostrophe (not to break depoly)
     <>
       <Title>Welcome!</Title>
-      <Text>Let&apos;s set up a profile for the learner.</Text>
+      <AdultText>Let&apos;s set up a profile for the learner.</AdultText>
       <AdultsNext page={1} firstPage={true} />
       <AdultsBack page={1} />
     </>
@@ -22,8 +23,4 @@ export default function Adult() {
 const Title = styled.h2`
   text-align: center;
   font-size: 2rem;
-`;
-
-const Text = styled.p`
-  text-align: center;
 `;
