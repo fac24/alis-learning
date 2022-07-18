@@ -3,5 +3,5 @@ import styled from "styled-components";
 import AdultsBack from "../components/AdultsBack";
 
 export default function Adult() {
-  return <AdultsBack />;
+  return <AdultsBack page={1} />;
 }
