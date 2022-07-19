@@ -17,7 +17,8 @@ export default function LearnerOnboardingProgressBar({
       mySteps.push(
         <>
           <LearnerOnboardingProgressBarListItem>
-            [show avatar here]
+            {/* Avatar goes here */}
+            <img src="/avatars/caterpillar.svg" />
           </LearnerOnboardingProgressBarListItem>
           <LearnerOnboardingProgressBarListItem>
             <TiArrowRightThick size="5rem" />
