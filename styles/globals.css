@@ -28,13 +28,34 @@
   font-style: italic;
 }
 
-/* Importing ComicNeue fonts regular */
+/* Importing ComicNeue fonts regular, bold, italic */
 
 @font-face {
   font-family: "ComicNeue";
   src: url('../fonts/Comic_Neue/ComicNeue-Regular.ttf');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "ComicNeue";
+  src: url('../fonts/Comic_Neue/ComicNeue-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ComicNeue";
+  src: url('../fonts/Comic_Neue/ComicNeue-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ComicNeue";
+  src: url('../fonts/Comic_Neue/ComicNeue-BoldItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
 }
 
 html,
