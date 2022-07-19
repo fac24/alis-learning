@@ -1,4 +1,4 @@
-import LearnerOnboardingFonts from "../../components/LearnerOnboardingFonts";
+import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 
 export default function LearnerFontsSizeSelection() {
   return (
