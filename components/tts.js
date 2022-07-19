@@ -1,4 +1,6 @@
 import { useRef, useEffect } from "react";
+import { AiTwotoneSound } from "react-icons/ai";
+import TtsSpeakerAndText from "./Styled-Components/TtsSpeakerAndText";
 
 export default function Tts(props) {
   const ref = useRef(null);
@@ -62,8 +64,8 @@ export default function Tts(props) {
   }, [props.children]);
 
   return (
-    <div className="tts" ref={ref}>
-      [speaker icon goes here] {props.children}
-    </div>
+    <TtsSpeakerAndText ref={ref}>
+      <AiTwotoneSound /> {props.children}
+    </TtsSpeakerAndText>
   );
 }
