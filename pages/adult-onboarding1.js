@@ -1,7 +1,7 @@
-import styled from "styled-components";
 import AdultsBack from "../components/AdultsBack";
 import AdultsNext from "../components/AdultsNext";
 import AdultText from "../components/Styled-Components/AdultText";
+import styled from "styled-components";
 
 export default function Adult() {
   return (
@@ -9,18 +9,29 @@ export default function Adult() {
     // sending it the page it is coming from for back / next functionality
     // if its the first page we will send different text to the button
     // will accept a boolean of true.
-
-    // &apos; is html code for apostrophe (not to break depoly)
     <>
-      <Title>Welcome!</Title>
-      <AdultText>Let&apos;s set up a profile for the learner.</AdultText>
+      <AdultText>
+        A fun and educational dyslexic reading platform for kids.
+      </AdultText>
       <AdultsNext page={1} firstPage={true} />
       <AdultsBack page={1} />
+      {/* This button is just a placeholder for now - let's check if Kaher want it*/}
+      <InfoButton>How can Alis Learning help with dyslexia?</InfoButton>
     </>
   );
 }
 
-const Title = styled.h2`
-  text-align: center;
-  font-size: 2rem;
+const InfoButton = styled.button`
+display: flex;
+text-align: center;
+justify-content: center;
+margin-left: auto;
+margin-right: auto;
+border-radius: 0.313rem;
+padding: 1%;
+border: 0.2rem solid black;
+margin-top: 6rem;
+
+&:hover{
+  transform: translateY(0.125rem);
 `;
