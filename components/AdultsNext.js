@@ -14,7 +14,7 @@ export default function AdultsNext({ page, firstPage }) {
   };
 
   return (
-    <AdultNext onClick={navigateNext}>
+    <AdultNext onClick={navigateNext} type="submit">
       {firstPage ? "Get a learner started" : "Next"}
     </AdultNext>
   );
