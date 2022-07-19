@@ -1,19 +1,27 @@
 import Tts from "../components/tts";
 import Link from "next/link";
+import LearnerOnboardingProgressBar from "../components/LearnerOnboardingProgressBar";
+import ChildNext from "../components/Styled-Components/ChildNext";
+import Back from "../components/Styled-Components/Back";
 
-export default function LearnerOnboardingLayout(props) {
-  const ttsTitle = props.ttsTitle;
-
+export default function LearnerOnboardingLayout({
+  ttsTitle,
+  children,
+  stepNumber,
+  nextStep,
+  previousStep,
+  completed,
+}) {
   return (
     <>
-      <div>Progress bar component</div>
+      <LearnerOnboardingProgressBar stepNumber={stepNumber} totalSteps="5" />
       <Tts>{ttsTitle}</Tts>
-      <div>{props.children}</div>
-      <Link href={props.nextStep}>
-        <a>Next</a>
+      <div>{children}</div>
+      <Link href={`/learner-onboarding/${nextStep}`}>
+        <ChildNext>{completed ? "Lets play a game" : "Next"}</ChildNext>
       </Link>
-      <Link href={props.previousStep}>
-        <a>Back</a>
+      <Link href={!nextStep ? "/" : `/learner-onboarding/${previousStep}`}>
+        <Back>Back</Back>
       </Link>
     </>
   );
