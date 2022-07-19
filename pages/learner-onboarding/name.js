@@ -7,7 +7,6 @@
 
 import styled from "styled-components";
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
-import LearnerOnboardingName from "../../components/LearnerOnboardingName";
 
 export default function LearnerChoiceName() {
   return (
