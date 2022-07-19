@@ -23,5 +23,6 @@ export default function Layout({ children }) {
 }
 
 const StyledTitle = styled.h1`
+  font-family: OpenDyslexic;
   color: black;
 `;
