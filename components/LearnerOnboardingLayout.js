@@ -20,7 +20,7 @@ export default function LearnerOnboardingLayout({
       <Link href={`/learner-onboarding/${nextStep}`}>
         <ChildNext>{completed ? "Lets play a game" : "Next"}</ChildNext>
       </Link>
-      <Link href={!nextStep ? "/" : `/learner-onboarding/${previousStep}`}>
+      <Link href={!previousStep ? "/" : `/learner-onboarding/${previousStep}`}>
         <Back>Back</Back>
       </Link>
     </>

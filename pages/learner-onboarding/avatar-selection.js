@@ -8,7 +8,6 @@ export default function LearnerAvatarSelection() {
       stepNumber="0"
       nextStep="name"
       // we need to change the previous step!
-      previousStep=""
     >
       Avatar selection code goes here
     </LearnerOnboardingLayout>
