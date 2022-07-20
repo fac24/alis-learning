@@ -6,29 +6,26 @@ import styled from "styled-components";
 // ask maria if you are confused (:
 
 const AdultNext = styled.button`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
+  width: 13rem;
+  padding: 1.5rem;
+  box-shadow: 5px 10px 8px #888888;
+  color: white;
+  font-size: 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: #4316a3;
+  letter-spacing: 1px;
+  cursor: pointer;
 
-display: flex;
-text-align: center;
-justify-content: center;
-margin-left: auto;
-margin-right: auto;
-margin-top: 10rem;
-width: 13rem;
-padding: 1.5rem;
-box-shadow: 5px 10px 8px #888888;
-color: white;
-font-size: 15px;
-border-radius: 20px;
-border: none;
-background-color: #4316A3;
-letter-spacing: 1px;
-cursor: pointer;
-
-&:hover{
+  &:hover {
     transform: translateY(0.125rem);
-}
+  }
 `;
-
-
 
 export default AdultNext;
