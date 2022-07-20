@@ -7,7 +7,11 @@ import { useState } from "react";
 
 // need to figure out what props we will send for the gameplay - the word broken into an array for the tiles makes sense. Then we can map through and use the same template regarless of how long the word is :)
 
-export default function LearnerOnboardingLayout({ firstText, secondText }) {
+export default function LearnerOnboardingLayout({
+  firstText,
+  secondText,
+  context,
+}) {
   // Will want to use and update local storage with the stars
   const [stars, setStars] = useState(0);
   const [buttonText, setButtonText] = useState("Go!");
@@ -49,7 +53,8 @@ export default function LearnerOnboardingLayout({ firstText, secondText }) {
       <Score>{stars}</Score>
       <Tts>{firstText}</Tts>
 
-      <p>CONTENT WILL GO HERE</p>
+      {/* below is the placeholder for the context to go */}
+      {context}
 
       <GameNext onClick={listenToLearner}>
         <ImMic /> {buttonText}
