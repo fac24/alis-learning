@@ -14,7 +14,7 @@ export default function LearnerOnboardingLayout({
 }) {
   return (
     <>
-      <LearnerOnboardingProgressBar stepNumber={stepNumber} totalSteps="5" />
+      <LearnerOnboardingProgressBar stepNumber={stepNumber} totalSteps={5} />
       <Tts>{ttsTitle}</Tts>
       <div>{children}</div>
       <Link href={`/learner-onboarding/${nextStep}`}>
