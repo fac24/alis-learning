@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
 const ChildNext = styled.button`
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10rem;
+  position: absolute;
+  bottom: 7rem;
+  left: 50%;
+  margin-left: -6.5rem;
   width: 13rem;
   padding: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
