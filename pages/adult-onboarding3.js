@@ -1,6 +1,9 @@
 import AdultsBack from "../components/AdultsBack";
 import AdultsNext from "../components/AdultsNext";
 import AdultText from "../components/Styled-Components/AdultText";
+import AdultProgress from "../components/AdultProgress";
+import StyledForm from "../components/Styled-Components/AdultForm";
+import styled from "styled-components";
 
 export default function Adult() {
   const getAge = (e) => {
@@ -14,15 +17,24 @@ export default function Adult() {
 
   return (
     <>
+      <AdultProgress completed={55} />
       <AdultText>How old is the learner?</AdultText>
-      <form onSubmit={getAge}>
+      <StyledForm onSubmit={getAge}>
         <label>
-          <input type="number" name="age" min="1" max="18"></input>
+          <StyledInput type="number" name="age" min="1" max="18"></StyledInput>
           years
         </label>
         <AdultsNext page={3} />
-      </form>
+      </StyledForm>
       <AdultsBack page={3} />
     </>
   );
 }
+
+const StyledInput = styled.input`
+  padding: 10px 5px;
+  margin: 5px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  text-align: center;
+`;
