@@ -5,7 +5,7 @@ export default function LearnerAvatarSelection() {
   return (
     <LearnerOnboardingLayout
       ttsTitle="Pick your avatar"
-      stepNumber="0"
+      stepNumber={0}
       nextStep="name"
       // we need to change the previous step!
       previousStep=""
