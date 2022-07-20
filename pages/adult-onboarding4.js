@@ -1,6 +1,9 @@
 import AdultsBack from "../components/AdultsBack";
 import AdultsNext from "../components/AdultsNext";
 import AdultText from "../components/Styled-Components/AdultText";
+import AdultProgress from "../components/AdultProgress";
+import AdultForm from "../components/Styled-Components/AdultForm";
+import styled from "styled-components";
 
 export default function Adult() {
   const getGoal = (e) => {
@@ -14,19 +17,28 @@ export default function Adult() {
 
   return (
     <>
+      <AdultProgress completed={80} />
       <AdultText>Choose a daily goal for the learner.</AdultText>
-      <form onSubmit={getGoal}>
+      <AdultForm onSubmit={getGoal}>
         <label>
-          <select type="select" name="time">
+          <StyledSelect type="select" name="time">
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
-          </select>
+          </StyledSelect>
           minutes
         </label>
         <AdultsNext page={4} />
-      </form>
+      </AdultForm>
       <AdultsBack page={4} />
     </>
   );
 }
+
+const StyledSelect = styled.select`
+  padding: 10px 5px;
+  margin: 5px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  text-align: center;
+`;

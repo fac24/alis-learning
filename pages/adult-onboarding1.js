@@ -1,6 +1,8 @@
 import AdultsBack from "../components/AdultsBack";
 import AdultsNext from "../components/AdultsNext";
 import AdultText from "../components/Styled-Components/AdultText";
+import AdultProgress from "../components/AdultProgress";
+
 import styled from "styled-components";
 
 export default function Adult() {
@@ -10,6 +12,7 @@ export default function Adult() {
     // if its the first page we will send different text to the button
     // will accept a boolean of true.
     <>
+      <AdultProgress completed={5} />
       <AdultText>
         A fun and educational dyslexic reading platform for kids.
       </AdultText>
