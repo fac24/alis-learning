@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const AdultBack = styled.button`
+const Back = styled.a`
   position: absolute;
   bottom: 0rem;
   width: 12rem;
@@ -18,4 +18,4 @@ const AdultBack = styled.button`
   }
 `;
 
-export default AdultBack;
+export default Back;
