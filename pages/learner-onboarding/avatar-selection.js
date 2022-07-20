@@ -1,20 +1,9 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
+import Image from "next/image";
+import avatars from "../../data/avatars.js";
 
 export default function LearnerAvatarSelection() {
-  const avatars = {
-    butterfly: "/avatars/butterfly.svg",
-    caterpillar: "/avatars/caterpillar.svg",
-    ladybird: "/avatars/ladybird.svg",
-    crab: "/avatars/crab.svg",
-    fish: "/avatars/fish.svg",
-    penguin: "/avatars/penguin.svg",
-    snail: "/avatars/snail.svg",
-    warhol: "/avatars/warhol.svg",
-  };
-
-  console.log(Object.entries(avatars).map((element) => element[1]));
-
   return (
     <LearnerOnboardingLayout
       ttsTitle="Pick your avatar"
@@ -25,14 +14,19 @@ export default function LearnerAvatarSelection() {
     >
       <StyledUnorderedList>
         {/*
-          Object.entries(avatars).map(([avatar_name, avatar_file]) => (
-         
-<StyledListItem>
-            <img src={avatar_file} alt={avatar_name} />
-          </StyledListItem>
-
-));
+          - Make a key-value array from the avatars object.
+          - For each key-value pair, split into variables avatar_name and avatar_file.
+          - Render a new StyledListItem component with an Image component for each pair.
         */}
+        {Object.entries(avatars).map(([avatar_name, avatar_file], index) => (
+          <StyledListItem key={index}>
+            <Image
+              src={avatar_file}
+              alt={avatar_name + " avatar"}
+              layout="fill"
+            />
+          </StyledListItem>
+        ))}
       </StyledUnorderedList>
     </LearnerOnboardingLayout>
   );
@@ -51,8 +45,11 @@ const StyledListItem = styled.li`
   border: 5px solid #ccc;
   border-radius: 1rem;
   cursor: pointer;
+  height: 10rem;
   margin: 0.5rem;
-  padding: 0.5rem;
+  /* Padding won't work here unless we rejig other bits */
+  /* padding: 0.5rem; */
+  position: relative;
   width: 10rem;
 
   &:hover {
