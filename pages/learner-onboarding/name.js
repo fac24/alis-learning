@@ -12,7 +12,7 @@ export default function LearnerChoiceName() {
   return (
     <LearnerOnboardingLayout
       ttsTitle="What is your name?"
-      stepNumber="1"
+      stepNumber={1}
       nextStep="font-selection"
       previousStep="avatar-selection"
     >
