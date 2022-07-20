@@ -5,7 +5,7 @@ const GameNext = styled.button`
   bottom: 7rem;
   left: 50%;
   margin-left: -6.5rem;
-  width: 13rem;
+  width: 16rem;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   color: white;

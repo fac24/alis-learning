@@ -7,9 +7,23 @@ import { useState } from "react";
 
 // need to figure out what props we will send for the gameplay - the word broken into an array for the tiles makes sense. Then we can map through and use the same template regarless of how long the word is :)
 
-export default function LearnerOnboardingLayout({ nextStep, word }) {
+export default function LearnerOnboardingLayout({
+  firstText,
+  secondText,
+  word,
+}) {
   // Will want to use and update local storage with the stars
   const [stars, setStars] = useState(0);
+  const [buttonText, setButtonText] = useState("Go!");
+
+  const listenToLearner = (e) => {
+    // the button text needs to change to listening...
+    setButtonText("Listening...");
+    // the speach-to-text needs to fo its magic
+    // wither show a propmt "you can do it" and set text back to go
+    // or redirect to correct-guess.js
+  };
+
   return (
     <>
       <Link href="/child-landing">
@@ -37,15 +51,15 @@ export default function LearnerOnboardingLayout({ nextStep, word }) {
         size="50px"
       />
       <Score>{stars}</Score>
-      <Tts>Can you read the word?</Tts>
+      <Tts>{firstText}</Tts>
 
       <p>GAME WILL GO HERE</p>
-      <Link href={`/phoneme-game/${nextStep}`}>
-        <GameNext>
-          <ImMic /> Go!
-        </GameNext>
-      </Link>
-      <Tts>Press the button and read the word out loud</Tts>
+
+      <GameNext onClick={listenToLearner}>
+        <ImMic /> {buttonText}
+      </GameNext>
+
+      <Tts>{secondText}</Tts>
     </>
   );
 }
