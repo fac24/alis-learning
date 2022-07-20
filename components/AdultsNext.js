@@ -7,7 +7,7 @@ export default function AdultsNext({ page, firstPage }) {
   const navigateNext = () => {
     // if last parent page navigate to child set up
     if (page === 5) {
-      router.replace(`/child-setup1`);
+      router.replace(`/learner-onboarding/avatar-selection`);
     } else {
       router.replace(`/adult-onboarding${page + 1}`);
     }
