@@ -18,7 +18,9 @@ export default function LearnerOnboardingLayout({
       <Tts>{ttsTitle}</Tts>
       <div>{children}</div>
       <Link href={`/learner-onboarding/${nextStep}`}>
-        <ChildNext>{completed ? "Lets play a game" : "Next"}</ChildNext>
+        <ChildNext>
+          {completed ? "Lets play a game" : "Next"}
+        </ChildNext>
       </Link>
       <Link href={!nextStep ? "/" : `/learner-onboarding/${previousStep}`}>
         <Back>Back</Back>

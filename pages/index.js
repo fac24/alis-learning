@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Link href="learner-onboarding/avatar-selection">
-        <ChildStart>Get started</ChildStart>
+        <ChildStart id="get_started">Get started</ChildStart>
       </Link>
       <Link href="adult-onboarding1">Go to parents section</Link>
     </>
