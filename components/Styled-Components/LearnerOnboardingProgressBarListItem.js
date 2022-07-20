@@ -5,6 +5,7 @@ const LearnerOnboardingProgressBarListItem = styled.li`
   display: flex;
   height: 8rem;
   justify-content: center;
+  position: relative;
 
   &:nth-child(2n + 1) {
     border: 5px solid black;
