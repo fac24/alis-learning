@@ -12,8 +12,12 @@ export default function LearnerOnboardingProgressBar({
 
   const mySteps = [];
 
+  // We want to make a list for the total number of steps in the progress indicator.
+  // So make a loop that counts from 0 to the total number of steps.
   for (let i = 1; i <= totalSteps; i++) {
-    if (i === Number(stepNumber)) {
+    // If the loop counter is equal to the step that the user is on...
+    if (i === stepNumber) {
+      // Then show their avatar in the
       mySteps.push(
         <>
           <LearnerOnboardingProgressBarListItem>
@@ -25,7 +29,7 @@ export default function LearnerOnboardingProgressBar({
           </LearnerOnboardingProgressBarListItem>
         </>
       );
-    } else if (i === Number(totalSteps)) {
+    } else if (i === totalSteps) {
       mySteps.push(
         <LearnerOnboardingProgressBarListItem>
           {/* <GiFinishLine size="5rem" /> */}
