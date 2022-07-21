@@ -12,7 +12,6 @@ export default function Layout({ children }) {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
-        {/* font go here */}
       </Head>
       <header>
         <StyledTitle>Alis Learning</StyledTitle>

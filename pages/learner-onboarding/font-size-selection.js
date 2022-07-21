@@ -1,17 +1,22 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
 import FontFlex from "../../components/Styled-Components/FontFlex";
+import { useEffect } from "react";
 
 export default function LearnerFontSizesSelection({
   size,
   setSize,
+  background,
   avatarNameInLocalStorage,
 }) {
+  useEffect(() => {
+    document.body.style.backgroundColor = background;
+  }, []);
+
   function updateFontSize(e) {
     e.preventDefault();
     setSize(e.target.value);
     console.log(size);
-    //We need to update the local storage here!
   }
   let html = (
     <>

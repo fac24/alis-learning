@@ -2,11 +2,17 @@ import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
 import Image from "next/image";
 import avatars from "../../data/avatars.js";
+import { useEffect } from "react";
 
 export default function LearnerAvatarSelection({
+  background,
   avatarNameInLocalStorage,
   setAvatarNameInLocalStorage,
 }) {
+  useEffect(() => {
+    document.body.style.backgroundColor = background;
+  }, []);
+
   function handleClick(avatar_name) {
     // calling the function for setAvatar to select the avatar name once learner handles that click.
     setAvatarNameInLocalStorage(avatar_name);

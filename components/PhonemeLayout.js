@@ -3,7 +3,7 @@ import Link from "next/link";
 import GameNext from "../components/Styled-Components/GameNext";
 import { ImMic, ImHome3, ImStarFull } from "react-icons/im";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // need to figure out what props we will send for the gameplay - the word broken into an array for the tiles makes sense. Then we can map through and use the same template regarless of how long the word is :)
 
@@ -11,10 +11,15 @@ export default function LearnerOnboardingLayout({
   firstText,
   secondText,
   context,
+  background,
 }) {
   // Will want to use and update local storage with the stars
   const [stars, setStars] = useState(0);
   const [buttonText, setButtonText] = useState("Go!");
+
+  useEffect(() => {
+    document.body.style.backgroundColor = background;
+  }, []);
 
   const listenToLearner = (e) => {
     // the button text needs to change to listening...
