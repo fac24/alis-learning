@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function ChildLanding({ learnerName }) {
   return (
     <>
-      <h2>Hi, {learnerName ? learnerName : "little learner"}!</h2>
+      <h2>{learnerName ? `Hi, ${learnerName}!` : "Hi!"}!</h2>
       <Tts>What game would you like to play?</Tts>
       <Link href="phoneme-game/first-step">
         <GameTile>Phoneme Game</GameTile>
