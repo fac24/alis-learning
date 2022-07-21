@@ -2,7 +2,11 @@ import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
 import FontFlex from "../../components/Styled-Components/FontFlex";
 
-export default function LearnerFontSizesSelection({ size, setSize }) {
+export default function LearnerFontSizesSelection({
+  size,
+  setSize,
+  avatarNameInLocalStorage,
+}) {
   function updateFontSize(e) {
     e.preventDefault();
     setSize(e.target.value);
@@ -33,6 +37,7 @@ export default function LearnerFontSizesSelection({ size, setSize }) {
         nextStep="background-selection"
         previousStep="font-selection"
         children={html}
+        avatarNameInLocalStorage={avatarNameInLocalStorage}
       />
     </>
   );

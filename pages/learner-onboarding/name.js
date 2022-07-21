@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 
-export default function LearnerChoiceName( {learnerName, setLearnerName}) {
-
+export default function LearnerChoiceName({
+  learnerName,
+  setLearnerName,
+  avatarNameInLocalStorage,
+}) {
   const saveName = (e) => {
     setLearnerName(e.target.value);
     console.log(e.target.value);
@@ -14,6 +17,7 @@ export default function LearnerChoiceName( {learnerName, setLearnerName}) {
       stepNumber={1}
       nextStep="font-selection"
       previousStep="avatar-selection"
+      avatarNameInLocalStorage={avatarNameInLocalStorage}
     >
       <StyledForm>
         <label htmlFor="learnerName"></label>
