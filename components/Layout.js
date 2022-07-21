@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styled from "styled-components";
-import { useEffect } from "react";
 
 export default function Layout({ children }) {
   return (
@@ -8,7 +7,6 @@ export default function Layout({ children }) {
       <Head>
         <title>Alis Learning</title>
         <meta
-          s
           name="description"
           content="A learning app to help children with dyslexia with their reading and writing"
         />
