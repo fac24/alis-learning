@@ -2,9 +2,23 @@ import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
 import Image from "next/image";
 import avatars from "../../data/avatars.js";
-import useLocalStorageState from "../components/Hooks/useLocalStorageState";
+import useLocalStorageState from "../../components/Hooks/useLocalStorageState";
 
+// key of avatar
+// set a key value of particular avatar
 export default function LearnerAvatarSelection() {
+  const [avatar, setAvatar] = useLocalStorageState("avatar", "") || [
+    null,
+    null,
+  ];
+
+  function handleClick(avatar_name) {
+    // calling the function for setAvatar to select the avatar name once learner handles that click.
+    setAvatar(avatar_name);
+    // console.log(avatar_name);
+    // console.log("ladyBird");
+  }
+
   return (
     <LearnerOnboardingLayout
       ttsTitle="Pick your avatar"
@@ -43,21 +57,15 @@ export default function LearnerAvatarSelection() {
 // custom hook
 // first is the first value set of the avatar.
 // second is the function that lets you update the value of the avatar updated
-const [avatar, setAvatar] = useLocalStorageState("avatar", "image") || [
-  null,
-  null,
-];
+// const [avatar, setAvatar] = useLocalStorageState("avatar", "image") || [
+//   null,
+//   null,
+// ];
 // using || null, null for nextJS to recognise
 // useState to be set as null
 // onclick so that learner clicks and picks up in the console
 // creating a function to handle click.
 // li as clickable on function for handling click.
-
-function handleClick(avatar_name) {
-  // console.log(e.target);
-  console.log(avatar_name);
-  // console.log("ladyBird");
-}
 
 // }
 
