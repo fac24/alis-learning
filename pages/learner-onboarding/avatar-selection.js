@@ -2,7 +2,7 @@ import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
 import Image from "next/image";
 import avatars from "../../data/avatars.js";
-// import useLocalStorageState from "../components/Hooks/useLocalStorageState";
+import useLocalStorageState from "../components/Hooks/useLocalStorageState";
 
 export default function LearnerAvatarSelection() {
   return (
@@ -40,10 +40,14 @@ export default function LearnerAvatarSelection() {
 // function setAvatar() {
 // first part of local storage would be the key picking up the avartar
 // the initial value.
-// const [avatar, setAvatar] = useLocalStorageState("avatar", "image") || [
-//   null,
-//   null,
-// ];
+// custom hook
+// first is the first value set of the avatar.
+// second is the function that lets you update the value of the avatar updated
+const [avatar, setAvatar] = useLocalStorageState("avatar", "image") || [
+  null,
+  null,
+];
+// using || null, null for nextJS to recognise
 // useState to be set as null
 // onclick so that learner clicks and picks up in the console
 // creating a function to handle click.
