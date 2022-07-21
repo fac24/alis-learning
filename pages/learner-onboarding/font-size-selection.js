@@ -32,6 +32,7 @@ export default function LearnerFontSizesSelection() {
     <>
       <LearnerOnboardingLayout
         ttsTitle="What is easier to read?"
+        stepNumber={3}
         nextStep="background-selection"
         previousStep="font-selection"
         children={html}
