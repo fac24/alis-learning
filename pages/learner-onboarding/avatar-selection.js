@@ -8,14 +8,12 @@ export default function LearnerAvatarSelection() {
   //the useState local storage inside and handle click function can be inside the initial function.
   // key of avatar
   // set a key value of particular avatar
-  const [avatar, setAvatar] = useLocalStorageState("avatar", "") || [
-    null,
-    null,
-  ];
+  const [avatarNameInLocalStorage, setAvatarNameInLocalStorage] =
+    useLocalStorageState("avatar", "") || [null, null];
 
   function handleClick(avatar_name) {
     // calling the function for setAvatar to select the avatar name once learner handles that click.
-    setAvatar(avatar_name);
+    setAvatarNameInLocalStorage(avatar_name);
     // console.log(avatar_name);
     // console.log("ladyBird");
   }
@@ -34,7 +32,13 @@ export default function LearnerAvatarSelection() {
           - Render a new StyledListItem component with an Image component for each pair.
         */}
         {Object.entries(avatars).map(([avatar_name, avatar_file], index) => (
-          <StyledListItem onClick={() => handleClick(avatar_name)} key={index}>
+          <StyledListItem
+            className={
+              avatar_name === avatarNameInLocalStorage ? "selected" : ""
+            }
+            onClick={() => handleClick(avatar_name)}
+            key={index}
+          >
             <Image
               src={avatar_file}
               alt={avatar_name + " avatar"}
@@ -46,6 +50,8 @@ export default function LearnerAvatarSelection() {
     </LearnerOnboardingLayout>
   );
 }
+
+// avatar_name === avatarNameInLocalStorage ? "selected" : ""
 
 // Selecting an Avatar //
 
