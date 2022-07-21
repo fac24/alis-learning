@@ -17,12 +17,12 @@ export default function LearnerOnboardingLayout({
       <LearnerOnboardingProgressBar stepNumber={stepNumber} totalSteps="5" />
       <Tts>{ttsTitle}</Tts>
       <div>{children}</div>
-      <Link href={`/learner-onboarding/${nextStep}`}>
-        <ChildNext>
-          {completed ? "Lets play a game" : "Next"}
-        </ChildNext>
+      <Link
+        href={completed ? "/child-landing" : `/learner-onboarding/${nextStep}`}
+      >
+        <ChildNext>{completed ? "Lets play a game" : "Next"}</ChildNext>
       </Link>
-      <Link href={!nextStep ? "/" : `/learner-onboarding/${previousStep}`}>
+      <Link href={!previousStep ? "/" : `/learner-onboarding/${previousStep}`}>
         <Back>Back</Back>
       </Link>
     </>
