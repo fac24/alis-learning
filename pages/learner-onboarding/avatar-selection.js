@@ -2,15 +2,11 @@ import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
 import Image from "next/image";
 import avatars from "../../data/avatars.js";
-import useLocalStorageState from "../../components/Hooks/useLocalStorageState";
 
-export default function LearnerAvatarSelection() {
-  //the useState local storage inside and handle click function can be inside the initial function.
-  // key of avatar
-  // set a key value of particular avatar
-  const [avatarNameInLocalStorage, setAvatarNameInLocalStorage] =
-    useLocalStorageState("avatar", "") || [null, null];
-
+export default function LearnerAvatarSelection({
+  avatarNameInLocalStorage,
+  setAvatarNameInLocalStorage,
+}) {
   function handleClick(avatar_name) {
     // calling the function for setAvatar to select the avatar name once learner handles that click.
     setAvatarNameInLocalStorage(avatar_name);
@@ -23,6 +19,7 @@ export default function LearnerAvatarSelection() {
       ttsTitle="Pick your avatar"
       stepNumber={0}
       nextStep="name"
+      avatarNameInLocalStorage={avatarNameInLocalStorage}
       // we need to change the previous step!
     >
       <StyledUnorderedList>
