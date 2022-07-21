@@ -6,16 +6,20 @@ function MyApp({ Component, pageProps }) {
   // Custom hooks setting user user details - here in the _app.js so it can be accessed acrosss all componenets!
   const [learnerName, setLearnerName] = useLocalStorageState(
     "learner-name",
-    null
+    ""
   ) || [null, null];
-  const [font, setFont] = useLocalStorageState("font", null) || [null, null];
-  const [size, setSize] = useLocalStorageState(
-    "font-size",
-    null
-  ) || [null, null];
+  const [font, setFont] = useLocalStorageState("font", "Comic") || [null, null];
+  const [size, setSize] = useLocalStorageState("font-size", "medium") || [
+    null,
+    null,
+  ];
   const [background, setBackground] = useLocalStorageState(
     "background",
-    null
+    "#fff"
+  ) || [null, null];
+  const [onboarding, setOnboarding] = useLocalStorageState(
+    "onboarding",
+    false
   ) || [null, null];
 
   return (
@@ -30,6 +34,8 @@ function MyApp({ Component, pageProps }) {
         setSize={setSize}
         background={background}
         setBackground={setBackground}
+        onboarding={onboarding}
+        setOnboarding={setOnboarding}
       />
     </Layout>
   );
