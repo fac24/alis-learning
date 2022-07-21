@@ -1,24 +1,22 @@
 import styled from "styled-components";
 
 const ChildNext = styled.button`
-  position: absolute;
-  bottom: 7rem;
-  left: 50%;
-  margin-left: -6.5rem;
-  width: 13rem;
-  padding: 1.5rem;
+  background: linear-gradient(hsl(25, 100%, 62%), hsl(25, 100%, 51%));
+  border-radius: 1rem;
+  border: none;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   color: white;
-  font-size: 15px;
-  font-weight: 700;
-  border-radius: 20px;
-  border: none;
-  background-color: orange;
-  letter-spacing: 2px;
   cursor: pointer;
+  margin: 0 auto;
+  padding: 1rem 6rem;
+  font-family: ComicNeue;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0px 2px 4px black;
 
-  &:hover {
-    transform: translateY(0.125rem);
+  &:active {
+    transform: translateY(0.2rem);
   }
 `;
 
