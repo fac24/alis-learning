@@ -2,10 +2,9 @@ import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import Tts from "../../components/tts";
 import { colours } from "../../data/colours.js";
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-export default function LearnerBackgroudSelection() {
-  const [background, setBackground] = useState(null);
+export default function LearnerBackgroudSelection({background, setBackground}) {
 
   const updateColour = (e) => {
     setBackground(e.target.value);
