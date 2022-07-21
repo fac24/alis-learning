@@ -3,7 +3,12 @@ import FontFlex from "../../components/Styled-Components/FontFlex";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 
-export default function LearnerFontsSelection({ font, setFont, background }) {
+export default function LearnerFontsSelection({
+  font,
+  setFont,
+  background,
+  avatarNameInLocalStorage,
+}) {
   useEffect(() => {
     document.body.style.backgroundColor = background;
   }, []);
@@ -37,6 +42,7 @@ export default function LearnerFontsSelection({ font, setFont, background }) {
         nextStep="font-size-selection"
         previousStep="name"
         children={html}
+        avatarNameInLocalStorage={avatarNameInLocalStorage}
       />
     </>
   );

@@ -1,12 +1,15 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import { useEffect } from "react";
 
-export default function OnboardingDone({ setOnboarding, background }) {
+export default function OnboardingDone({
+  setOnboarding,
+  background,
+  avatarNameInLocalStorage,
+}) {
   useEffect(() => {
     document.body.style.backgroundColor = background;
+    setOnboarding(true);
   }, []);
-
-  setOnboarding(true);
 
   return (
     <LearnerOnboardingLayout
@@ -15,6 +18,7 @@ export default function OnboardingDone({ setOnboarding, background }) {
       previousStep="background-selection"
       nextStep="child-landing"
       completed="true"
+      avatarNameInLocalStorage={avatarNameInLocalStorage}
     />
   );
 }

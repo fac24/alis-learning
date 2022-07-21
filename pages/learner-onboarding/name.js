@@ -6,6 +6,7 @@ export default function LearnerChoiceName({
   learnerName,
   setLearnerName,
   background,
+  avatarNameInLocalStorage,
 }) {
   useEffect(() => {
     document.body.style.backgroundColor = background;
@@ -22,6 +23,7 @@ export default function LearnerChoiceName({
       stepNumber={1}
       nextStep="font-selection"
       previousStep="avatar-selection"
+      avatarNameInLocalStorage={avatarNameInLocalStorage}
     >
       <StyledForm>
         <label htmlFor="learnerName"></label>

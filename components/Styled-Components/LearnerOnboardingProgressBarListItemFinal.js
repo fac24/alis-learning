@@ -7,7 +7,7 @@ const LearnerOnboardingProgressBarListItemFinal = styled.li`
   justify-content: center;
   position: relative;
   margin-right: 0.6rem;
-  width: 12rem;
+  width: 8rem;
 `;
 
 export default LearnerOnboardingProgressBarListItemFinal;

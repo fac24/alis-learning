@@ -7,6 +7,7 @@ import { useEffect } from "react";
 export default function LearnerBackgroudSelection({
   background,
   setBackground,
+  avatarNameInLocalStorage,
 }) {
   const updateColour = (e) => {
     setBackground(e.target.value);
@@ -22,6 +23,7 @@ export default function LearnerBackgroudSelection({
       stepNumber={4}
       nextStep="onboarding-done"
       previousStep="font-size-selection"
+      avatarNameInLocalStorage={avatarNameInLocalStorage}
     >
       <Grid>
         {colours.map((colour) => (

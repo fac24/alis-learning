@@ -22,6 +22,12 @@ function MyApp({ Component, pageProps }) {
     false
   ) || [null, null];
 
+  //the useState local storage inside and handle click function can be inside the initial function.
+  // key of avatar
+  // set a key value of particular avatar
+  const [avatarNameInLocalStorage, setAvatarNameInLocalStorage] =
+    useLocalStorageState("avatar", null) || [null, null];
+
   return (
     <Layout>
       <Component
@@ -36,6 +42,8 @@ function MyApp({ Component, pageProps }) {
         setBackground={setBackground}
         onboarding={onboarding}
         setOnboarding={setOnboarding}
+        avatarNameInLocalStorage={avatarNameInLocalStorage}
+        setAvatarNameInLocalStorage={setAvatarNameInLocalStorage}
       />
     </Layout>
   );

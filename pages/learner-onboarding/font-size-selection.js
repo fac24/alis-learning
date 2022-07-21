@@ -7,6 +7,7 @@ export default function LearnerFontSizesSelection({
   size,
   setSize,
   background,
+  avatarNameInLocalStorage,
 }) {
   useEffect(() => {
     document.body.style.backgroundColor = background;
@@ -41,6 +42,7 @@ export default function LearnerFontSizesSelection({
         nextStep="background-selection"
         previousStep="font-selection"
         children={html}
+        avatarNameInLocalStorage={avatarNameInLocalStorage}
       />
     </>
   );
