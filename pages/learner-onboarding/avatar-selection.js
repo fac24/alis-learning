@@ -2,6 +2,7 @@ import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
 import Image from "next/image";
 import avatars from "../../data/avatars.js";
+// import useLocalStorageState from "../components/Hooks/useLocalStorageState";
 
 export default function LearnerAvatarSelection() {
   return (
@@ -18,7 +19,7 @@ export default function LearnerAvatarSelection() {
           - Render a new StyledListItem component with an Image component for each pair.
         */}
         {Object.entries(avatars).map(([avatar_name, avatar_file], index) => (
-          <StyledListItem key={index}>
+          <StyledListItem onClick={() => handleClick(avatar_name)} key={index}>
             <Image
               src={avatar_file}
               alt={avatar_name + " avatar"}
@@ -30,6 +31,33 @@ export default function LearnerAvatarSelection() {
     </LearnerOnboardingLayout>
   );
 }
+
+// Selecting an Avatar //
+
+// Step One = selecting an avatar by clicking
+// set the avatar so that learner may wish to pick an avatar they desire.
+
+// function setAvatar() {
+// first part of local storage would be the key picking up the avartar
+// the initial value.
+// const [avatar, setAvatar] = useLocalStorageState("avatar", "image") || [
+//   null,
+//   null,
+// ];
+// useState to be set as null
+// onclick so that learner clicks and picks up in the console
+// creating a function to handle click.
+// li as clickable on function for handling click.
+
+function handleClick(avatar_name) {
+  // console.log(e.target);
+  console.log(avatar_name);
+  // console.log("ladyBird");
+}
+
+// }
+
+// StepTwo = now setting the avatar inside the progress bar.
 
 const StyledUnorderedList = styled.ul`
   list-style-type: none;
