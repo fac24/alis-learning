@@ -1,11 +1,8 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
-import { useState } from "react";
 import styled from "styled-components";
 import FontFlex from "../../components/Styled-Components/FontFlex";
 
-export default function LearnerFontSizesSelection() {
-  const [size, setSize] = useState("");
-
+export default function LearnerFontSizesSelection({ size, setSize }) {
   function updateFontSize(e) {
     e.preventDefault();
     setSize(e.target.value);

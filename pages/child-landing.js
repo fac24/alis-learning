@@ -2,10 +2,10 @@ import Tts from "../components/tts";
 import Link from "next/link";
 import styled from "styled-components";
 
-export default function ChildLanding() {
+export default function ChildLanding({ learnerName }) {
   return (
     <>
-      <h2>Hi, --learners name here, which we can get from localStorage --!</h2>
+      <h2>Hi, {learnerName ? learnerName : "little learner"}!</h2>
       <Tts>What game would you like to play?</Tts>
       <Link href="phoneme-game/first-step">
         <GameTile>Phoneme Game</GameTile>

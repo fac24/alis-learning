@@ -1,14 +1,13 @@
-// 1. alis-learning title above.
-// 2. progress bar component will go after
-// 3. what is your name speech click icon. Also include text prompting the learner.
-// 4. form with will include input area for learner to type name.
-// 5. orange next button on bottom center.
-// 6. back button on bottom left.
-
 import styled from "styled-components";
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 
-export default function LearnerChoiceName() {
+export default function LearnerChoiceName( {learnerName, setLearnerName}) {
+
+  const saveName = (e) => {
+    setLearnerName(e.target.value);
+    console.log(e.target.value);
+  };
+
   return (
     <LearnerOnboardingLayout
       ttsTitle="What is your name?"
@@ -16,12 +15,10 @@ export default function LearnerChoiceName() {
       nextStep="font-selection"
       previousStep="avatar-selection"
     >
-      {/* <LearnerOnboardingName /> */}
       <StyledForm>
-        <label for="learnerName"></label>
-        <StyledInput type="text" name="learnerName" />
+        <label htmlFor="learnerName"></label>
+        <StyledInput onChange={saveName} type="text" name="learnerName" />
       </StyledForm>
-      {/* Content goes here */}
     </LearnerOnboardingLayout>
   );
 }

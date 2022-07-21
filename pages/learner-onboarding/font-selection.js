@@ -1,19 +1,15 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
-// import LearnerFontsDys from "../../components/Styled-Components/LearnerFontsDys";
-// import LearnerFontsComic from "../../components/Styled-Components/LearnerFontsComic";
-// import LearnerFontsRoman from "../../components/Styled-Components/LearnerFontsRoman";
 import FontFlex from "../../components/Styled-Components/FontFlex";
 import styled from "styled-components";
 import { useState } from "react";
 
-export default function LearnerFontsSelection() {
-  const [font, setFont] = useState("");
-
+export default function LearnerFontsSelection({ font, setFont }) {
+  
   function updateFont(e) {
     e.preventDefault();
     setFont(e.target.value);
     console.log(font);
-    //We need to update the local storage here!
+    
   }
   let html = (
     <>
