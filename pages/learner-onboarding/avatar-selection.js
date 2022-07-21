@@ -4,9 +4,10 @@ import Image from "next/image";
 import avatars from "../../data/avatars.js";
 import useLocalStorageState from "../../components/Hooks/useLocalStorageState";
 
-// key of avatar
-// set a key value of particular avatar
 export default function LearnerAvatarSelection() {
+  //the useState local storage inside and handle click function can be inside the initial function.
+  // key of avatar
+  // set a key value of particular avatar
   const [avatar, setAvatar] = useLocalStorageState("avatar", "") || [
     null,
     null,
