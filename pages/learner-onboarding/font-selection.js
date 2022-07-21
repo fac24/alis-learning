@@ -3,13 +3,15 @@ import FontFlex from "../../components/Styled-Components/FontFlex";
 import styled from "styled-components";
 import { useState } from "react";
 
-export default function LearnerFontsSelection({ font, setFont }) {
-  
+export default function LearnerFontsSelection({
+  font,
+  setFont,
+  avatarNameInLocalStorage,
+}) {
   function updateFont(e) {
     e.preventDefault();
     setFont(e.target.value);
     console.log(font);
-    
   }
   let html = (
     <>
@@ -35,6 +37,7 @@ export default function LearnerFontsSelection({ font, setFont }) {
         nextStep="font-size-selection"
         previousStep="name"
         children={html}
+        avatarNameInLocalStorage={avatarNameInLocalStorage}
       />
     </>
   );

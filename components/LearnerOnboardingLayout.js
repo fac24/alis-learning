@@ -11,10 +11,15 @@ export default function LearnerOnboardingLayout({
   nextStep,
   previousStep,
   completed,
+  avatarNameInLocalStorage,
 }) {
   return (
     <>
-      <LearnerOnboardingProgressBar stepNumber={stepNumber} totalSteps={5} />
+      <LearnerOnboardingProgressBar
+        stepNumber={stepNumber}
+        totalSteps={5}
+        avatarNameInLocalStorage={avatarNameInLocalStorage}
+      />
       <Tts>{ttsTitle}</Tts>
       <div>{children}</div>
       <Link

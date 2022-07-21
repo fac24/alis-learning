@@ -4,8 +4,11 @@ import { colours } from "../../data/colours.js";
 import styled from "styled-components";
 import { useEffect } from "react";
 
-export default function LearnerBackgroudSelection({background, setBackground}) {
-
+export default function LearnerBackgroudSelection({
+  background,
+  setBackground,
+  avatarNameInLocalStorage,
+}) {
   const updateColour = (e) => {
     setBackground(e.target.value);
   };
@@ -20,6 +23,7 @@ export default function LearnerBackgroudSelection({background, setBackground}) {
       stepNumber={4}
       nextStep="onboarding-done"
       previousStep="font-size-selection"
+      avatarNameInLocalStorage={avatarNameInLocalStorage}
     >
       <Grid>
         {colours.map((colour) => (
