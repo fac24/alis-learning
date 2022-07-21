@@ -1,7 +1,15 @@
 import styled from "styled-components";
+import { useEffect } from "react";
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 
-export default function LearnerChoiceName( {learnerName, setLearnerName}) {
+export default function LearnerChoiceName({
+  learnerName,
+  setLearnerName,
+  background,
+}) {
+  useEffect(() => {
+    document.body.style.backgroundColor = background;
+  }, []);
 
   const saveName = (e) => {
     setLearnerName(e.target.value);

@@ -1,15 +1,17 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import FontFlex from "../../components/Styled-Components/FontFlex";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function LearnerFontsSelection({ font, setFont }) {
-  
+export default function LearnerFontsSelection({ font, setFont, background }) {
+  useEffect(() => {
+    document.body.style.backgroundColor = background;
+  }, []);
+
   function updateFont(e) {
     e.preventDefault();
     setFont(e.target.value);
     console.log(font);
-    
   }
   let html = (
     <>

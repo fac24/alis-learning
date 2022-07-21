@@ -3,13 +3,6 @@ import styled from "styled-components";
 import { useEffect } from "react";
 
 export default function Layout({ children }) {
-  let adultPage = children.type.name;
-
-  useEffect(() => {
-    // if not adult page then run this
-    document.body.style.backgroundColor = children.props.background;
-  }, [children.props.background]);
-
   return (
     <>
       <Head>

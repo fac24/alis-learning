@@ -2,8 +2,13 @@ import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
 import Image from "next/image";
 import avatars from "../../data/avatars.js";
+import { useEffect } from "react";
 
-export default function LearnerAvatarSelection() {
+export default function LearnerAvatarSelection({ background }) {
+  useEffect(() => {
+    document.body.style.backgroundColor = background;
+  }, []);
+
   return (
     <LearnerOnboardingLayout
       ttsTitle="Pick your avatar"

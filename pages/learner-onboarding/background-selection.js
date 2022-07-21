@@ -4,8 +4,10 @@ import { colours } from "../../data/colours.js";
 import styled from "styled-components";
 import { useEffect } from "react";
 
-export default function LearnerBackgroudSelection({background, setBackground}) {
-
+export default function LearnerBackgroudSelection({
+  background,
+  setBackground,
+}) {
   const updateColour = (e) => {
     setBackground(e.target.value);
   };
