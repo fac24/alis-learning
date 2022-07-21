@@ -1,10 +1,14 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-export default function Home() {
+export default function Home({ onboarding }) {
   return (
     <>
-      <Link href="learner-onboarding/avatar-selection">
+      <Link
+        href={
+          onboarding ? "child-landing" : "learner-onboarding/avatar-selection"
+        }
+      >
         <ChildStart id="get_started">Get started</ChildStart>
       </Link>
       <Link href="adult-onboarding1">Go to parents section</Link>
