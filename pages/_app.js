@@ -21,13 +21,18 @@ function MyApp({ Component, pageProps }) {
     "onboarding",
     false
   ) || [null, null];
+  // local storage use state to handle a value of keeping track of progress.
+  const [phonemeLevel, setPhonemeLevel] = useLocalStorageState(
+    "phonemeLevel",
+    1
+  ) || [null, null];
 
   //the useState local storage inside and handle click function can be inside the initial function.
   // key of avatar
   // set a key value of particular avatar
   const [avatarNameInLocalStorage, setAvatarNameInLocalStorage] =
     useLocalStorageState("avatar", null) || [null, null];
-
+  // sending the props at the root of the pages so it's accessible everywhere!
   return (
     <Layout>
       <Component
@@ -44,6 +49,7 @@ function MyApp({ Component, pageProps }) {
         setOnboarding={setOnboarding}
         avatarNameInLocalStorage={avatarNameInLocalStorage}
         setAvatarNameInLocalStorage={setAvatarNameInLocalStorage}
+        phonemeLevel={phonemeLevel}
       />
     </Layout>
   );
