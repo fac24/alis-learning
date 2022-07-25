@@ -7,7 +7,6 @@ export default function OnboardingDone({
   avatarNameInLocalStorage,
 }) {
   useEffect(() => {
-    document.body.style.backgroundColor = background;
     setOnboarding(true);
   }, []);
 
@@ -19,6 +18,7 @@ export default function OnboardingDone({
       nextStep="child-landing"
       completed="true"
       avatarNameInLocalStorage={avatarNameInLocalStorage}
+      background={background}
     />
   );
 }

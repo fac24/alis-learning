@@ -9,10 +9,6 @@ export default function LearnerAvatarSelection({
   avatarNameInLocalStorage,
   setAvatarNameInLocalStorage,
 }) {
-  useEffect(() => {
-    document.body.style.backgroundColor = background;
-  }, []);
-
   function handleClick(avatar_name) {
     // calling the function for setAvatar to select the avatar name once learner handles that click.
     setAvatarNameInLocalStorage(avatar_name);
@@ -26,6 +22,7 @@ export default function LearnerAvatarSelection({
       stepNumber={0}
       nextStep="name"
       avatarNameInLocalStorage={avatarNameInLocalStorage}
+      background={background}
       // we need to change the previous step!
     >
       <StyledUnorderedList>

@@ -9,10 +9,6 @@ export default function LearnerFontsSelection({
   background,
   avatarNameInLocalStorage,
 }) {
-  useEffect(() => {
-    document.body.style.backgroundColor = background;
-  }, []);
-
   function updateFont(e) {
     e.preventDefault();
     setFont(e.target.value);
@@ -43,6 +39,7 @@ export default function LearnerFontsSelection({
         previousStep="name"
         children={html}
         avatarNameInLocalStorage={avatarNameInLocalStorage}
+        background={background}
       />
     </>
   );

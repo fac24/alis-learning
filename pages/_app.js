@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   ];
   const [background, setBackground] = useLocalStorageState(
     "background",
-    "#fff"
+    "#F8F5F4"
   ) || [null, null];
   const [onboarding, setOnboarding] = useLocalStorageState(
     "onboarding",
