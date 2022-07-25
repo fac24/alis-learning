@@ -11,6 +11,7 @@ export default function LearnerChoiceName({
   const saveName = (e) => {
     setLearnerName(e.target.value);
     console.log(e.target.value);
+    
   };
 
   return (

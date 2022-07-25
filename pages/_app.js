@@ -9,10 +9,10 @@ function MyApp({ Component, pageProps }) {
     ""
   ) || [null, null];
   const [font, setFont] = useLocalStorageState("font", "Comic") || [null, null];
-  const [size, setSize] = useLocalStorageState("font-size", "medium") || [
-    null,
-    null,
-  ];
+  const [fontSize, setFontSize] = useLocalStorageState(
+    "font-size",
+    "medium"
+  ) || [null, null];
   const [background, setBackground] = useLocalStorageState(
     "background",
     "#F8F5F4"
@@ -29,15 +29,15 @@ function MyApp({ Component, pageProps }) {
     useLocalStorageState("avatar", null) || [null, null];
 
   return (
-    <Layout>
+    <Layout font={font} fontSize={fontSize}>
       <Component
         {...pageProps}
         learnerName={learnerName}
         setLearnerName={setLearnerName}
         font={font}
         setFont={setFont}
-        size={size}
-        setSize={setSize}
+        fontSize={fontSize}
+        setFontSize={setFontSize}
         background={background}
         setBackground={setBackground}
         onboarding={onboarding}

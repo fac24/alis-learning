@@ -1,29 +1,28 @@
 /* Importing OpenDyslexic fonts regular, bold and italic */
 @font-face {
   font-family: "OpenDyslexic";
-  src: url('../fonts/open_dyslexic/OpenDyslexic-Regular.otf');
+  src: url("../fonts/open_dyslexic/OpenDyslexic-Regular.otf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "OpenDyslexic";
-  src: url('../fonts/open_dyslexic/OpenDyslexic-Bold.otf');
+  src: url("../fonts/open_dyslexic/OpenDyslexic-Bold.otf");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "OpenDyslexic";
-  src: url('../fonts/open_dyslexic/OpenDyslexic-Italic.otf');
+  src: url("../fonts/open_dyslexic/OpenDyslexic-Italic.otf");
   font-weight: normal;
   font-style: italic;
 }
 
-
 @font-face {
   font-family: "OpenDyslexic";
-  src: url('../fonts/open_dyslexic/OpenDyslexic-BoldItalic.otf');
+  src: url("../fonts/open_dyslexic/OpenDyslexic-BoldItalic.otf");
   font-weight: bold;
   font-style: italic;
 }
@@ -32,46 +31,63 @@
 
 @font-face {
   font-family: "ComicNeue";
-  src: url('../fonts/Comic_Neue/ComicNeue-Regular.ttf');
+  src: url("../fonts/Comic_Neue/ComicNeue-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "ComicNeue";
-  src: url('../fonts/Comic_Neue/ComicNeue-Bold.ttf');
+  src: url("../fonts/Comic_Neue/ComicNeue-Bold.ttf");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "ComicNeue";
-  src: url('../fonts/Comic_Neue/ComicNeue-Italic.ttf');
+  src: url("../fonts/Comic_Neue/ComicNeue-Italic.ttf");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "ComicNeue";
-  src: url('../fonts/Comic_Neue/ComicNeue-BoldItalic.ttf');
+  src: url("../fonts/Comic_Neue/ComicNeue-BoldItalic.ttf");
   font-weight: bold;
   font-style: italic;
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.Roman {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.Dyslexic {
+  font-family: "OpenDyslexic";
+}
+
+.Comic {
+  font-family: "ComicNeue";
+}
+
+/* .small *{ 
+  font-size: 1rem;
+}
+
+
+main > main.medium {
+  /* font-size: 2rem; */
+/* font-size: medium;
+} */
+
+/* .large {
+  font-size: 3rem; */
+/* } */
+
+main {
+  font-size: inherit;
 }
 

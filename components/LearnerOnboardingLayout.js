@@ -14,6 +14,7 @@ export default function LearnerOnboardingLayout({
   completed,
   avatarNameInLocalStorage,
   background,
+  
 }) {
   useEffect(() => {
     document.body.style.backgroundColor = background;

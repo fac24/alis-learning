@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styled from "styled-components";
 
-export default function Layout({ children }) {
+export default function Layout({ children, font, fontSize }) {
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ export default function Layout({ children }) {
       <header>
         <StyledTitle>Alis Learning</StyledTitle>
       </header>
-      <main>{children}</main>
+      <main className={font + " " + fontSize}>{children}</main>
     </>
   );
 }
@@ -26,3 +26,7 @@ const StyledTitle = styled.h1`
   font-family: OpenDyslexic;
   text-align: center;
 `;
+
+// const Main = styled.main`
+// color: green;
+// `;

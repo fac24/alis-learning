@@ -40,6 +40,7 @@ export default function LearnerFontsSelection({
         children={html}
         avatarNameInLocalStorage={avatarNameInLocalStorage}
         background={background}
+        font={font}
       />
     </>
   );

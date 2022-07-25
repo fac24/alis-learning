@@ -4,6 +4,8 @@ import { useEffect } from "react";
 export default function OnboardingDone({
   setOnboarding,
   background,
+  font, 
+  fontSize,
   avatarNameInLocalStorage,
 }) {
   useEffect(() => {
@@ -19,6 +21,8 @@ export default function OnboardingDone({
       completed="true"
       avatarNameInLocalStorage={avatarNameInLocalStorage}
       background={background}
+      font={font}
+      fontSize={fontSize}
     />
   );
 }

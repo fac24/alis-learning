@@ -4,15 +4,15 @@ import FontFlex from "../../components/Styled-Components/FontFlex";
 import { useEffect } from "react";
 
 export default function LearnerFontSizesSelection({
-  size,
-  setSize,
+  fontSize,
+  setFontSize,
   background,
   avatarNameInLocalStorage,
 }) {
   function updateFontSize(e) {
     e.preventDefault();
-    setSize(e.target.value);
-    console.log(size);
+    setFontSize(e.target.value);
+    //console.log(fontSize);
   }
   let html = (
     <>
@@ -40,6 +40,7 @@ export default function LearnerFontSizesSelection({
         children={html}
         avatarNameInLocalStorage={avatarNameInLocalStorage}
         background={background}
+        fontSize={fontSize}
       />
     </>
   );
