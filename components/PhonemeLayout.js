@@ -1,6 +1,6 @@
 import Tts from "../components/tts";
 import Link from "next/link";
-import GameNext from "../components/Styled-Components/GameNext";
+import GameNext from "./Styled-Components/GameGoButton";
 import { ImMic, ImHome3, ImStarFull } from "react-icons/im";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
@@ -10,24 +10,15 @@ import { useState, useEffect } from "react";
 export default function LearnerOnboardingLayout({
   firstText,
   secondText,
-  context,
   background,
+  stars,
+  children,
 }) {
   // Will want to use and update local storage with the stars
-  const [stars, setStars] = useState(0);
-  const [buttonText, setButtonText] = useState("Go!");
 
   useEffect(() => {
     document.body.style.backgroundColor = background;
   }, []);
-
-  const listenToLearner = (e) => {
-    // the button text needs to change to listening...
-    setButtonText("Listening...");
-    // the speach-to-text needs to fo its magic
-    // wither show a propmt "you can do it" and set text back to go
-    // or redirect to correct-guess.js
-  };
 
   return (
     <>
@@ -58,12 +49,7 @@ export default function LearnerOnboardingLayout({
       <Score>{stars}</Score>
       <Tts>{firstText}</Tts>
 
-      {/* below is the placeholder for the context to go */}
-      {context}
-
-      <GameNext onClick={listenToLearner}>
-        <ImMic /> {buttonText}
-      </GameNext>
+      {children}
 
       <Tts>{secondText}</Tts>
     </>

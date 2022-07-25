@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const GameNext = styled.button`
+const GameGoButton = styled.button`
   display: block;
   margin: 0 auto;
   width: 16rem;
@@ -11,7 +11,7 @@ const GameNext = styled.button`
   font-weight: 700;
   border-radius: 20px;
   border: none;
-  background-color: orange;
+  background-color: LimeGreen;
   letter-spacing: 2px;
   cursor: pointer;
 
@@ -20,4 +20,4 @@ const GameNext = styled.button`
   }
 `;
 
-export default GameNext;
+export default GameGoButton;
