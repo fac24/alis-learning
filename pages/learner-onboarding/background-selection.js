@@ -13,10 +13,6 @@ export default function LearnerBackgroudSelection({
     setBackground(e.target.value);
   };
 
-  useEffect(() => {
-    document.body.style.backgroundColor = background;
-  }, [background]);
-
   return (
     <LearnerOnboardingLayout
       ttsTitle="Click the colours to change the background."
@@ -24,6 +20,7 @@ export default function LearnerBackgroudSelection({
       nextStep="onboarding-done"
       previousStep="font-size-selection"
       avatarNameInLocalStorage={avatarNameInLocalStorage}
+      background={background}
     >
       <Grid>
         {colours.map((colour) => (

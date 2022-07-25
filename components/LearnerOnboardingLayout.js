@@ -3,6 +3,7 @@ import Link from "next/link";
 import LearnerOnboardingProgressBar from "../components/LearnerOnboardingProgressBar";
 import ChildNext from "../components/Styled-Components/ChildNext";
 import Back from "../components/Styled-Components/Back";
+import { useEffect } from "react";
 
 export default function LearnerOnboardingLayout({
   ttsTitle,
@@ -12,7 +13,12 @@ export default function LearnerOnboardingLayout({
   previousStep,
   completed,
   avatarNameInLocalStorage,
+  background,
 }) {
+  useEffect(() => {
+    document.body.style.backgroundColor = background;
+  }, [background]);
+
   return (
     <>
       <LearnerOnboardingProgressBar

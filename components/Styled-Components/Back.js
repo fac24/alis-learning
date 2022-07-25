@@ -1,6 +1,7 @@
 import styled from "styled-components";
 const Back = styled.a`
   position: absolute;
+  text-align: center;
   bottom: 0rem;
   width: 12rem;
   padding: 1.5rem;

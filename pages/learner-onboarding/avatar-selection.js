@@ -2,8 +2,10 @@ import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
 import Image from "next/image";
 import avatars from "../../data/avatars.js";
+import { useEffect } from "react";
 
 export default function LearnerAvatarSelection({
+  background,
   avatarNameInLocalStorage,
   setAvatarNameInLocalStorage,
 }) {
@@ -20,6 +22,7 @@ export default function LearnerAvatarSelection({
       stepNumber={0}
       nextStep="name"
       avatarNameInLocalStorage={avatarNameInLocalStorage}
+      background={background}
       // we need to change the previous step!
     >
       <StyledUnorderedList>

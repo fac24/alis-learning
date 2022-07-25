@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { useEffect } from "react";
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 
 export default function LearnerChoiceName({
   learnerName,
   setLearnerName,
+  background,
   avatarNameInLocalStorage,
 }) {
   const saveName = (e) => {
@@ -18,6 +20,7 @@ export default function LearnerChoiceName({
       nextStep="font-selection"
       previousStep="avatar-selection"
       avatarNameInLocalStorage={avatarNameInLocalStorage}
+      background={background}
     >
       <StyledForm>
         <label htmlFor="learnerName"></label>
