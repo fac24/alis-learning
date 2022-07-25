@@ -13,7 +13,7 @@ export default function PhonemeFirstStep({ phonemeLevel }) {
     (word) => word.level === phonemeLevel
   );
 
-  // setting the phoneme tiles here inside the useEffect
+  // setting the phoneme tiles here inside the useEffect as we need to page to be rendered and loaded first
   useEffect(() => {
     setPhonemeTiles(currentWordObject.phonemes);
   }, []);
