@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import useLocalStorageState from "../components/Hooks/useLocalStorageState";
 
 function MyApp({ Component, pageProps }) {
-  const [stars, setStars] = useLocalStorageState("stars", 0) || [null, null];
+  const [stars, setStars] = useState(0);
   // Custom hooks setting user user details - here in the _app.js so it can be accessed acrosss all componenets!
   const [learnerName, setLearnerName] = useLocalStorageState(
     "learner-name",
