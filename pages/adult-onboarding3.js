@@ -5,14 +5,11 @@ import AdultProgress from "../components/AdultProgress";
 import StyledForm from "../components/Styled-Components/AdultForm";
 import styled from "styled-components";
 
-export default function Adult() {
+export default function Adult({ setLearnerAge }) {
   const getAge = (e) => {
     e.preventDefault();
-    // picking up the age.
-    // console.log(e.target.age.value);
-    let learnersAge = e.target.age.value;
-    console.log(learnersAge);
-    // here we will handle saving the users age to local storage.
+    // picking up the age from the input and saving it to local storage via out custom hook
+    setLearnerAge(e.target.age.value);
   };
 
   return (
