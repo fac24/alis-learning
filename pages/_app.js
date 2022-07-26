@@ -4,42 +4,44 @@ import Layout from "../components/Layout";
 import useLocalStorageState from "../components/Hooks/useLocalStorageState";
 
 function MyApp({ Component, pageProps }) {
-  // const [stars, setStars] = useLocalStorageState("stars", 0) || [null, null];
-  const [stars, setStars] = useLocalStorageState("stars", 0);
-
   // Custom hooks setting user user details - here in the _app.js so it can be accessed acrosss all componenets!
+  const [stars, setStars] = useLocalStorageState("stars", 0);
   const [learnerName, setLearnerName] = useLocalStorageState(
     "learner-name",
     ""
-  ) || [null, null];
-  const [font, setFont] = useLocalStorageState("font", "Comic") || [null, null];
-  const [fontSize, setFontSize] = useLocalStorageState(
-    "font-size",
-    "medium"
-  ) || [null, null];
+  );
+  const [font, setFont] = useLocalStorageState("font", "Comic");
+  const [fontSize, setFontSize] = useLocalStorageState("font-size", "medium");
   const [background, setBackground] = useLocalStorageState(
     "background",
     "#F8F5F4"
-  ) || [null, null];
-  const [onboarding, setOnboarding] = useLocalStorageState(
-    "onboarding",
-    false
-  ) || [null, null];
-  // local storage use state to handle a value of keeping track of progress.
+  );
+  const [onboarding, setOnboarding] = useLocalStorageState("onboarding", false);
   const [phonemeLevel, setPhonemeLevel] = useLocalStorageState(
     "phonemeLevel",
     1
-  ) || [null, null];
-
-  //the useState local storage inside and handle click function can be inside the initial function.
-  // key of avatar
-  // set a key value of particular avatar
+  );
   const [avatarNameInLocalStorage, setAvatarNameInLocalStorage] =
-    useLocalStorageState("avatar", null) || [null, null];
+    useLocalStorageState("avatar", null);
+  const [learnerAge, setLearnerAge] = useLocalStorageState("age", null);
+  const [learnerGoal, setLearnerGoal] = useLocalStorageState("goal", 5);
+
+  // The position of this bit of code matters!
+  // It probably needs to be here (or hereabouts :)
+  const [isClient, setIsClient] = useState(false);
+
+  // This give the page a tiny moment to load - so the page renders with the learners customization and NOT the default options - bug fix 🐛
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
 
   // sending the props at the root of the pages so it's accessible everywhere!
   return (
-    <Layout font={font} fontSize={fontSize}>
+    <Layout font={font} fontSize={fontSize} background={background}>
       <Component
         {...pageProps}
         learnerName={learnerName}
@@ -58,6 +60,8 @@ function MyApp({ Component, pageProps }) {
         setPhonemeLevel={setPhonemeLevel}
         stars={stars}
         setStars={setStars}
+        setLearnerAge={setLearnerAge}
+        setLearnerGoal={setLearnerGoal}
       />
     </Layout>
   );
