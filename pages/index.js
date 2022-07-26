@@ -53,6 +53,11 @@ const ChildStart = styled.a`
   &:hover {
     transform: translateY(0.125rem);
   }
+
+  @media only screen and (max-width: 600px) {
+    margin-left: -4.75rem;
+    width: 10rem;
+  }
 `;
 
 const ParentStart = styled.a`
@@ -74,6 +79,10 @@ const ParentStart = styled.a`
 
   &:hover {
     transform: translateY(0.125rem);
+  }
+  @media only screen and (max-width: 600px) {
+    margin-left: -4.75rem;
+    width: 10rem;
   }
 `;
 
