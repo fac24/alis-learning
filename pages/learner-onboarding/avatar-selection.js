@@ -52,33 +52,6 @@ export default function LearnerAvatarSelection({
   );
 }
 
-// avatar_name === avatarNameInLocalStorage ? "selected" : ""
-
-// Selecting an Avatar //
-
-// Step One = selecting an avatar by clicking
-// set the avatar so that learner may wish to pick an avatar they desire.
-
-// function setAvatar() {
-// first part of local storage would be the key picking up the avartar
-// the initial value.
-// custom hook
-// first is the first value set of the avatar.
-// second is the function that lets you update the value of the avatar updated
-// const [avatar, setAvatar] = useLocalStorageState("avatar", "image") || [
-//   null,
-//   null,
-// ];
-// using || null, null for nextJS to recognise
-// useState to be set as null
-// onclick so that learner clicks and picks up in the console
-// creating a function to handle click.
-// li as clickable on function for handling click.
-
-// }
-
-// StepTwo = now setting the avatar inside the progress bar.
-
 const StyledUnorderedList = styled.ul`
   list-style-type: none;
   display: flex;
@@ -101,10 +74,11 @@ const StyledListItem = styled.li`
 
   &:hover {
     border-color: #666;
-  
   }
 
   &.selected {
     border-color: black;
+    // animation: shake 0.5s;
+    // animation-iteration-count: 6s;
   }
 `;
