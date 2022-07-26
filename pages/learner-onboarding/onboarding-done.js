@@ -1,6 +1,6 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import { useEffect } from "react";
-
+// they set there profile and are now ready to place.
 export default function OnboardingDone({
   setOnboarding,
   background,

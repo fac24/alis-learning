@@ -1,4 +1,4 @@
-import Tts from "../components/tts";
+import Tts from "./Tts";
 import Link from "next/link";
 import LearnerOnboardingProgressBar from "../components/LearnerOnboardingProgressBar";
 import ChildNext from "../components/Styled-Components/ChildNext";
