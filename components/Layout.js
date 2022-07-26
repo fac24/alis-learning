@@ -1,7 +1,16 @@
 import Head from "next/head";
 import styled from "styled-components";
+import Link from "next/link";
+import { useEffect } from "react";
 
-export default function Layout({ children, font, fontSize }) {
+export default function Layout({ children, font, fontSize, background }) {
+  useEffect(() => {
+    // this if statement isn't currently working - I (maria) was trying trying to get learner background choice to NOT show on the adult pages
+    // if (children.type.name != "Home" || children.type.name !== "Adult") {
+    document.body.style.backgroundColor = background;
+    // }
+  }, [background]);
+
   return (
     <>
       <Head>
@@ -14,21 +23,25 @@ export default function Layout({ children, font, fontSize }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <StyledTitle>Alis Learning</StyledTitle>
+        <StyledTitle>
+          <Link href="/">
+            <a>Alis Learning</a>
+          </Link>
+        </StyledTitle>
       </header>
-      <main className={font + " " + fontSize} suppressHydrationWarning={true}>
-        {children}
-      </main>
+      <main className={`${font} ${fontSize}`}>{children}</main>
     </>
   );
 }
 
 const StyledTitle = styled.h1`
-  color: black;
-  font-family: OpenDyslexic;
+  font-family: Arial, sans-serif;
+  margin: 3rem auto;
   text-align: center;
-`;
+  // user-select: none;
 
-// const Main = styled.main`
-// color: green;
-// `;
+  & > a {
+    color: #666;
+    text-decoration: none;
+  }
+`;
