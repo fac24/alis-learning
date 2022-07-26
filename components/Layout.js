@@ -16,7 +16,9 @@ export default function Layout({ children, font, fontSize }) {
       <header>
         <StyledTitle>Alis Learning</StyledTitle>
       </header>
-      <main className={font + " " + fontSize}>{children}</main>
+      <main className={font + " " + fontSize} suppressHydrationWarning={true}>
+        {children}
+      </main>
     </>
   );
 }
