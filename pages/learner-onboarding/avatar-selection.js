@@ -1,6 +1,7 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
-import styled from "styled-components";
-import Image from "next/image";
+// import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+// import Image from "next/image";
 import avatars from "../../data/avatars.js";
 import { useEffect } from "react";
 
@@ -39,12 +40,13 @@ export default function LearnerAvatarSelection({
             onClick={() => handleClick(avatar_name)}
             key={index}
           >
-            <Image
+            <StyledImage
               src={avatar_file}
               alt={avatar_name + " avatar"}
               layout="fill"
               className="shake_avatar"
             />
+            <Shadow />
           </StyledListItem>
         ))}
       </StyledUnorderedList>
@@ -81,4 +83,57 @@ const StyledListItem = styled.li`
     // animation: shake 0.5s;
     // animation-iteration-count: 6s;
   }
+`;
+
+const LOGO_SIZE = "48px";
+const DURATION = "0.5s";
+const SHADOW_HEIGHT = `${Math.round(48 / 5)}px`;
+const DROP_HEIGHT = "200px";
+const OFFSET = "100px";
+
+const bounce = keyframes`
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(${DROP_HEIGHT}) scale(1, 0.7);
+  }
+`;
+
+const grow = keyframes`
+  from {
+    transform: scale(0.2, 0.5);
+  }
+  to {
+    transform: scale(1.5, 0.8);
+  }
+`;
+
+const StyledImage = styled.img`
+  position: absolute;
+  top: ${OFFSET};
+  left: calc(50% - ${LOGO_SIZE} / 2);
+  animation-name: ${bounce};
+  animation-duration: ${DURATION};
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  animation-iteration-count: infinite;
+`;
+
+const Shadow = styled.div`
+  width: ${LOGO_SIZE};
+  height: ${SHADOW_HEIGHT};
+  background: radial-gradient(
+    50% 50%,
+    rgba(150, 150, 150, 1),
+    rgba(150, 150, 150, 0.05)
+  );
+  position: absolute;
+  top: calc(${OFFSET} + ${DROP_HEIGHT} + ${LOGO_SIZE} - 1.5 * ${SHADOW_HEIGHT});
+  left: calc(50% - ${LOGO_SIZE} / 2);
+  animation-name: ${grow};
+  animation-duration: ${DURATION};
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  animation-iteration-count: infinite;
 `;
