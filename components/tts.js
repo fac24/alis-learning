@@ -65,7 +65,7 @@ export default function Tts(props) {
 
   return (
     <TtsSpeakerAndText ref={ref}>
-      <AiTwotoneSound /> {props.children}
+      <AiTwotoneSound size="2.5rem" /> {props.children}
     </TtsSpeakerAndText>
   );
 }
