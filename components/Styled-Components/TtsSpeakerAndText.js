@@ -1,11 +1,19 @@
 import styled from "styled-components";
+
 const TtsSpeakerAndText = styled.div`
+  align-items: center;
   cursor: pointer;
-  font-size: 1.5rem;
-  text-align: center;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
   margin: 3rem auto;
   max-width: max-content;
-  /* user-select: none; */
+  // text-align: center;
+  user-select: none;
+
+  & > svg {
+    margin-right: 1rem;
+  }
 `;
 
 export default TtsSpeakerAndText;
