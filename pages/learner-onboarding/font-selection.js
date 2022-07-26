@@ -20,7 +20,11 @@ export default function LearnerFontsSelection({
         <LearnerFontsRoman onClick={updateFont} value="Roman">
           cat on the mat
         </LearnerFontsRoman>
-        <LearnerFontsDys onClick={updateFont} value="Dyslexic">
+        <LearnerFontsDys
+          onClick={updateFont}
+          value="Dyslexic"
+          className="Dyslexic"
+        >
           cat on the mat
         </LearnerFontsDys>
         <LearnerFontsComic onClick={updateFont} value="Comic">
