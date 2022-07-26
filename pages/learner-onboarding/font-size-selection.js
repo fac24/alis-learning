@@ -17,13 +17,25 @@ export default function LearnerFontSizesSelection({
   let html = (
     <>
       <FontFlex>
-        <LearnerFontSizeSmall onClick={updateFontSize} value="small">
+        <LearnerFontSizeSmall
+          onClick={updateFontSize}
+          value="small"
+          className="small"
+        >
           cat on the mat
         </LearnerFontSizeSmall>
-        <LearnerFontSizeMedium onClick={updateFontSize} value="medium">
+        <LearnerFontSizeMedium
+          onClick={updateFontSize}
+          value="medium"
+          className="medium"
+        >
           cat on the mat
         </LearnerFontSizeMedium>
-        <LearnerFontSizeLarge onClick={updateFontSize} value="large">
+        <LearnerFontSizeLarge
+          onClick={updateFontSize}
+          value="large"
+          className="large"
+        >
           cat on the mat
         </LearnerFontSizeLarge>
       </FontFlex>
