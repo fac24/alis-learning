@@ -81,7 +81,8 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100vw;
-  column-gap: 80%;
+  // column-gap: 80%;
+  column-gap: 70%;
 
   @media only screen and (max-width: 600px) {
     column-gap: 25%;
