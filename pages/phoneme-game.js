@@ -5,6 +5,8 @@ import styled from "styled-components";
 import GameNext from "../components/Styled-Components/GameNext";
 import GameGoButton from "../components/Styled-Components/GameGoButton";
 import { ImMic } from "react-icons/im";
+import Star from "../public/decorations/star.svg";
+import Image from "next/image";
 
 export default function PhonemeFirstStep({
   phonemeLevel,
@@ -157,10 +159,13 @@ export default function PhonemeFirstStep({
       >
         <TileContainer>
           {phonemeTiles.map((tile, index) => (
-            <PhonemeTile key={index}>{tile}</PhonemeTile>
+            <PhonemeTile className={gameState} key={index}>
+              {tile}
+            </PhonemeTile>
           ))}
         </TileContainer>
       </PhonemeLayout>
+
       {gameState !== "correct" ? (
         <GameGoButton
           onClick={(event) => {
@@ -169,7 +174,7 @@ export default function PhonemeFirstStep({
               : console.log("Waiting for window...");
           }}
         >
-          <ImMic />
+          <StyledImMic />
           {gameState === "listening"
             ? "Listening..."
             : gameState === "incorrect"
@@ -177,26 +182,65 @@ export default function PhonemeFirstStep({
             : "Go"}
         </GameGoButton>
       ) : (
-        <GameNext onClick={() => nextLevel()}>Next</GameNext>
+        <>
+          <GameNext onClick={() => nextLevel()}>Next</GameNext>
+          <NewStarContainer>
+            <Image src={Star} alt="star" width={90} height={20} />
+            <StarPlusText>+ 1</StarPlusText>
+          </NewStarContainer>
+        </>
       )}
     </>
   );
 }
 
-const PhonemeTile = styled.p`
-  border: 4px solid black;
-  text-align: center;
-  margin: 3px;
+// Add drop-shadow to the SVG microphone icon:
+const StyledImMic = styled(ImMic)`
+  filter: drop-shadow(0 0.15rem 0.05rem rgba(0, 0, 0, 0.5));
+`;
+
+const PhonemeTile = styled.div`
+  align-items: center;
+  background-color: #faf8f1;
+  border: 4px solid #f6edbc;
   border-radius: 0.625rem;
-  width: 6rem;
-  height: 6rem;
-  font-size: 3rem;
-  line-height: 5rem;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  cursor: default;
+  display: flex;
+  font-size: 4rem;
+  font-weight: bold;
+  height: 7rem;
+  justify-content: center;
+  // line-height: 5rem;
+  margin: 0 0.25rem;
+  // user-select: none;
+  width: 7rem;
+
+  &.incorrect {
+    border-color: crimson;
+  }
+
+  &.correct {
+    // border-color: limeGreen;
+    border-image: linear-gradient(#11d600, #21a300) 5;
+  }
 `;
 
 const TileContainer = styled.div`
   display: flex;
   text-align: center;
-  margin: 6rem auto;
+  margin: 5rem auto;
   width: fit-content;
+`;
+
+const NewStarContainer = styled.div`
+  display: flex;
+  margin: 1rem auto;
+  max-width: 9rem;
+  justify-content: space-between;
+`;
+
+const StarPlusText = styled.p`
+  font-weight: 600;
+  font-size: 40px;
 `;
