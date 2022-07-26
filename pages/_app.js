@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/globals.css";
 import Layout from "../components/Layout";
 import useLocalStorageState from "../components/Hooks/useLocalStorageState";
 
 function MyApp({ Component, pageProps }) {
-  const [stars, setStars] = useState(0);
+  const [stars, setStars] = useLocalStorageState("stars", 0) || [null, null];
+
+  // let stars;
+  // let setStars;
+
+  // useEffect(() => {
+  //   [stars, setStars] = useLocalStorageState("stars", 0);
+  // }, []);
+
   // Custom hooks setting user user details - here in the _app.js so it can be accessed acrosss all componenets!
   const [learnerName, setLearnerName] = useLocalStorageState(
     "learner-name",
@@ -34,6 +42,7 @@ function MyApp({ Component, pageProps }) {
   // set a key value of particular avatar
   const [avatarNameInLocalStorage, setAvatarNameInLocalStorage] =
     useLocalStorageState("avatar", null) || [null, null];
+
   // sending the props at the root of the pages so it's accessible everywhere!
   return (
     <Layout>

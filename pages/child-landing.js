@@ -1,4 +1,4 @@
-import Tts from "../components/tts";
+import Tts from "../components/Tts";
 import Link from "next/link";
 import styled from "styled-components";
 import { useEffect } from "react";
@@ -12,7 +12,7 @@ export default function ChildLanding({ learnerName, background }) {
       <h2>{learnerName ? `Hi, ${learnerName}!` : "Hi there!"}</h2>
 
       <Tts>What game would you like to play?</Tts>
-      <Link href="phoneme-game/first-step">
+      <Link href="phoneme-game">
         <GameTile>Phoneme Game</GameTile>
       </Link>
     </>

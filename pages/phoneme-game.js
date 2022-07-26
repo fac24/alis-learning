@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import PhonemeLayout from "../../components/PhonemeLayout";
-import { phonemeData } from "../../data/phoneme.js";
+import PhonemeLayout from "../components/PhonemeLayout";
+import { phonemeData } from "../data/phoneme.js";
 import styled from "styled-components";
-import GameNext from "../../components/Styled-Components/GameNext";
-import GameGoButton from "../../components/Styled-Components/GameGoButton";
+import GameNext from "../components/Styled-Components/GameNext";
+import GameGoButton from "../components/Styled-Components/GameGoButton";
 import { ImMic } from "react-icons/im";
 
 export default function PhonemeFirstStep({
@@ -75,7 +75,7 @@ export default function PhonemeFirstStep({
           setLearnerPrompt("Well done, you got it right!");
           setLearnerPrompt2("Press the button to go to the next word");
           // Every correct word guessed results in the star count increasing by one
-          // setStars(() => stars + 1);
+          setStars(() => stars + 1);
           // The "listen" button is hidden and a "next" button takes it place
           setGameState("correct");
         } else {

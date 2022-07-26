@@ -1,13 +1,12 @@
-import Tts from "../components/tts";
+import Tts from "./Tts";
 import Link from "next/link";
-import GameNext from "./Styled-Components/GameGoButton";
-import { ImMic, ImHome3, ImStarFull } from "react-icons/im";
+import { ImHome3, ImStarFull } from "react-icons/im";
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 // need to figure out what props we will send for the gameplay - the word broken into an array for the tiles makes sense. Then we can map through and use the same template regarless of how long the word is :)
 
-export default function LearnerOnboardingLayout({
+export default function PhonemeLayout({
   firstText,
   secondText,
   background,
@@ -46,7 +45,7 @@ export default function LearnerOnboardingLayout({
         color="gold"
         size="50px"
       />
-      <Score>{stars}</Score>
+      <Score suppressHydrationWarning={true}>{stars}</Score>
       <Tts>{firstText}</Tts>
 
       {children}
