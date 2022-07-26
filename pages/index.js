@@ -82,6 +82,11 @@ const Grid = styled.div`
   grid-template-columns: 1fr 1fr;
   width: 100vw;
   column-gap: 80%;
+
+  @media only screen and (max-width: 600px) {
+    column-gap: 25%;
+    row-gap: 20%;
+  }
 `;
 
 const Icon = styled.div`
