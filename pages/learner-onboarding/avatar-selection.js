@@ -85,8 +85,9 @@ const StyledListItem = styled.li`
   }
 `;
 
-const LOGO_SIZE = "48px";
-const DURATION = "0.5s";
+const AVATAR_SIZE = "48px";
+// const DURATION = "0.5s";
+const DURATION = "1s";
 const SHADOW_HEIGHT = `${Math.round(48 / 5)}px`;
 const DROP_HEIGHT = "200px";
 const OFFSET = "100px";
@@ -112,7 +113,7 @@ const grow = keyframes`
 const StyledImage = styled.img`
   position: absolute;
   top: ${OFFSET};
-  left: calc(50% - ${LOGO_SIZE} / 2);
+  left: calc(50% - ${AVATAR_SIZE} / 2);
   animation-name: ${bounce};
   animation-duration: ${DURATION};
   animation-direction: alternate;
@@ -129,8 +130,10 @@ const Shadow = styled.div`
     rgba(150, 150, 150, 0.05)
   );
   position: absolute;
-  top: calc(${OFFSET} + ${DROP_HEIGHT} + ${LOGO_SIZE} - 1.5 * ${SHADOW_HEIGHT});
-  left: calc(50% - ${LOGO_SIZE} / 2);
+  top: calc(
+    ${OFFSET} + ${DROP_HEIGHT} + ${AVATAR_SIZE} - 1.5 * ${SHADOW_HEIGHT}
+  );
+  left: calc(50% - ${AVATAR_SIZE} / 2);
   animation-name: ${grow};
   animation-duration: ${DURATION};
   animation-direction: alternate;
