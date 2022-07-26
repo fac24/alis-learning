@@ -11,16 +11,9 @@ import Star from "../public/decorations/star.png";
 export default function PhonemeLayout({
   firstText,
   secondText,
-  background,
   stars,
   children,
 }) {
-  // Will want to use and update local storage with the stars
-
-  useEffect(() => {
-    document.body.style.backgroundColor = background;
-  }, []);
-
   return (
     <>
       <Link href="/child-landing">
@@ -41,8 +34,8 @@ export default function PhonemeLayout({
       <ImageContainer>
         <Image src={Star} alt="star" width={80} height={80} />
       </ImageContainer>
-      <Score suppressHydrationWarning={true}>{stars}</Score>
-      {/* <Score>{stars}</Score> */}
+      {/* <Score suppressHydrationWarning={true}>{stars}</Score> */}
+      <Score>{stars}</Score>
       <Tts>{firstText}</Tts>
 
       {children}
