@@ -43,6 +43,7 @@ export default function LearnerAvatarSelection({
               src={avatar_file}
               alt={avatar_name + " avatar"}
               layout="fill"
+              className="shake_avatar"
             />
           </StyledListItem>
         ))}
@@ -100,6 +101,7 @@ const StyledListItem = styled.li`
 
   &:hover {
     border-color: #666;
+  
   }
 
   &.selected {
