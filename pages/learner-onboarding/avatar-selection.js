@@ -122,7 +122,7 @@ const StyledImage = styled.img`
 `;
 
 const Shadow = styled.div`
-  width: ${LOGO_SIZE};
+  width: ${AVATAR_SIZE};
   height: ${SHADOW_HEIGHT};
   background: radial-gradient(
     50% 50%,
