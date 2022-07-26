@@ -66,28 +66,26 @@
 }
 
 .Dyslexic {
-  font-family: "OpenDyslexic";
+  font-family: OpenDyslexic;
 }
 
 .Comic {
   font-family: "ComicNeue";
 }
 
-/* .small *{ 
-  font-size: 1rem;
-}
-
-
-main > main.medium {
-  /* font-size: 2rem; */
+/* main > main.medium { */
+/* font-size: 2rem; */
 /* font-size: medium;
 } */
 
-/* .large {
-  font-size: 3rem; */
-/* } */
-
-main {
-  font-size: inherit;
+.small {
+  font-size: 1rem;
 }
 
+.medium {
+  font-size: 2rem;
+}
+
+.large {
+  font-size: 3rem;
+}
