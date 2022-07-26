@@ -85,12 +85,13 @@ const StyledListItem = styled.li`
   }
 `;
 
-const AVATAR_SIZE = "65px";
+const AVATAR_SIZE = "4.063rem";
+const SHADOW_SIZE = "8rem";
 // const DURATION = "0.5s";
 const DURATION = "1s";
-const SHADOW_HEIGHT = `${Math.round(48 / 5)}px`;
-const DROP_HEIGHT = "200px";
-const OFFSET = "0px";
+const SHADOW_HEIGHT = `${Math.round(15 / 30)}rem`;
+const DROP_HEIGHT = "2rem";
+const OFFSET = "0rem";
 
 const bounce = keyframes`
   from {
@@ -122,18 +123,14 @@ const StyledImage = styled.img`
 `;
 
 const Shadow = styled.div`
-  width: ${AVATAR_SIZE};
+  width: ${SHADOW_SIZE};
   height: ${SHADOW_HEIGHT};
-  background: radial-gradient(
-    50% 50%,
-    rgba(150, 150, 150, 1),
-    rgba(150, 150, 150, 0.05)
-  );
+  background: radial-gradient(50% 50%, rgb(95 136 101), rgb(208 248 197 / 15%));
   position: absolute;
   top: calc(
-    ${OFFSET} + ${DROP_HEIGHT} + ${AVATAR_SIZE} - 1.5 * ${SHADOW_HEIGHT}
+    ${OFFSET} + ${DROP_HEIGHT} + ${SHADOW_SIZE} - 1.5 * ${SHADOW_HEIGHT}
   );
-  left: calc(25% - ${AVATAR_SIZE} / 2);
+  left: calc(25% - ${SHADOW_SIZE} / 2);
   animation-name: ${grow};
   animation-duration: ${DURATION};
   animation-direction: alternate;
