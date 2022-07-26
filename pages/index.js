@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styled from "styled-components";
+// import styled from "styled-components";
 import avatars from "../data/avatars";
 // import Image from "next/image";
 import styled, { keyframes } from "styled-components";
@@ -104,4 +104,25 @@ const Icon = styled.div`
   margin: 2rem;
 `;
 
-const LandingImage = styled.img``;
+const AVATAR_DURATION = "2s";
+
+const FloatingAvatar = keyframes`
+0% {
+  transform: translateY(5px);
+}
+50% {
+  transform: translateY(-5px);
+}
+100% {
+  transform: translateY(5px);
+}
+`;
+
+const LandingImage = styled.img`
+  width: 100%;
+  height: auto;
+  animation-name: ${FloatingAvatar};
+  animation-duration: ${AVATAR_DURATION};
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+`;
