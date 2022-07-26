@@ -9,35 +9,30 @@ export default function LearnerFontSizesSelection({
   background,
   avatarNameInLocalStorage,
 }) {
-  function updateFontSize(e) {
-    e.preventDefault();
-    setFontSize(e.target.value);
-    //console.log(fontSize);
+  function updateFontSize(newSize) {
+    setFontSize(newSize);
   }
   let html = (
     <>
       <FontFlex>
-        <LearnerFontSizeSmall
-          onClick={updateFontSize}
-          value="small"
-          className="small"
+        <LearnerFontSizeSelectionButton
+          onClick={() => updateFontSize("small")}
+          className={fontSize === "small" ? "selected" : null}
         >
-          cat on the mat
-        </LearnerFontSizeSmall>
-        <LearnerFontSizeMedium
-          onClick={updateFontSize}
-          value="medium"
-          className="medium"
+          <LearnerFontSizeSmall>cat on the mat</LearnerFontSizeSmall>
+        </LearnerFontSizeSelectionButton>
+        <LearnerFontSizeSelectionButton
+          onClick={() => updateFontSize("medium")}
+          className={fontSize === "medium" ? "selected" : null}
         >
-          cat on the mat
-        </LearnerFontSizeMedium>
-        <LearnerFontSizeLarge
-          onClick={updateFontSize}
-          value="large"
-          className="large"
+          <LearnerFontSizeMedium>cat on the mat</LearnerFontSizeMedium>
+        </LearnerFontSizeSelectionButton>
+        <LearnerFontSizeSelectionButton
+          onClick={() => updateFontSize("large")}
+          className={fontSize === "large" ? "selected" : null}
         >
-          cat on the mat
-        </LearnerFontSizeLarge>
+          <LearnerFontSizeLarge>cat on the mat</LearnerFontSizeLarge>
+        </LearnerFontSizeSelectionButton>
       </FontFlex>
     </>
   );
@@ -58,27 +53,39 @@ export default function LearnerFontSizesSelection({
   );
 }
 
-const LearnerFontSizeSmall = styled.button`
-  font-size: 1rem;
-  margin-top: 10px;
-  padding: 12px 18px;
-  background-color: transparent;
-  border: none;
+const LearnerFontSizeSelectionButton = styled.a`
+  align-items: center;
+  border: 5px solid #ccc;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  user-select: none;
+
+  &:hover {
+    border-color: #666;
+  }
+
+  &.selected {
+    border-color: black;
+  }
 `;
 
-const LearnerFontSizeMedium = styled.button`
+// margin-top: 10px;
+// margin-bottom: 10px;
+// padding: 12px 18px;
+// background-color: transparent;
+// border: none;
+
+const LearnerFontSizeSmall = styled.span`
   font-size: 2rem;
-  margin-top: 10px;
-  padding: 12px 18px;
-  background-color: transparent;
-  border: none;
 `;
 
-const LearnerFontSizeLarge = styled.button`
-  font-size: 3rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 12px 18px;
-  background-color: transparent;
-  border: none;
+const LearnerFontSizeMedium = styled.span`
+  font-size: 3.5rem;
+`;
+
+const LearnerFontSizeLarge = styled.span`
+  font-size: 5rem;
 `;
