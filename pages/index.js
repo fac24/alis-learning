@@ -1,7 +1,8 @@
 import Link from "next/link";
 import styled from "styled-components";
 import avatars from "../data/avatars";
-import Image from "next/image";
+// import Image from "next/image";
+import styled, { keyframes } from "styled-components";
 
 export default function Home({ onboarding }) {
   return (
@@ -9,7 +10,7 @@ export default function Home({ onboarding }) {
       <Grid>
         {Object.entries(avatars).map(([avatar_name, avatar_file], index) => (
           <Icon key={avatar_name}>
-            <Image
+            <LandingImage
               src={avatar_file}
               alt={avatar_name + " avatar"}
               height={100}
@@ -102,3 +103,5 @@ const Grid = styled.div`
 const Icon = styled.div`
   margin: 2rem;
 `;
+
+const LandingImage = styled.img``;
