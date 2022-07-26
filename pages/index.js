@@ -40,7 +40,7 @@ const ChildStart = styled.a`
   width: 15rem;
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  color: white;
+  color: #000;
   font-size: 18px;
   font-weight: 700;
   border-radius: 20px;
