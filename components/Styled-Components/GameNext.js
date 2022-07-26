@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const GameNext = styled.button`
   display: block;
-  margin: 0 auto;
+  margin: 8rem auto 0 auto;
   width: 16rem;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -11,7 +11,7 @@ const GameNext = styled.button`
   font-weight: 700;
   border-radius: 20px;
   border: none;
-  background-color: orange;
+  background-color: darkorange;
   letter-spacing: 2px;
   cursor: pointer;
 

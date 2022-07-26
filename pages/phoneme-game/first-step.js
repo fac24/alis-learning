@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PhonemeLayout from "../../components/PhonemeLayout";
 import { phonemeData } from "../../data/phoneme.js";
 import styled from "styled-components";
-import GameNext from "../../components/Styled-Components/GameGoButton";
+import GameNext from "../../components/Styled-Components/GameNext";
 import GameGoButton from "../../components/Styled-Components/GameGoButton";
 import { ImMic } from "react-icons/im";
 
@@ -191,11 +191,12 @@ const PhonemeTile = styled.p`
   width: 6rem;
   height: 6rem;
   font-size: 3rem;
+  line-height: 5rem;
 `;
 
 const TileContainer = styled.div`
   display: flex;
   text-align: center;
-  margin: 0 auto;
+  margin: 6rem auto;
   width: fit-content;
 `;
