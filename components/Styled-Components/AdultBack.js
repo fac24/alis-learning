@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const Back = styled.a`
+const AdultBack = styled.a`
   position: absolute;
   text-align: center;
   bottom: 0rem;
@@ -19,4 +19,4 @@ const Back = styled.a`
   }
 `;
 
-export default Back;
+export default AdultBack;

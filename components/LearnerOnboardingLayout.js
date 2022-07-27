@@ -2,7 +2,7 @@ import Tts from "./Tts";
 import Link from "next/link";
 import LearnerOnboardingProgressBar from "../components/LearnerOnboardingProgressBar";
 import ChildNext from "../components/Styled-Components/ChildNext";
-import Back from "../components/Styled-Components/Back";
+import Back from "./Styled-Components/AdultBack";
 import { useEffect } from "react";
 
 export default function LearnerOnboardingLayout({
@@ -14,7 +14,6 @@ export default function LearnerOnboardingLayout({
   completed,
   avatarNameInLocalStorage,
   background,
-  
 }) {
   useEffect(() => {
     document.body.style.backgroundColor = background;
