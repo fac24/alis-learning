@@ -9,7 +9,7 @@ export default function ErrorPage({ stars }) {
     <>
       <PhonemeLayout
         firstText={"Oops, nothing to see here yet!"}
-        secondText={"Try another game 🙂"}
+        secondText={"Please, try another game 🙂"}
         stars={stars}
       >
         <div
