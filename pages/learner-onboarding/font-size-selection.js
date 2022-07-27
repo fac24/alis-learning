@@ -18,6 +18,9 @@ export default function LearnerFontSizesSelection({
         <LearnerFontSizeSelectionButton
           tabIndex={0}
           onClick={() => updateFontSize("small")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") updateFontSize("small");
+          }}
           className={fontSize === "small" ? "selected" : null}
         >
           <LearnerFontSizeSmall>cat on the mat</LearnerFontSizeSmall>
@@ -25,6 +28,9 @@ export default function LearnerFontSizesSelection({
         <LearnerFontSizeSelectionButton
           tabIndex={0}
           onClick={() => updateFontSize("medium")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") updateFontSize("medium");
+          }}
           className={fontSize === "medium" ? "selected" : null}
         >
           <LearnerFontSizeMedium>cat on the mat</LearnerFontSizeMedium>
@@ -32,6 +38,9 @@ export default function LearnerFontSizesSelection({
         <LearnerFontSizeSelectionButton
           tabIndex={0}
           onClick={() => updateFontSize("large")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") updateFontSize("large");
+          }}
           className={fontSize === "large" ? "selected" : null}
         >
           <LearnerFontSizeLarge>cat on the mat</LearnerFontSizeLarge>

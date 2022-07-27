@@ -38,6 +38,9 @@ export default function LearnerAvatarSelection({
               avatar_name === avatarNameInLocalStorage ? "selected" : ""
             }
             onClick={() => handleClick(avatar_name)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleClick(avatar_name);
+            }}
             key={index}
           >
             <StyledImage
