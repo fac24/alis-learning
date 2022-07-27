@@ -24,7 +24,6 @@ export default function LearnerOnboardingProgressBar({
         <>
           <LearnerOnboardingProgressBarListItem key={i.toString()}>
             <Image
-              // className="circle_avatar"
               src={avatars[avatarNameInLocalStorage] || "/avatars/mystery.svg"}
               alt="avatar"
               width="100"
