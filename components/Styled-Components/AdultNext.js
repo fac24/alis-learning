@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const AdultNext = styled.button`
+const AdultNext = styled.p`
   display: flex;
   text-align: center;
   justify-content: center;

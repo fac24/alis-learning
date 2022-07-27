@@ -23,14 +23,11 @@ export default function Adult() {
   );
 }
 
-const InfoButton = styled.button`
-display: flex;
-text-align: center;
-justify-content: center;
+const InfoButton = styled.p`
 margin-left: auto;
 margin-right: auto;
+max-width: 20rem;
 border-radius: 0.313rem;
-font-family: Arial, sans-serif;
 padding: 1%;
 border: 0.2rem solid black;
 margin-top: 6rem;
