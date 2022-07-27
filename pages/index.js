@@ -102,25 +102,44 @@ const Grid = styled.div`
   }
 `;
 
-const ROTATE_DURATION = "8s";
+// const ROTATE_DURATION = "8s";
 
-const rotatingAvatar = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-`;
+// const rotatingAvatar = keyframes`
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(359deg);
+//   }
+// `;
 
 const Icon = styled.div`
   // margin: 2rem;
   margin: 0.9rem;
   width: 90%;
-  animation-name: ${rotatingAvatar};
-  animation-duration: ${ROTATE_DURATION};
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  // animation-name: ${rotatingAvatar};
+  // animation-duration: ${ROTATE_DURATION};
+  // animation-iteration-count: infinite;
+  // animation-timing-function: linear;
+
+  // &:third-child {
+  //   transform: rotate(360deg) scale(1.3);
+  // }
+
+  &:nth-child(1) {
+    -ms-transform: rotate(110deg) scale(1);
+    transform: rotate(324deg) scale(1.8);
+  }
+
+  &:nth-child(2) {
+    -ms-transform: rotate(110deg) scale(1);
+    transform: rotate(324deg) scale(1.8);
+  }
+
+  &:nth-child(3) {
+    // transform: rotate(360deg) scale(1.3);
+    transform: rotate(110deg) scale(1);
+  }
 `;
 
 const AVATAR_DURATION = "2s";
