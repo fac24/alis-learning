@@ -1,6 +1,7 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
-import FontFlex from "../../components/Styled-Components/FontFlex";
 import styled from "styled-components";
+import LearnerFontSettingSelectionButton from "../../components/Styled-Components/LearnerFontSettingSelectionButton";
+import LearnerFontSettingSelectionContainer from "../../components/Styled-Components/LearnerFontSettingSelectionContainer";
 import { useState, useEffect } from "react";
 
 export default function LearnerFontsSelection({
@@ -9,28 +10,31 @@ export default function LearnerFontsSelection({
   background,
   avatarNameInLocalStorage,
 }) {
-  function updateFont(e) {
-    e.preventDefault();
-    setFont(e.target.value);
-    console.log(font);
+  function updateFont(newFont) {
+    setFont(newFont);
   }
   let html = (
     <>
-      <FontFlex>
-        <LearnerFontsRoman onClick={updateFont} value="Roman">
-          cat on the mat
-        </LearnerFontsRoman>
-        <LearnerFontsDys
-          onClick={updateFont}
-          value="Dyslexic"
-          className="Dyslexic"
+      <LearnerFontSettingSelectionContainer>
+        <LearnerFontSettingSelectionButton
+          onClick={() => updateFont("Comic")}
+          className={font === "Comic" ? "selected" : null}
         >
-          cat on the mat
-        </LearnerFontsDys>
-        <LearnerFontsComic onClick={updateFont} value="Comic">
-          cat on the mat
-        </LearnerFontsComic>
-      </FontFlex>
+          <LearnerFontsComic>cat on the mat</LearnerFontsComic>
+        </LearnerFontSettingSelectionButton>
+        <LearnerFontSettingSelectionButton
+          onClick={() => updateFont("Dyslexic")}
+          className={font === "Dyslexic" ? "selected" : null}
+        >
+          <LearnerFontsDys>cat on the mat</LearnerFontsDys>
+        </LearnerFontSettingSelectionButton>
+        <LearnerFontSettingSelectionButton
+          onClick={() => updateFont("Roman")}
+          className={font === "Roman" ? "selected" : null}
+        >
+          <LearnerFontsRoman>cat on the mat</LearnerFontsRoman>
+        </LearnerFontSettingSelectionButton>
+      </LearnerFontSettingSelectionContainer>
     </>
   );
 
@@ -50,30 +54,17 @@ export default function LearnerFontsSelection({
   );
 }
 
-const LearnerFontsRoman = styled.button`
+const LearnerFontsRoman = styled.span`
   font-family: "Times New Roman", Times, serif;
-  font-size: 1.8rem;
-  margin: 10px;
-  padding: 12px 18px;
-  background-color: transparent;
-  border: none;
+  font-size: 2.25rem;
 `;
 
-const LearnerFontsDys = styled.button`
+const LearnerFontsDys = styled.span`
   font-family: OpenDyslexic;
-  font-size: 1.8rem;
-  margin: 10px;
-  padding: 12px 18px;
-  background-color: transparent;
-  border: none;
+  font-size: 2.25rem;
 `;
 
-const LearnerFontsComic = styled.button`
+const LearnerFontsComic = styled.span`
   font-family: ComicNeue;
-  font-size: 1.8rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 12px 18px;
-  background-color: transparent;
-  border: none;
+  font-size: 2.25rem;
 `;

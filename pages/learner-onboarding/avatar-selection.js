@@ -38,6 +38,9 @@ export default function LearnerAvatarSelection({
               avatar_name === avatarNameInLocalStorage ? "selected" : ""
             }
             onClick={() => handleClick(avatar_name)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleClick(avatar_name);
+            }}
             key={index}
           >
             <StyledImage
@@ -45,6 +48,7 @@ export default function LearnerAvatarSelection({
               alt={avatar_name + " avatar"}
               layout="fill"
               className="shake_avatar"
+              tabIndex={0}
             />
             <Shadow />
           </StyledListItem>

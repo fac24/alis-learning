@@ -56,15 +56,24 @@ export default function Tts(props) {
 
     element.addEventListener("click", readOut);
 
+    element.addEventListener("keydown", (e) => {
+      if (e.keyCode === 13) {
+        readOut();
+      }
+    });
+
     function cleanup() {
       element.removeEventListener("click", readOut);
+      // element.addEventListener("keydown", (e) => {
+      //   if (e.keyCode === 13) readOut();
+      // });
     }
 
     return cleanup;
   }, [props.children]);
 
   return (
-    <TtsSpeakerAndText ref={ref}>
+    <TtsSpeakerAndText ref={ref} tabIndex={0}>
       <AiTwotoneSound size="2.5rem" /> {props.children}
     </TtsSpeakerAndText>
   );

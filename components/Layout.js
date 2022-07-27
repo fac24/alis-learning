@@ -10,7 +10,9 @@ export default function Layout({ children, font, fontSize, background }) {
     // if (children.type.name != "Home" || children.type.name !== "Adult") {
     document.body.style.backgroundColor = background;
     // }
-  }, [background]);
+
+    document.documentElement.className = `font-size-${fontSize}`;
+  }, [background, fontSize]);
 
   return (
     <>
@@ -42,7 +44,7 @@ const StyledTitle = styled.h1`
   // user-select: none;
 
   & > a {
-    color: #666;
+    color: #3b3b3b;
     text-decoration: none;
   }
 `;
