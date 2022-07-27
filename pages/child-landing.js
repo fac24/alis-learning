@@ -15,7 +15,7 @@ export default function ChildLanding({ learnerName }) {
           <OneHundred>One Hundred Words</OneHundred>
         </Link>
         <Link href="phoneme-game" passHref>
-          <GameTile>Phoneme Game</GameTile>
+          <GameTile tabIndex={0}>Phoneme Game</GameTile>
         </Link>
         <Link href="404" passHref>
           <StoryTime>Story Time</StoryTime>
