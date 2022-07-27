@@ -10,7 +10,7 @@ export default function ChildLanding({ learnerName }) {
 
       <Tts>What game would you like to play?</Tts>
       <Link href="phoneme-game">
-        <GameTile>Phoneme Game</GameTile>
+        <GameTile tabIndex={0}>Phoneme Game</GameTile>
       </Link>
     </>
   );
