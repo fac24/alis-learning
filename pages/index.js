@@ -3,8 +3,11 @@ import Link from "next/link";
 import avatars from "../data/avatars";
 // import Image from "next/image";
 import styled, { keyframes } from "styled-components";
+import LearnerBigCTAButton from "../components/Styled-Components/LearnerBigCTAButton";
+import AdultBackButton from "../components/Styled-Components/AdultBack";
+import Tts from "../components/Tts";
 
-export default function Home({ onboarding }) {
+export default function Home({ onboarding, learnerName }) {
   return (
     <>
       <Grid>
@@ -19,73 +22,40 @@ export default function Home({ onboarding }) {
           </Icon>
         ))}
       </Grid>
+      <LandingMessage>
+        {onboarding
+          ? `Hi ${learnerName}, welcome back!`
+          : `Hi, it looks like this is your first visit.`}
+      </LandingMessage>
+      <Tts>Click the button to {onboarding ? "continue" : "get started"}</Tts>
       <Link
         href={
           onboarding ? "child-landing" : "learner-onboarding/avatar-selection"
         }
         passHref
       >
-        <ChildStart id="get_started">Get started!</ChildStart>
+        <LearnerBigCTAButton id="get_started">
+          {onboarding ? "Continue learning" : "Get started!"}
+        </LearnerBigCTAButton>
       </Link>
       <Link href="adult-onboarding1" passHref>
-        <ParentStart>Go to parents section</ParentStart>
+        <AdultStartButton>I'm a parent or teacher</AdultStartButton>
       </Link>
     </>
   );
 }
 
-const ChildStart = styled.a`
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  margin-left: -6.5rem;
-  width: 15rem;
-  padding: 2rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  color: #000;
-  font-size: 18px;
-  font-weight: 700;
-  border-radius: 20px;
-  text-align: center;
-  border: none;
-  background-color: orange;
-  letter-spacing: 2px;
-  cursor: pointer;
-
-  &:hover {
-    transform: translateY(0.125rem);
-  }
-
-  @media only screen and (max-width: 600px) {
-    margin-left: -4.75rem;
-    width: 10rem;
-  }
+const LandingMessage = styled.h2`
+  font-size: 2.25rem;
+  font-weight: normal;
+  margin: 6rem auto 3rem auto;
+  max-width: fit-content;
 `;
 
-const ParentStart = styled.a`
-  position: absolute;
-  text-align: center;
-  bottom: 15%;
-  left: 50%;
-  margin-left: -6.5rem;
-  width: 15rem;
-  padding: 1.5rem;
-  box-shadow: rgb(136 136 136) 5px 10px 8px;
-  color: white;
-  font-size: 15px;
-  border-radius: 20px;
-  border: none;
-  background-color: rgb(67, 22, 163);
-  letter-spacing: 1px;
-  cursor: pointer;
-
-  &:hover {
-    transform: translateY(0.125rem);
-  }
-  @media only screen and (max-width: 600px) {
-    margin-left: -4.75rem;
-    width: 10rem;
-  }
+const AdultStartButton = styled(AdultBackButton)`
+  margin: 12rem auto 3rem auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
 `;
 
 const Grid = styled.div`
@@ -94,6 +64,7 @@ const Grid = styled.div`
   width: 100vw;
   // column-gap: 80%;
   column-gap: 70%;
+  // position: absolute;
 
   @media only screen and (max-width: 600px) {
     column-gap: 25%;

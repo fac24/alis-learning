@@ -1,8 +1,8 @@
 import Tts from "./Tts";
 import Link from "next/link";
 import LearnerOnboardingProgressBar from "../components/LearnerOnboardingProgressBar";
-import ChildNext from "../components/Styled-Components/ChildNext";
-import Back from "./Styled-Components/AdultBack";
+import LearnerNextButton from "./Styled-Components/LearnerNextButton";
+import LearnerBackButton from "./Styled-Components/LearnerBackButton";
 import { useEffect } from "react";
 
 export default function LearnerOnboardingLayout({
@@ -15,10 +15,6 @@ export default function LearnerOnboardingLayout({
   avatarNameInLocalStorage,
   background,
 }) {
-  useEffect(() => {
-    document.body.style.backgroundColor = background;
-  }, [background]);
-
   return (
     <>
       <LearnerOnboardingProgressBar
@@ -30,11 +26,17 @@ export default function LearnerOnboardingLayout({
       <div>{children}</div>
       <Link
         href={completed ? "/child-landing" : `/learner-onboarding/${nextStep}`}
+        passHref
       >
-        <ChildNext>{completed ? "Lets play a game" : "Next"}</ChildNext>
+        <LearnerNextButton>
+          {completed ? "Lets play a game" : "Next"}
+        </LearnerNextButton>
       </Link>
-      <Link href={!previousStep ? "/" : `/learner-onboarding/${previousStep}`}>
-        <Back>Back</Back>
+      <Link
+        href={!previousStep ? "/" : `/learner-onboarding/${previousStep}`}
+        passHref
+      >
+        <LearnerBackButton>Back</LearnerBackButton>
       </Link>
     </>
   );
