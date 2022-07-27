@@ -91,8 +91,10 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100vw;
-  // column-gap: 80%;
-  column-gap: 70%;
+  // // column-gap: 80%;
+  // column-gap: 70%;
+  column-gap: 40%;
+  margin-left: 10%;
 
   @media only screen and (max-width: 600px) {
     column-gap: 25%;
@@ -101,7 +103,9 @@ const Grid = styled.div`
 `;
 
 const Icon = styled.div`
-  margin: 2rem;
+  // margin: 2rem;
+  margin: 0.9rem;
+  width: 90%;
 `;
 
 const AVATAR_DURATION = "2s";
@@ -119,7 +123,8 @@ const FloatingAvatar = keyframes`
 `;
 
 const LandingImage = styled.img`
-  width: 100%;
+  // width: 100%;
+  width: 20%;
   height: auto;
   animation-name: ${FloatingAvatar};
   animation-duration: ${AVATAR_DURATION};
