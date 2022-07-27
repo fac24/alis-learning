@@ -42,7 +42,7 @@ const StyledTitle = styled.h1`
   // user-select: none;
 
   & > a {
-    color: #666;
+    color: #3b3b3b;
     text-decoration: none;
   }
 `;
