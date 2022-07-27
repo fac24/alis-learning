@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     ""
   );
   const [font, setFont] = useLocalStorageState("font", "Comic");
-  const [fontSize, setFontSize] = useLocalStorageState("font-size", "medium");
+  const [fontSize, setFontSize] = useLocalStorageState("font-size", "small");
   const [background, setBackground] = useLocalStorageState(
     "background",
     "#F8F5F4"
