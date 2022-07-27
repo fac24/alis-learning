@@ -21,11 +21,11 @@ export default function Home({ onboarding, learnerName }) {
           </Icon>
         ))}
       </Grid>
-      <h2>
+      <LandingMessage>
         {onboarding
           ? `Hi <b>${learnerName}</b>, welcome back!`
           : `Hi, it looks like this is your first visit.`}
-      </h2>
+      </LandingMessage>
       <Tts>Click the button to get started</Tts>
       <Link
         href={
@@ -41,6 +41,13 @@ export default function Home({ onboarding, learnerName }) {
     </>
   );
 }
+
+const LandingMessage = styled.h2`
+  font-size: 2.25rem;
+  font-weight: normal;
+  margin: 3rem auto;
+  max-width: fit-content;
+`;
 
 const ParentStart = styled.a`
   position: absolute;
@@ -74,6 +81,7 @@ const Grid = styled.div`
   width: 100vw;
   // column-gap: 80%;
   column-gap: 70%;
+  position: absolute;
 
   @media only screen and (max-width: 600px) {
     column-gap: 25%;
