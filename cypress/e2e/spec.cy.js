@@ -16,8 +16,55 @@ describe("Get started route", () => {
       url: "/avatars",
       hostname: "localhost",
     });
-    cy.get('main').contains("snail.svg");
+    cy.get("main").contains("snail.svg");
   });
 });
 
+ // ✅ --- PASSING ---
+describe("Parent route", () => {
+  it("should be navigate all pages through the parent route", () => {
+    cy.visit("/");
+    cy.get("h1").contains("Alis Learning");
+    cy.get("h1").should("not.contain", "Feedback Form");
+    cy.contains("Go to parents section").click();
+    cy.url().should("include", "/adult-onboarding1");
+    cy.contains("How can Alis Learning help with dyslexia?").click().end();
+    cy.contains("Get a learner started").click();
+    cy.url().should("include", "/adult-onboarding2");
+    cy.contains("Welcome!");
+    cy.contains("Next").click();
+    cy.url().should("include", "/adult-onboarding3");
+    cy.get("main").find("input");
+    cy.contains("Next").click();
+    cy.location("pathname").should("eq", "/adult-onboarding4");
+    cy.get("main").find("form");
+    cy.wait(0);
+    cy.contains("Next").click();
+    // cy.wait();
+    cy.url().should("include", "/adult-onboarding5");
+    cy.contains("Great");
+    cy.go("back");
+  });
+});
 
+ // ✅ --- PASSING ---
+describe("Location", () => {
+  it("should assert location", () => {
+    cy.visit("http://localhost:3000/learner-onboarding/font-selection");
+
+    cy.location().should((loc) => {
+      expect(loc.host).to.eq("localhost:3000");
+      expect(loc.hostname).to.eq("localhost");
+      expect(loc.href).to.eq(
+        "http://localhost:3000/learner-onboarding/font-selection"
+      );
+      expect(loc.origin).to.eq("http://localhost:3000");
+      expect(loc.pathname).to.eq("/learner-onboarding/font-selection");
+      expect(loc.port).to.eq("3000");
+      expect(loc.protocol).to.eq("http:");
+      expect(loc.toString()).to.eq(
+        "http://localhost:3000/learner-onboarding/font-selection"
+      );
+    });
+  });
+});
