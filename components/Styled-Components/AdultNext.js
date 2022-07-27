@@ -12,7 +12,7 @@ const AdultNext = styled.button`
   margin-left: auto;
   margin-right: auto;
   margin-top: 10rem;
-  position: absolute;
+  // position: absolute;
   bottom: 0rem;
   width: 12rem;
   padding: 1.5rem;
