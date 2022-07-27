@@ -102,10 +102,25 @@ const Grid = styled.div`
   }
 `;
 
+const ROTATE_DURATION = "8s";
+
+const rotatingAvatar = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+`;
+
 const Icon = styled.div`
   // margin: 2rem;
   margin: 0.9rem;
   width: 90%;
+  animation-name: ${rotatingAvatar};
+  animation-duration: ${ROTATE_DURATION};
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 `;
 
 const AVATAR_DURATION = "2s";
