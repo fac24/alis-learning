@@ -45,6 +45,7 @@ export default function LearnerAvatarSelection({
               alt={avatar_name + " avatar"}
               layout="fill"
               className="shake_avatar"
+              tabIndex={0}
             />
             <Shadow />
           </StyledListItem>
