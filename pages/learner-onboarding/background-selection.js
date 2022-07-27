@@ -28,6 +28,7 @@ export default function LearnerBackgroudSelection({
             style={{ backgroundColor: colour.hex }}
             value={colour.hex}
             onClick={updateColour}
+            aria-label={`change background to ${colour.name}`}
           ></ColourButton>
         ))}
       </Grid>

@@ -35,7 +35,7 @@ export default function Home({ onboarding, learnerName }) {
       >
         <LearnerBigCTAButton id="get_started">Get started!</LearnerBigCTAButton>
       </Link>
-      {/* <Link href="adult-onboarding1">
+      {/* <Link href="adult-onboarding1" passHref>
         <ParentStart>Go to parents section</ParentStart>
       </Link> */}
     </>
