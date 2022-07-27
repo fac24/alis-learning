@@ -22,7 +22,7 @@ export default function LearnerChoiceName({
       avatarNameInLocalStorage={avatarNameInLocalStorage}
       background={background}
     >
-      <StyledForm>
+      <StyledForm onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="learnerName"></label>
         <StyledInput
           onChange={saveName}
