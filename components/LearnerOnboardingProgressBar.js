@@ -5,6 +5,7 @@ import { GiFinishLine, GiCheckeredFlag } from "react-icons/gi";
 import { FaFlagCheckered } from "react-icons/fa";
 import { TiArrowRightThick } from "react-icons/ti";
 import Image from "next/image";
+import styled, { keyframes } from "styled-components";
 import avatars from "../data/avatars.js";
 
 export default function LearnerOnboardingProgressBar({
@@ -45,7 +46,7 @@ export default function LearnerOnboardingProgressBar({
           <LearnerOnboardingProgressBarListItemFinal key={i.toString()}>
             {/* {i.toString()} */}
             <GiFinishLine size="8rem" />
-            <Image
+            <StyledImage
               src={avatars[avatarNameInLocalStorage] || "/avatars/mystery.svg"}
               alt="avatar"
               width="100"
@@ -86,3 +87,19 @@ export default function LearnerOnboardingProgressBar({
     </LearnerOnboardingProgressBarList>
   );
 }
+
+const CHEER_FOR_FINSISH_LINE = "2s";
+
+const WinningBounce = keyframes`
+0%   { transform: scale(1,1)    translateY(0); }
+10%  { transform: scale(1.1,.9) translateY(0); }
+30%  { transform: scale(.9,1.1) translateY(-100px); }
+50%  { transform: scale(1,1)    translateY(0); }
+100% { transform: scale(1,1)    translateY(0); }
+`;
+
+const StyledImage = styled.img`
+  animation-name: ${WinningBounce};
+  animation-duration: ${CHEER_FOR_FINSISH_LINE};
+  animation-timing-function: ease;
+`;
