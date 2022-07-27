@@ -20,7 +20,7 @@ describe("Get started route", () => {
   });
 });
 
- // ✅ --- PASSING ---
+// ✅ --- PASSING ---
 describe("Parent route", () => {
   it("should be navigate all pages through the parent route", () => {
     cy.visit("/");
@@ -47,7 +47,7 @@ describe("Parent route", () => {
   });
 });
 
- // ✅ --- PASSING ---
+// ✅ --- PASSING ---
 describe("Location", () => {
   it("should assert location", () => {
     cy.visit("http://localhost:3000/learner-onboarding/font-selection");

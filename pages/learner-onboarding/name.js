@@ -10,7 +10,7 @@ export default function LearnerChoiceName({
 }) {
   const saveName = (e) => {
     setLearnerName(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   return (
@@ -22,9 +22,14 @@ export default function LearnerChoiceName({
       avatarNameInLocalStorage={avatarNameInLocalStorage}
       background={background}
     >
-      <StyledForm>
+      <StyledForm onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="learnerName"></label>
-        <StyledInput onChange={saveName} type="text" name="learnerName" />
+        <StyledInput
+          onChange={saveName}
+          type="text"
+          name="learnerName"
+          value={learnerName}
+        />
       </StyledForm>
     </LearnerOnboardingLayout>
   );

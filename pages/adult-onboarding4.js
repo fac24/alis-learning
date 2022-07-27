@@ -5,14 +5,11 @@ import AdultProgress from "../components/AdultProgress";
 import AdultForm from "../components/Styled-Components/AdultForm";
 import styled from "styled-components";
 
-export default function Adult() {
+export default function Adult({ setLearnerGoal }) {
   const getGoal = (e) => {
     e.preventDefault();
-    // picking up the age.
-    // console.log(e.target.age.value);
-    let learnersGoal = e.target.time.value;
-    console.log(learnersGoal);
-    // here we will handle saving the users age to local storage.
+    // picking up the learner goal from the user input and saving it to local storage via the custom hook
+    setLearnerGoal(e.target.time.value);
   };
 
   return (

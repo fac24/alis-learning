@@ -1,5 +1,5 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
-import Tts from "../../components/tts";
+import Tts from "../../components/Tts";
 import { colours } from "../../data/colours.js";
 import styled from "styled-components";
 import { useEffect } from "react";

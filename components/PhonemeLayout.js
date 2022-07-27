@@ -1,34 +1,19 @@
-import Tts from "../components/tts";
+import Tts from "./Tts";
 import Link from "next/link";
-import GameNext from "../components/Styled-Components/GameNext";
-import { ImMic, ImHome3, ImStarFull } from "react-icons/im";
+import { ImHome3, ImStarFull } from "react-icons/im";
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import Image from "next/image";
+import Star from "../public/decorations/star.png";
 
 // need to figure out what props we will send for the gameplay - the word broken into an array for the tiles makes sense. Then we can map through and use the same template regarless of how long the word is :)
 
-export default function LearnerOnboardingLayout({
+export default function PhonemeLayout({
   firstText,
   secondText,
-  context,
-  background,
+  stars,
+  children,
 }) {
-  // Will want to use and update local storage with the stars
-  const [stars, setStars] = useState(0);
-  const [buttonText, setButtonText] = useState("Go!");
-
-  useEffect(() => {
-    document.body.style.backgroundColor = background;
-  }, []);
-
-  const listenToLearner = (e) => {
-    // the button text needs to change to listening...
-    setButtonText("Listening...");
-    // the speach-to-text needs to fo its magic
-    // wither show a propmt "you can do it" and set text back to go
-    // or redirect to correct-guess.js
-  };
-
   return (
     <>
       <Link href="/child-landing">
@@ -46,24 +31,14 @@ export default function LearnerOnboardingLayout({
           />
         </a>
       </Link>
-      <ImStarFull
-        style={{
-          position: "absolute",
-          top: "20px",
-          left: "100px",
-        }}
-        color="gold"
-        size="50px"
-      />
+      <ImageContainer>
+        <Image src={Star} alt="star" width={80} height={80} />
+      </ImageContainer>
+      {/* <Score suppressHydrationWarning={true}>{stars}</Score> */}
       <Score>{stars}</Score>
       <Tts>{firstText}</Tts>
 
-      {/* below is the placeholder for the context to go */}
-      {context}
-
-      <GameNext onClick={listenToLearner}>
-        <ImMic /> {buttonText}
-      </GameNext>
+      {children}
 
       <Tts>{secondText}</Tts>
     </>
@@ -76,4 +51,10 @@ const Score = styled.div`
   position: absolute;
   top: 10px;
   left: 170px;
+`;
+
+const ImageContainer = styled.div`
+  position: absolute;
+  top: 5px;
+  left: 80px;
 `;
