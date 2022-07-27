@@ -16,18 +16,21 @@ export default function LearnerFontSizesSelection({
     <>
       <FontFlex>
         <LearnerFontSizeSelectionButton
+          tabIndex={0}
           onClick={() => updateFontSize("small")}
           className={fontSize === "small" ? "selected" : null}
         >
           <LearnerFontSizeSmall>cat on the mat</LearnerFontSizeSmall>
         </LearnerFontSizeSelectionButton>
         <LearnerFontSizeSelectionButton
+          tabIndex={0}
           onClick={() => updateFontSize("medium")}
           className={fontSize === "medium" ? "selected" : null}
         >
           <LearnerFontSizeMedium>cat on the mat</LearnerFontSizeMedium>
         </LearnerFontSizeSelectionButton>
         <LearnerFontSizeSelectionButton
+          tabIndex={0}
           onClick={() => updateFontSize("large")}
           className={fontSize === "large" ? "selected" : null}
         >
