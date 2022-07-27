@@ -1,6 +1,17 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
+import { useEffect } from "react";
+// they set there profile and are now ready to place.
+export default function OnboardingDone({
+  setOnboarding,
+  background,
+  font, 
+  fontSize,
+  avatarNameInLocalStorage,
+}) {
+  useEffect(() => {
+    setOnboarding(true);
+  }, []);
 
-export default function OnboardingDone({ avatarNameInLocalStorage }) {
   return (
     <LearnerOnboardingLayout
       ttsTitle="Well done! Now you're ready to play a game."
@@ -9,6 +20,9 @@ export default function OnboardingDone({ avatarNameInLocalStorage }) {
       nextStep="child-landing"
       completed="true"
       avatarNameInLocalStorage={avatarNameInLocalStorage}
+      background={background}
+      font={font}
+      fontSize={fontSize}
     />
   );
 }

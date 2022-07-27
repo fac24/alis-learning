@@ -1,14 +1,16 @@
 import styled from "styled-components";
+import { useEffect } from "react";
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 
 export default function LearnerChoiceName({
   learnerName,
   setLearnerName,
+  background,
   avatarNameInLocalStorage,
 }) {
   const saveName = (e) => {
     setLearnerName(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   return (
@@ -18,10 +20,16 @@ export default function LearnerChoiceName({
       nextStep="font-selection"
       previousStep="avatar-selection"
       avatarNameInLocalStorage={avatarNameInLocalStorage}
+      background={background}
     >
-      <StyledForm>
+      <StyledForm onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="learnerName"></label>
-        <StyledInput onChange={saveName} type="text" name="learnerName" />
+        <StyledInput
+          onChange={saveName}
+          type="text"
+          name="learnerName"
+          value={learnerName}
+        />
       </StyledForm>
     </LearnerOnboardingLayout>
   );

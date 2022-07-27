@@ -1,31 +1,40 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
-import FontFlex from "../../components/Styled-Components/FontFlex";
+import LearnerFontSettingSelectionButton from "../../components/Styled-Components/LearnerFontSettingSelectionButton";
+import LearnerFontSettingSelectionContainer from "../../components/Styled-Components/LearnerFontSettingSelectionContainer";
+import { useEffect } from "react";
 
 export default function LearnerFontSizesSelection({
-  size,
-  setSize,
+  fontSize,
+  setFontSize,
+  background,
   avatarNameInLocalStorage,
 }) {
-  function updateFontSize(e) {
-    e.preventDefault();
-    setSize(e.target.value);
-    console.log(size);
-    //We need to update the local storage here!
+  function updateFontSize(newSize) {
+    setFontSize(newSize);
   }
   let html = (
     <>
-      <FontFlex>
-        <LearnerFontSizeSmall onClick={updateFontSize} value="small">
-          cat on the mat
-        </LearnerFontSizeSmall>
-        <LearnerFontSizeMedium onClick={updateFontSize} value="medium">
-          cat on the mat
-        </LearnerFontSizeMedium>
-        <LearnerFontSizeLarge onClick={updateFontSize} value="large">
-          cat on the mat
-        </LearnerFontSizeLarge>
-      </FontFlex>
+      <LearnerFontSettingSelectionContainer>
+        <LearnerFontSettingSelectionButton
+          onClick={() => updateFontSize("small")}
+          className={fontSize === "small" ? "selected" : null}
+        >
+          <LearnerFontSizeSmall>cat on the mat</LearnerFontSizeSmall>
+        </LearnerFontSettingSelectionButton>
+        <LearnerFontSettingSelectionButton
+          onClick={() => updateFontSize("medium")}
+          className={fontSize === "medium" ? "selected" : null}
+        >
+          <LearnerFontSizeMedium>cat on the mat</LearnerFontSizeMedium>
+        </LearnerFontSettingSelectionButton>
+        <LearnerFontSettingSelectionButton
+          onClick={() => updateFontSize("large")}
+          className={fontSize === "large" ? "selected" : null}
+        >
+          <LearnerFontSizeLarge>cat on the mat</LearnerFontSizeLarge>
+        </LearnerFontSettingSelectionButton>
+      </LearnerFontSettingSelectionContainer>
     </>
   );
 
@@ -38,32 +47,24 @@ export default function LearnerFontSizesSelection({
         previousStep="font-selection"
         children={html}
         avatarNameInLocalStorage={avatarNameInLocalStorage}
+        background={background}
+        fontSize={fontSize}
       />
     </>
   );
 }
 
-const LearnerFontSizeSmall = styled.button`
-  font-size: 1rem;
-  margin-top: 10px;
-  padding: 12px 18px;
-  background-color: transparent;
-  border: none;
+//
+// Use absolute (px) sizes so these don't change when the preference is changed!
+
+const LearnerFontSizeSmall = styled.span`
+  font-size: 36px;
 `;
 
-const LearnerFontSizeMedium = styled.button`
-  font-size: 2rem;
-  margin-top: 10px;
-  padding: 12px 18px;
-  background-color: transparent;
-  border: none;
+const LearnerFontSizeMedium = styled.span`
+  font-size: 45px;
 `;
 
-const LearnerFontSizeLarge = styled.button`
-  font-size: 3rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 12px 18px;
-  background-color: transparent;
-  border: none;
+const LearnerFontSizeLarge = styled.span`
+  font-size: 54px;
 `;
