@@ -23,10 +23,11 @@ export default function Home({ onboarding }) {
         href={
           onboarding ? "child-landing" : "learner-onboarding/avatar-selection"
         }
+        passHref
       >
         <ChildStart id="get_started">Get started!</ChildStart>
       </Link>
-      <Link href="adult-onboarding1">
+      <Link href="adult-onboarding1" passHref>
         <ParentStart>Go to parents section</ParentStart>
       </Link>
     </>
