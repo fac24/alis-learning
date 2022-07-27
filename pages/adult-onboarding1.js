@@ -26,7 +26,8 @@ export default function Adult() {
 const InfoButton = styled.p`
 margin-left: auto;
 margin-right: auto;
-max-width: 20rem;
+max-width: 21rem;
+text-align: center;
 border-radius: 0.313rem;
 padding: 1%;
 border: 0.2rem solid black;
