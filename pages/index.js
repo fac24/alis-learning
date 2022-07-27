@@ -51,6 +51,7 @@ const ChildStart = styled.a`
   background-color: orange;
   letter-spacing: 2px;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     transform: translateY(0.125rem);
@@ -78,6 +79,7 @@ const ParentStart = styled.a`
   background-color: rgb(67, 22, 163);
   letter-spacing: 1px;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     transform: translateY(0.125rem);
