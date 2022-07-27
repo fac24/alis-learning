@@ -17,10 +17,10 @@ export default function LearnerFontsSelection({
     <>
       <LearnerFontSettingSelectionContainer>
         <LearnerFontSettingSelectionButton
-          onClick={() => updateFont("Roman")}
-          className={font === "Roman" ? "selected" : null}
+          onClick={() => updateFont("Comic")}
+          className={font === "Comic" ? "selected" : null}
         >
-          <LearnerFontsRoman>cat on the mat</LearnerFontsRoman>
+          <LearnerFontsComic>cat on the mat</LearnerFontsComic>
         </LearnerFontSettingSelectionButton>
         <LearnerFontSettingSelectionButton
           onClick={() => updateFont("Dyslexic")}
@@ -29,10 +29,10 @@ export default function LearnerFontsSelection({
           <LearnerFontsDys>cat on the mat</LearnerFontsDys>
         </LearnerFontSettingSelectionButton>
         <LearnerFontSettingSelectionButton
-          onClick={() => updateFont("Comic")}
-          className={font === "Comic" ? "selected" : null}
+          onClick={() => updateFont("Roman")}
+          className={font === "Roman" ? "selected" : null}
         >
-          <LearnerFontsComic>cat on the mat</LearnerFontsComic>
+          <LearnerFontsRoman>cat on the mat</LearnerFontsRoman>
         </LearnerFontSettingSelectionButton>
       </LearnerFontSettingSelectionContainer>
     </>
