@@ -1,22 +1,13 @@
 import styled from "styled-components";
-const AdultBack = styled.a`
-  position: absolute;
-  text-align: center;
-  bottom: 0rem;
-  width: 12rem;
-  padding: 1.5rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  color: black;
-  font-size: 16px;
-  border-radius: 20px;
-  border: none;
-  background-color: white;
-  margin: 2rem;
-  cursor: pointer;
+import LearnerBackButton from "./LearnerBackButton";
 
-  &:hover {
-    transform: translateY(0.125rem);
-  }
+const AdultBackButton = styled(LearnerBackButton)`
+  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
+  // font-weight: normal;
+  letter-spacing: normal;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 `;
 
-export default AdultBack;
+export default AdultBackButton;
