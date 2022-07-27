@@ -16,8 +16,8 @@ export default function PhonemeLayout({
 }) {
   return (
     <>
-      <Link href="/child-landing">
-        {/* do we want to link to the map instead when we have it? */}
+      <Link href="/child-landing" passHref>
+        {/* we can link to the map here in the future when we have it */}
         <a>
           <ImHome3
             style={{
@@ -27,7 +27,8 @@ export default function PhonemeLayout({
             }}
             size="50px"
             cursor="pointer"
-            // color="" if we want to change the colour
+            color="black"
+            aria-label="Link back to games selection"
           />
         </a>
       </Link>
