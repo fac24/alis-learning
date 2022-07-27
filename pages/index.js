@@ -130,7 +130,8 @@ const Icon = styled.div`
   &:nth-child(1) {
     // -ms-transform: rotate(110deg) scale(1);
     // transform: rotate(324deg) scale(1.8);
-    transform: rotate(324deg) scale(1.8);
+    // transform: rotate(324deg) scale(1.8);
+    transform: rotate(30deg) scale(1);
   }
 
   &:nth-child(2) {
@@ -154,34 +155,36 @@ const Icon = styled.div`
     // // transform: rotate(360deg) scale(1.3);
     // // transform: rotate(110deg) scale(1);
     // transform: rotate(46deg) scale(2);
-    webkit-transform: rotate(46deg) scale(2);
-    -ms-transform: rotate(46deg) scale(2);
-    transform: rotate(46deg) scale(2);
+    // webkit-transform: rotate(46deg) scale(2);
+    // -ms-transform: rotate(46deg) scale(2);
+    // transform: rotate(46deg) scale(2);
+    transform: rotate(296deg) scale(2);
   }
 
   &:nth-child(5) {
     // // transform: rotate(360deg) scale(1.3);
     // // transform: rotate(110deg) scale(1);
     // transform: rotate(46deg) scale(2);
-    -webkit-transform: rotate(46deg) scale(2);
-    -ms-transform: rotate(46deg) scale(2);
-    transform: rotate(46deg) scale(2);
+    // -webkit-transform: rotate(46deg) scale(2);
+    // -ms-transform: rotate(46deg) scale(2);
+    // transform: rotate(46deg) scale(2);
+    transform: rotate(354deg) scale(1.3);
   }
 
   &:nth-child(6) {
     // transform: rotate(360deg) scale(1.3);
     // transform: rotate(110deg) scale(1);
     // transform: rotate(46deg) scale(2);
-    -webkit-transform: rotate(46deg) scale(2);
-    -ms-transform: rotate(46deg) scale(2);
-    transform: rotate(46deg) scale(2);
+    // -webkit-transform: rotate(46deg) scale(2);
+    // -ms-transform: rotate(46deg) scale(2);
+    transform: rotate(46deg) scale(1.5);
   }
 
   &:nth-child(7) {
     // transform: rotate(360deg) scale(1.3);
     // transform: rotate(110deg) scale(1);
     // transform: rotate(46deg) scale(2);
-    transform: rotate(46deg) scale(2);
+    transform: rotate(322deg) scale(1.5);
   }
 
   &:nth-child(8) {
@@ -190,7 +193,8 @@ const Icon = styled.div`
     // transform: rotate(46deg) scale(2);
     // transform: rotate(329deg) scale(4);
     // transform: rotate(87deg) scale(3);
-    transform: rotate(87deg) scale(3);
+    // transform: rotate(87deg) scale(3);
+    transform: rotate(317deg) scale(2);
   }
 `;
 
