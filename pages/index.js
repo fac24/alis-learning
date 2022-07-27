@@ -4,13 +4,13 @@ import avatars from "../data/avatars";
 // import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 import LearnerBigCTAButton from "../components/Styled-Components/LearnerBigCTAButton";
-import AdultBackButton from "../components/Styled-Components/AdultBack";
+import AdultBackButton from "../components/Styled-Components/AdultBackButton";
 import Tts from "../components/Tts";
 
 export default function Home({ onboarding, learnerName }) {
   return (
     <>
-      <Grid>
+      {/* <Grid>
         {Object.entries(avatars).map(([avatar_name, avatar_file], index) => (
           <Icon key={avatar_name}>
             <LandingImage
@@ -21,7 +21,7 @@ export default function Home({ onboarding, learnerName }) {
             />
           </Icon>
         ))}
-      </Grid>
+      </Grid> */}
       <LandingMessage>
         {onboarding
           ? `Hi ${learnerName}, welcome back!`
