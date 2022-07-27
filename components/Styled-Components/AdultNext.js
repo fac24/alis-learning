@@ -12,7 +12,9 @@ const AdultNext = styled.button`
   margin-left: auto;
   margin-right: auto;
   margin-top: 10rem;
-  width: 13rem;
+  position: absolute;
+  bottom: 0rem;
+  width: 12rem;
   padding: 1.5rem;
   box-shadow: 5px 10px 8px #888888;
   color: white;

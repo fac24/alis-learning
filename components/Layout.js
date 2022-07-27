@@ -24,7 +24,7 @@ export default function Layout({ children, font, fontSize, background }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <StyledTitle>
+        <StyledTitle className="atitle">
           <Link href="/">
             <a>Alis Learning</a>
           </Link>
