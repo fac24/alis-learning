@@ -1,6 +1,7 @@
 import LearnerOnboardingLayout from "../../components/LearnerOnboardingLayout";
 import styled from "styled-components";
-import FontFlex from "../../components/Styled-Components/FontFlex";
+import LearnerFontSettingSelectionButton from "../../components/Styled-Components/LearnerFontSettingSelectionButton";
+import LearnerFontSettingSelectionContainer from "../../components/Styled-Components/LearnerFontSettingSelectionContainer";
 import { useEffect } from "react";
 
 export default function LearnerFontSizesSelection({
@@ -14,9 +15,8 @@ export default function LearnerFontSizesSelection({
   }
   let html = (
     <>
-      <FontFlex>
-        <LearnerFontSizeSelectionButton
-          tabIndex={0}
+      <LearnerFontSettingSelectionContainer>
+        <LearnerFontSettingSelectionButton
           onClick={() => updateFontSize("small")}
           onKeyDown={(e) => {
             if (e.key === "Enter") updateFontSize("small");
@@ -24,9 +24,8 @@ export default function LearnerFontSizesSelection({
           className={fontSize === "small" ? "selected" : null}
         >
           <LearnerFontSizeSmall>cat on the mat</LearnerFontSizeSmall>
-        </LearnerFontSizeSelectionButton>
-        <LearnerFontSizeSelectionButton
-          tabIndex={0}
+        </LearnerFontSettingSelectionButton>
+        <LearnerFontSettingSelectionButton
           onClick={() => updateFontSize("medium")}
           onKeyDown={(e) => {
             if (e.key === "Enter") updateFontSize("medium");
@@ -34,9 +33,8 @@ export default function LearnerFontSizesSelection({
           className={fontSize === "medium" ? "selected" : null}
         >
           <LearnerFontSizeMedium>cat on the mat</LearnerFontSizeMedium>
-        </LearnerFontSizeSelectionButton>
-        <LearnerFontSizeSelectionButton
-          tabIndex={0}
+        </LearnerFontSettingSelectionButton>
+        <LearnerFontSettingSelectionButton
           onClick={() => updateFontSize("large")}
           onKeyDown={(e) => {
             if (e.key === "Enter") updateFontSize("large");
@@ -44,8 +42,8 @@ export default function LearnerFontSizesSelection({
           className={fontSize === "large" ? "selected" : null}
         >
           <LearnerFontSizeLarge>cat on the mat</LearnerFontSizeLarge>
-        </LearnerFontSizeSelectionButton>
-      </FontFlex>
+        </LearnerFontSettingSelectionButton>
+      </LearnerFontSettingSelectionContainer>
     </>
   );
 
@@ -65,39 +63,17 @@ export default function LearnerFontSizesSelection({
   );
 }
 
-const LearnerFontSizeSelectionButton = styled.a`
-  align-items: center;
-  border: 5px solid #ccc;
-  border-radius: 1rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  user-select: none;
-
-  &:hover {
-    border-color: #666;
-  }
-
-  &.selected {
-    border-color: black;
-  }
-`;
-
-// margin-top: 10px;
-// margin-bottom: 10px;
-// padding: 12px 18px;
-// background-color: transparent;
-// border: none;
+//
+// Use absolute (px) sizes so these don't change when the preference is changed!
 
 const LearnerFontSizeSmall = styled.span`
-  font-size: 2rem;
+  font-size: 36px;
 `;
 
 const LearnerFontSizeMedium = styled.span`
-  font-size: 3.5rem;
+  font-size: 45px;
 `;
 
 const LearnerFontSizeLarge = styled.span`
-  font-size: 5rem;
+  font-size: 54px;
 `;

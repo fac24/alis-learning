@@ -10,7 +10,9 @@ export default function Layout({ children, font, fontSize, background }) {
     // if (children.type.name != "Home" || children.type.name !== "Adult") {
     document.body.style.backgroundColor = background;
     // }
-  }, [background]);
+
+    document.documentElement.className = `font-size-${fontSize}`;
+  }, [background, fontSize]);
 
   return (
     <>
