@@ -14,7 +14,7 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <StyledTitle>Alis Learning</StyledTitle>
+        <StyledTitle className="atitle">Alis Learning</StyledTitle>
       </header>
       <main>{children}</main>
     </>
