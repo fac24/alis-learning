@@ -140,6 +140,36 @@ const Icon = styled.div`
     // transform: rotate(360deg) scale(1.3);
     transform: rotate(110deg) scale(1);
   }
+
+  &:nth-child(4) {
+    // transform: rotate(360deg) scale(1.3);
+    // transform: rotate(110deg) scale(1);
+    transform: rotate(46deg) scale(2);
+  }
+
+  &:nth-child(5) {
+    // transform: rotate(360deg) scale(1.3);
+    // transform: rotate(110deg) scale(1);
+    transform: rotate(46deg) scale(2);
+  }
+
+  &:nth-child(6) {
+    // transform: rotate(360deg) scale(1.3);
+    // transform: rotate(110deg) scale(1);
+    transform: rotate(46deg) scale(2);
+  }
+
+  &:nth-child(7) {
+    // transform: rotate(360deg) scale(1.3);
+    // transform: rotate(110deg) scale(1);
+    transform: rotate(46deg) scale(2);
+  }
+
+  &:nth-child(8) {
+    // transform: rotate(360deg) scale(1.3);
+    // transform: rotate(110deg) scale(1);
+    transform: rotate(46deg) scale(2);
+  }
 `;
 
 const AVATAR_DURATION = "2s";
