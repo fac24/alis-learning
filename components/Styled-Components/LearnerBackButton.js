@@ -1,19 +1,18 @@
 import styled from "styled-components";
 
-const ChildNext = styled.a`
-  background: linear-gradient(hsl(25, 100%, 62%), hsl(25, 100%, 51%));
-  border-radius: 1rem;
+const LearnerBackButton = styled.a`
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: #000;
   cursor: pointer;
   display: block;
-  margin: 3rem auto;
-  padding: 1rem 6rem;
-  font-size: 2.25rem;
+  margin: 3rem 0 3rem 2rem;
+  padding: 0.5rem 6rem;
+  font-size: 1.75rem;
   font-weight: bold;
   letter-spacing: 0.25rem;
   text-decoration: none;
-  text-shadow: 0px 2px 4px black;
   width: fit-content;
 
   &:active {
@@ -21,4 +20,4 @@ const ChildNext = styled.a`
   }
 `;
 
-export default ChildNext;
+export default LearnerBackButton;
