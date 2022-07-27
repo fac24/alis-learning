@@ -98,7 +98,8 @@ const Grid = styled.div`
 
   @media only screen and (max-width: 600px) {
     column-gap: 25%;
-    row-gap: 20%;
+    // row-gap: 20%;
+    row-gap: 30%;
   }
 `;
 
@@ -127,48 +128,69 @@ const Icon = styled.div`
   // }
 
   &:nth-child(1) {
-    -ms-transform: rotate(110deg) scale(1);
+    // -ms-transform: rotate(110deg) scale(1);
+    // transform: rotate(324deg) scale(1.8);
     transform: rotate(324deg) scale(1.8);
   }
 
   &:nth-child(2) {
+    // -ms-transform: rotate(110deg) scale(1);
+    // transform: rotate(324deg) scale(1.8);
     -ms-transform: rotate(110deg) scale(1);
-    transform: rotate(324deg) scale(1.8);
+    -webkit-transform: rotate(324deg) scale(1.8);
+    -ms-transform: rotate(324deg) scale(1.8);
+    transform: rotate(25deg) scale(1.8);
   }
 
   &:nth-child(3) {
-    // transform: rotate(360deg) scale(1.3);
+    // // transform: rotate(360deg) scale(1.3);
+    // transform: rotate(110deg) scale(1);
+    -webkit-transform: rotate(110deg) scale(1);
+    -ms-transform: rotate(110deg) scale(1);
     transform: rotate(110deg) scale(1);
   }
 
   &:nth-child(4) {
-    // transform: rotate(360deg) scale(1.3);
-    // transform: rotate(110deg) scale(1);
+    // // transform: rotate(360deg) scale(1.3);
+    // // transform: rotate(110deg) scale(1);
+    // transform: rotate(46deg) scale(2);
+    webkit-transform: rotate(46deg) scale(2);
+    -ms-transform: rotate(46deg) scale(2);
     transform: rotate(46deg) scale(2);
   }
 
   &:nth-child(5) {
-    // transform: rotate(360deg) scale(1.3);
-    // transform: rotate(110deg) scale(1);
+    // // transform: rotate(360deg) scale(1.3);
+    // // transform: rotate(110deg) scale(1);
+    // transform: rotate(46deg) scale(2);
+    -webkit-transform: rotate(46deg) scale(2);
+    -ms-transform: rotate(46deg) scale(2);
     transform: rotate(46deg) scale(2);
   }
 
   &:nth-child(6) {
     // transform: rotate(360deg) scale(1.3);
     // transform: rotate(110deg) scale(1);
+    // transform: rotate(46deg) scale(2);
+    -webkit-transform: rotate(46deg) scale(2);
+    -ms-transform: rotate(46deg) scale(2);
     transform: rotate(46deg) scale(2);
   }
 
   &:nth-child(7) {
     // transform: rotate(360deg) scale(1.3);
     // transform: rotate(110deg) scale(1);
+    // transform: rotate(46deg) scale(2);
     transform: rotate(46deg) scale(2);
   }
 
   &:nth-child(8) {
     // transform: rotate(360deg) scale(1.3);
     // transform: rotate(110deg) scale(1);
-    transform: rotate(46deg) scale(2);
+    // transform: rotate(46deg) scale(2);
+    // transform: rotate(329deg) scale(4);
+    // transform: rotate(87deg) scale(3);
+    transform: rotate(87deg) scale(3);
   }
 `;
 
