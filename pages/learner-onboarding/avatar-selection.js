@@ -90,7 +90,9 @@ const StyledListItem = styled.li`
 `;
 
 const AVATAR_SIZE = "4.063rem";
-const SHADOW_SIZE = "8rem";
+const SHADOW_SIZE = "6rem";
+const SHADOW_TOP = "8rem";
+const SHADOW_LEFT = "2rem";
 // const DURATION = "0.5s";
 const DURATION = "1s";
 const SHADOW_HEIGHT = `${Math.round(15 / 30)}rem`;
@@ -132,9 +134,9 @@ const Shadow = styled.div`
   background: radial-gradient(50% 50%, rgb(95 136 101), rgb(208 248 197 / 15%));
   position: absolute;
   top: calc(
-    ${OFFSET} + ${DROP_HEIGHT} + ${SHADOW_SIZE} - 1.5 * ${SHADOW_HEIGHT}
+    ${OFFSET} + ${DROP_HEIGHT} + ${SHADOW_TOP} - 1.5 * ${SHADOW_HEIGHT}
   );
-  left: calc(25% - ${SHADOW_SIZE} / 2);
+  left: calc(25% - ${SHADOW_LEFT} / 2);
   animation-name: ${grow};
   animation-duration: ${DURATION};
   animation-direction: alternate;
