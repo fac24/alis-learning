@@ -9,8 +9,8 @@ export default function ChildLanding({ learnerName }) {
       <h2>{learnerName ? `Hi, ${learnerName}!` : "Hi there!"}</h2>
 
       <Tts>What game would you like to play?</Tts>
-      <Link href="phoneme-game">
-        <GameTile>Phoneme Game</GameTile>
+      <Link href="phoneme-game" passHref>
+        <GameTile tabIndex={0}>Phoneme Game</GameTile>
       </Link>
     </>
   );

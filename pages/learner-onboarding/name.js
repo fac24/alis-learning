@@ -23,11 +23,18 @@ export default function LearnerChoiceName({
       background={background}
     >
       <StyledForm onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="learnerName"></label>
+        <label
+          htmlFor="learnerName"
+          style={{ display: "none" }}
+          aria-hidden="false"
+        >
+          Type your name below
+        </label>
         <StyledInput
           onChange={saveName}
           type="text"
           name="learnerName"
+          id="learnerName"
           value={learnerName}
         />
       </StyledForm>
