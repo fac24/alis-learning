@@ -1,6 +1,7 @@
 import Tts from "./Tts";
 import Link from "next/link";
 import LearnerOnboardingProgressBar from "../components/LearnerOnboardingProgressBar";
+import LearnerBigCTAButton from "../components/Styled-Components/LearnerBigCTAButton";
 import LearnerNextButton from "./Styled-Components/LearnerNextButton";
 import LearnerBackButton from "./Styled-Components/LearnerBackButton";
 import { useEffect } from "react";
@@ -28,9 +29,11 @@ export default function LearnerOnboardingLayout({
         href={completed ? "/child-landing" : `/learner-onboarding/${nextStep}`}
         passHref
       >
-        <LearnerNextButton>
-          {completed ? "Lets play a game" : "Next"}
-        </LearnerNextButton>
+        {completed ? (
+          <LearnerBigCTAButton>Let's play a game</LearnerBigCTAButton>
+        ) : (
+          <LearnerNextButton>Next</LearnerNextButton>
+        )}
       </Link>
       <Link
         href={!previousStep ? "/" : `/learner-onboarding/${previousStep}`}
