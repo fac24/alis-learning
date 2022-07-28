@@ -36,6 +36,7 @@ export default function LearnerChoiceName({
           name="learnerName"
           id="learnerName"
           value={learnerName}
+          data-testid="name"
         />
       </StyledForm>
     </LearnerOnboardingLayout>

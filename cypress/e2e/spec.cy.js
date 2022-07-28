@@ -4,7 +4,7 @@ describe("empty spec", () => {
   });
 });
 
-// // ✅ --- PASSING ---
+// ✅ --- PASSING ---
 describe("Get started route", () => {
   it("Visiting the Avatars Page", () => {
     cy.visit("/");
@@ -26,7 +26,7 @@ describe("Parent route", () => {
     cy.visit("/");
     cy.get("h1").contains("Alis Learning");
     cy.get("h1").should("not.contain", "Feedback Form");
-    cy.contains("Go to parents section").click();
+    cy.contains("I'm a parent or teacher").click();
     cy.url().should("include", "/adult-onboarding1");
     cy.contains("How can Alis Learning help with dyslexia?").click().end();
     cy.contains("Get a learner started").click();
@@ -85,5 +85,48 @@ describe("window properties", () => {
     cy.window().should("have.property", "top");
     cy.document().should("have.property", "charset").and("eq", "UTF-8");
     cy.title().should("not.contain", "Reading App");
+  });
+});
+
+// ✅ --- PASSING ---
+describe("Local storage", () => {
+  it("Check if input name is stored", () => {
+    cy.visit("/learner-onboarding/name");
+    cy.get("#learnerName")
+      .should("be.visible")
+      .type("Potato")
+      .should(() => {
+        expect(localStorage.getItem("learner-name")).to.eq('"Potato"');
+      });
+    cy.visit("/child-landing");
+    cy.get("h2").should("not.contain", "Hi, there");
+    cy.contains("Hi, Potato!");
+  });
+});
+
+// ✅ --- PASSING ---
+describe("Does the data matches", () => {
+  it("set of colours should be array of 8", () => {
+    const colours = [
+      { name: "grey", hex: "#d8d3d6" },
+      { name: "green", hex: "#a8f29a" },
+      { name: "blue", hex: "#96adfc" },
+      { name: "yellow", hex: "#eddd6e" },
+      { name: "turquiose", hex: "#aff7e1" },
+      { name: "purple", hex: "#b987dc" },
+      { name: "peach", hex: "#edd1b0" },
+      { name: "blueGrey", hex: "#dbe1f1" },
+    ];
+
+    expect(colours).to.deep.equal([
+      { name: "grey", hex: "#d8d3d6" },
+      { name: "green", hex: "#a8f29a" },
+      { name: "blue", hex: "#96adfc" },
+      { name: "yellow", hex: "#eddd6e" },
+      { name: "turquiose", hex: "#aff7e1" },
+      { name: "purple", hex: "#b987dc" },
+      { name: "peach", hex: "#edd1b0" },
+      { name: "blueGrey", hex: "#dbe1f1" },
+    ]);
   });
 });
