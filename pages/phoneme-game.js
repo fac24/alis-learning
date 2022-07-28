@@ -26,6 +26,10 @@ export default function PhonemeFirstStep({
   const [learnerPrompt, setLearnerPrompt] = useState(learnerPromptDefault);
   const [learnerPrompt2, setLearnerPrompt2] = useState(learnerPrompt2Default);
 
+  // Possible gameStates are new, correct, incorrect.
+  // new: when the user first lands on the game page.
+  // correct: when speech recognition recognises that the user has said the correct word.
+  // incorrect: when the user doesn't say a word correctly, or no speech is detected.
   const [gameState, setGameState] = useState("new");
 
   let currentWordObject = phonemeData.find(
@@ -47,7 +51,7 @@ export default function PhonemeFirstStep({
       SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
     recogniseLearnerSpeech = function (buttonEvent) {
-      buttonEvent.target.disabled = true;
+      // buttonEvent.target.disabled = true;
       setGameState("listening");
 
       // We need to have the next few lines to keep the API happy...
@@ -95,13 +99,11 @@ export default function PhonemeFirstStep({
 
       recognition.onspeechend = function () {
         recognition.stop();
-        buttonEvent.target.disabled = false;
-        setGameState("new");
       };
 
       recognition.onerror = function (event) {
-        buttonEvent.target.disabled = false;
-        setGameState("new");
+        setLearnerPrompt("Nearly, try again!");
+        setGameState("incorrect");
         console.log("Error occurred in recognition: " + event.error);
       };
 
@@ -193,22 +195,28 @@ export default function PhonemeFirstStep({
       </PhonemeLayout>
 
       {gameState !== "correct" ? (
-        <GameGoButton
-          onClick={(event) => {
-            typeof window !== "undefined"
-              ? recogniseLearnerSpeech(event)
-              : console.log("Waiting for window...");
-          }}
-        >
-          <StyledImMic />
-          {gameState === "listening"
-            ? "Listening..."
-            : gameState === "incorrect"
-            ? "Try again"
-            : "Go"}
-        </GameGoButton>
+        <>
+          {/* If the gameState is anything OTHER than correct, show the green ("go/try again/listening") button. */}
+          <GameGoButton
+            onClick={(event) => {
+              gameState !== "listening"
+                ? typeof window !== "undefined"
+                  ? recogniseLearnerSpeech(event)
+                  : console.log("Waiting for window...")
+                : null;
+            }}
+          >
+            <StyledImMic />
+            {gameState === "listening"
+              ? "Listening..."
+              : gameState === "incorrect"
+              ? "Try again"
+              : "Go"}
+          </GameGoButton>
+        </>
       ) : (
         <>
+          {/* If the gameState IS correct, show the "next" button to take the user to the next round. */}
           <GameNext onClick={() => nextLevel()}>Next</GameNext>
           <NewStarContainer>
             <Image src={Star} alt="star" width={90} height={20} />
