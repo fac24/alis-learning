@@ -8,6 +8,7 @@ import AdultBackButton from "../components/Styled-Components/AdultBackButton";
 import Tts from "../components/Tts";
 
 export default function Home({ onboarding, learnerName }) {
+  document.body.style.overflowX = "hidden";
   return (
     <>
       <Grid>
