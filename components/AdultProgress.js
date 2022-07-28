@@ -13,7 +13,8 @@ export default function AdultProgress({ completed }) {
 }
 
 const StyledProgress = styled.progress`
-  width: 80%;
+  margin: 0 auto 2rem auto;
+  width: 60%;
   text-align: center;
   height: 1.5rem;
 
@@ -21,7 +22,7 @@ const StyledProgress = styled.progress`
   -moz-appearance: none;
 
   ::-webkit-progress-value {
-    background-color: green;
+    background-color: #4af351;
     border-radius: 20px;
   }
   ::-webkit-progress-bar {
@@ -30,7 +31,7 @@ const StyledProgress = styled.progress`
   }
 
   ::-moz-progress-value {
-    background-color: green;
+    background-color: #4af351;
     border-radius: 20px;
   }
   ::-moz-progress-bar {

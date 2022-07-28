@@ -13,6 +13,7 @@ const LearnerBackButton = styled.a`
   font-weight: bold;
   letter-spacing: 0.25rem;
   text-decoration: none;
+  user-select: none;
   width: fit-content;
 
   &:active {

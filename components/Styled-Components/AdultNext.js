@@ -1,6 +1,15 @@
 import styled from "styled-components";
+import LearnerNextButton from "./LearnerNextButton";
 
-const AdultNext = styled.p`
+const AdultNext = styled(LearnerNextButton)`
+  background: linear-gradient(#4316a3, #3d217a);
+  font-size: 1.25rem;
+  // font-weight: normal;
+  letter-spacing: 0.15rem;
+  padding: 1.25rem 4.5rem;
+`;
+
+/*
   display: flex;
   text-align: center;
   justify-content: center;
@@ -24,6 +33,6 @@ const AdultNext = styled.p`
   &:hover {
     transform: translateY(0.125rem);
   }
-`;
+*/
 
 export default AdultNext;
