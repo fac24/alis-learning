@@ -6,5 +6,5 @@ export const colours = [
   { name: "turquiose", hex: "#aff7e1" },
   { name: "purple", hex: "#b987dc" },
   { name: "peach", hex: "#edd1b0" },
-  { name: "blueGrey", hex: "#dbe1f1" },
+  { name: "off white", hex: "#F8F5F4" },
 ];
