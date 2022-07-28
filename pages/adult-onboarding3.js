@@ -7,21 +7,22 @@ import styled from "styled-components";
 import AdultLayout from "../components/AdultLayout";
 import AdultInput from "../components/Styled-Components/AdultInput";
 
-export default function Adult({ setLearnerAge }) {
-  const getAge = (e) => {
-    e.preventDefault();
-    // picking up the age from the input and saving it to local storage via out custom hook
-    setLearnerAge(e.target.age.value);
-  };
-
+export default function Adult({ learnerAge, setLearnerAge }) {
   return (
     <>
       <AdultLayout>
         <AdultProgress completed={55} />
         <AdultText>How old is the learner?</AdultText>
-        <StyledForm onSubmit={getAge}>
+        <StyledForm onSubmit={(e) => e.preventDefault()}>
           <label>
-            <AdultInput type="number" name="age" min="1" max="18"></AdultInput>
+            <AdultInput
+              type="number"
+              name="age"
+              min="1"
+              max="18"
+              onInput={(e) => setLearnerAge(Number(e.target.value))}
+              value={learnerAge}
+            ></AdultInput>
             years
           </label>
           <AdultsNext page={3} />

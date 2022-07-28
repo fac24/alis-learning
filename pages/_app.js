@@ -60,6 +60,7 @@ function MyApp({ Component, pageProps }) {
         setPhonemeLevel={setPhonemeLevel}
         stars={stars}
         setStars={setStars}
+        learnerAge={learnerAge}
         setLearnerAge={setLearnerAge}
         setLearnerGoal={setLearnerGoal}
       />
