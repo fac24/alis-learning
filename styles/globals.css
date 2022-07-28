@@ -57,6 +57,8 @@
   font-style: italic;
 }
 
+/* Some global styles */
+
 * {
   box-sizing: border-box;
 }

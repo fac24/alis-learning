@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
-// The absolute and and top/left 50% move the buttons top left corner to the center of the page
-// minus some margin on top and left to bring the whole thing back to the center
-// If you want to adjust the position change the 'margin-top' and the 'margin-left' accordingly
-// ask maria if you are confused (:
-
-const AdultNext = styled.button`
+const AdultNext = styled.p`
   display: flex;
   text-align: center;
   justify-content: center;
@@ -19,6 +14,7 @@ const AdultNext = styled.button`
   box-shadow: 5px 10px 8px #888888;
   color: white;
   font-size: 15px;
+  font-family: rial, Helvetica, sans-serif;
   border-radius: 20px;
   border: none;
   background-color: #4316a3;

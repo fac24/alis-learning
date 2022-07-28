@@ -1,4 +1,4 @@
-import AdultBack from "./Styled-Components/Back";
+import AdultBack from "./Styled-Components/AdultBackButton";
 import { Router, useRouter } from "next/router";
 
 export default function AdultsBack({ page }) {

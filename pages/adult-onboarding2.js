@@ -3,6 +3,7 @@ import AdultsNext from "../components/AdultsNext";
 import AdultText from "../components/Styled-Components/AdultText";
 import Title from "../components/Styled-Components/Title";
 import AdultProgress from "../components/AdultProgress";
+import AdultLayout from "../components/AdultLayout";
 
 export default function Adult() {
   return (
@@ -13,11 +14,13 @@ export default function Adult() {
 
     // &apos; is html code for apostrophe (not to break depoly)
     <>
-      <AdultProgress completed={30} />
-      <Title>Welcome!</Title>
-      <AdultText>Let&apos;s set up a profile for the learner.</AdultText>
-      <AdultsNext page={2} />
-      <AdultsBack page={2} />
+      <AdultLayout>
+        <AdultProgress completed={30} />
+        <Title>Welcome!</Title>
+        <AdultText>Let&apos;s set up a profile for the learner.</AdultText>
+        <AdultsNext page={2} />
+        <AdultsBack page={2} />
+      </AdultLayout>
     </>
   );
 }

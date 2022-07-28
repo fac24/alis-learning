@@ -1,7 +1,6 @@
 import Tts from "../components/Tts";
 import Link from "next/link";
 import styled from "styled-components";
-import { useEffect } from "react";
 
 export default function ChildLanding({ learnerName }) {
   return (
@@ -9,7 +8,6 @@ export default function ChildLanding({ learnerName }) {
       <SayHi>{learnerName ? `Hi, ${learnerName}!` : "Hi there!"}</SayHi>
 
       <Tts>What game would you like to play?</Tts>
-
 
       <GameSelection>
         <Link href="404" passHref>
@@ -22,7 +20,6 @@ export default function ChildLanding({ learnerName }) {
           <StoryTime>Story Time</StoryTime>
         </Link>
       </GameSelection>
-
     </>
   );
 }
