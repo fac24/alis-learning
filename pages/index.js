@@ -9,19 +9,12 @@ import Tts from "../components/Tts";
 import { useRouter } from "next/router";
 
 export default function Home({ onboarding, learnerName }) {
-  // <Router>
-  let scrollHidden = (document.body.style.overflowX = "hidden");
-  console.log(scrollHidden);
+  document.body.style.overflowX = "hidden";
+  // console.log(scrollHidden);
   // if on landing page.
   // only show overflow hidden in landing page
   // else do not.
   // const StyleHidden = (scrollHidden) => {
-  if (scrollHidden) {
-    return scrollHidden;
-  } else {
-    return;
-  }
-  // </Router>
   // };
   return (
     <>
