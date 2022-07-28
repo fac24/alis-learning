@@ -5,8 +5,6 @@ import { useEffect } from "react";
 
 export default function Layout({ children, font, fontSize, background }) {
   useEffect(() => {
-    // the if statement below isn't currently working - I (maria) was trying trying to get learner background choice to NOT show on the adult pages
-
     // if (children.type.name != "Home" || children.type.name !== "Adult") {
     document.body.style.backgroundColor = background;
     // }
@@ -39,7 +37,8 @@ export default function Layout({ children, font, fontSize, background }) {
 
 const StyledTitle = styled.h1`
   font-family: Arial, sans-serif;
-  margin: 3rem auto;
+  margin: 45px auto;
+  font-size: 30px;
   text-align: center;
   // user-select: none;
 

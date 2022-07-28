@@ -3,7 +3,7 @@ import styled from "styled-components";
 const LearnerOnboardingProgressBarListItem = styled.li`
   align-items: center;
   display: flex;
-  height: 8rem;
+  height: 120px;
   justify-content: center;
   position: relative;
 
@@ -11,8 +11,8 @@ const LearnerOnboardingProgressBarListItem = styled.li`
     border: 5px solid black;
     border-radius: 4rem;
     box-shadow: 5px 5px black;
-    margin-right: 0.6rem;
-    width: 8rem;
+    margin-right: 9px;
+    width: 120px;
   }
 
   /* &:nth-child(2n) {
