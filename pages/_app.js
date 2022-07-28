@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
   const [avatarNameInLocalStorage, setAvatarNameInLocalStorage] =
     useLocalStorageState("avatar", null);
   const [learnerAge, setLearnerAge] = useLocalStorageState("age", null);
-  const [learnerGoal, setLearnerGoal] = useLocalStorageState("goal", 5);
+  const [learnerGoal, setLearnerGoal] = useLocalStorageState("goal", "5");
 
   // The position of this bit of code matters!
   // It probably needs to be here (or hereabouts :)
@@ -60,6 +60,7 @@ function MyApp({ Component, pageProps }) {
         setPhonemeLevel={setPhonemeLevel}
         stars={stars}
         setStars={setStars}
+        learnerAge={learnerAge}
         setLearnerAge={setLearnerAge}
         setLearnerGoal={setLearnerGoal}
       />

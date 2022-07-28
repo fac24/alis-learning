@@ -5,24 +5,27 @@ import AdultProgress from "../components/AdultProgress";
 import AdultForm from "../components/Styled-Components/AdultForm";
 import styled from "styled-components";
 import AdultLayout from "../components/AdultLayout";
+import AdultInput from "../components/Styled-Components/AdultInput";
 
-export default function Adult({ setLearnerGoal }) {
-  const getGoal = (e) => {
-    e.preventDefault();
-    // picking up the learner goal from the user input and saving it to local storage via the custom hook
-    setLearnerGoal(e.target.time.value);
-  };
+export default function Adult({ learnerGoal, setLearnerGoal }) {
+  // const goalOptions = [5, 10, 15];
 
   return (
     <>
       <AdultLayout>
         <AdultProgress completed={80} />
-        <AdultText style={{ paddingTop: 80 }}>
-          Choose a daily goal for the learner.
-        </AdultText>
-        <AdultForm onSubmit={getGoal}>
+        <AdultText>Choose a daily goal for the learner.</AdultText>
+        <AdultForm onSubmit={(e) => e.preventDefault()}>
           <label>
-            <StyledSelect type="select" name="time">
+            <StyledSelect
+              type="select"
+              name="time"
+              value={learnerGoal}
+              onInput={(e) => setLearnerGoal(e.target.value)}
+            >
+              {/* {goalOptions.map((goal) => (
+                <option value={goal}>{goal}</option>
+              ))} */}
               <option value="5">5</option>
               <option value="10">10</option>
               <option value="15">15</option>
@@ -37,10 +40,6 @@ export default function Adult({ setLearnerGoal }) {
   );
 }
 
-const StyledSelect = styled.select`
-  padding: 10px 5px;
-  margin: 5px;
-  border: 2px solid grey;
-  border-radius: 5px;
-  text-align: center;
+const StyledSelect = styled(AdultInput).attrs({ as: "select" })`
+  padding: 2rem 1.75rem;
 `;

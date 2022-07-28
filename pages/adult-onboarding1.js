@@ -1,6 +1,7 @@
 import AdultsBack from "../components/AdultsBack";
 import AdultsNext from "../components/AdultsNext";
 import AdultText from "../components/Styled-Components/AdultText";
+import AdultBackButton from "../components/Styled-Components/AdultBackButton";
 import AdultProgress from "../components/AdultProgress";
 import AdultLayout from "../components/AdultLayout";
 
@@ -15,24 +16,16 @@ export default function Adult() {
           A fun and educational dyslexic reading platform for kids.
         </AdultText>
         <AdultsNext page={1} firstPage={true} />
-        <AdultsBack page={1} />
         {/* This button is just a placeholder for now - let's check if Kaher want it*/}
         <InfoButton>How can Alis Learning help with dyslexia?</InfoButton>
+        <AdultsBack page={1} />
       </AdultLayout>
     </>
   );
 }
 
-const InfoButton = styled.p`
-margin-left: auto;
-margin-right: auto;
-max-width: 21rem;
-text-align: center;
-border-radius: 0.313rem;
-padding: 1%;
-border: 0.2rem solid black;
-margin-top: 6rem;
-
-&:hover{
-  transform: translateY(0.125rem);
+const InfoButton = styled(AdultBackButton)`
+  margin: 6rem auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 `;
