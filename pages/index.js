@@ -6,9 +6,23 @@ import styled, { keyframes } from "styled-components";
 import LearnerBigCTAButton from "../components/Styled-Components/LearnerBigCTAButton";
 import AdultBackButton from "../components/Styled-Components/AdultBackButton";
 import Tts from "../components/Tts";
+import { useRouter } from "next/router";
 
 export default function Home({ onboarding, learnerName }) {
-  document.body.style.overflowX = "hidden";
+  // <Router>
+  let scrollHidden = (document.body.style.overflowX = "hidden");
+  console.log(scrollHidden);
+  // if on landing page.
+  // only show overflow hidden in landing page
+  // else do not.
+  // const StyleHidden = (scrollHidden) => {
+  if (scrollHidden) {
+    return scrollHidden;
+  } else {
+    return;
+  }
+  // </Router>
+  // };
   return (
     <>
       <Grid>
