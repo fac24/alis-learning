@@ -4,7 +4,7 @@ import { ImHome3, ImStarFull } from "react-icons/im";
 import styled from "styled-components";
 import { useEffect } from "react";
 import Image from "next/image";
-import Star from "../public/decorations/star.png";
+import Star from "../public/decorations/star.svg";
 
 // need to figure out what props we will send for the gameplay - the word broken into an array for the tiles makes sense. Then we can map through and use the same template regarless of how long the word is :)
 
