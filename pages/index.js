@@ -6,8 +6,22 @@ import styled, { keyframes } from "styled-components";
 import LearnerBigCTAButton from "../components/Styled-Components/LearnerBigCTAButton";
 import AdultBackButton from "../components/Styled-Components/AdultBackButton";
 import Tts from "../components/Tts";
+// import { useRouter } from "next/router";
 
 export default function Home({ onboarding, learnerName }) {
+  // const router = useRouter();
+  // const pathname = router.pathname;
+  // if on landing page.
+  // only show overflow hidden in landing page
+  // else do not.
+
+  // if the pathname leads to the landing/home page
+  // if (pathname === "/") {
+  document.body.style.overflowX = "hidden";
+  // }
+  // } else {
+  //   document.body.style.overflowX = "visible";
+  // }
   return (
     <>
       <Grid>
@@ -67,8 +81,9 @@ const Grid = styled.div`
   column-gap: 40%;
   // margin-left: 10%;
   position: absolute;
-  top: 10vw;
+  top: 5vw;
   left: 10vw;
+  margin: 5%;
   // overflow-x: hidden;
   z-index: -1;
 
@@ -122,19 +137,15 @@ const Icon = styled.div`
   &:nth-child(3) {
     // // transform: rotate(360deg) scale(1.3);
     // transform: rotate(110deg) scale(1);
-    -webkit-transform: rotate(110deg) scale(1);
-    -ms-transform: rotate(110deg) scale(1);
-    transform: rotate(110deg) scale(1);
+    transform: rotate(17deg) scale(1.5);
   }
 
   &:nth-child(4) {
     // // transform: rotate(360deg) scale(1.3);
     // // transform: rotate(110deg) scale(1);
-    // transform: rotate(46deg) scale(2);
-    // webkit-transform: rotate(46deg) scale(2);
-    // -ms-transform: rotate(46deg) scale(2);
-    // transform: rotate(46deg) scale(2);
-    transform: rotate(296deg) scale(2);
+    // transform: rotate(296deg) scale(2);
+    transform: rotate(325deg) scale(1.5);
+    margin: 2%;
   }
 
   &:nth-child(5) {
@@ -160,17 +171,16 @@ const Icon = styled.div`
     // transform: rotate(360deg) scale(1.3);
     // transform: rotate(110deg) scale(1);
     // transform: rotate(46deg) scale(2);
-    transform: rotate(322deg) scale(1.5);
+    // transform: rotate(322deg) scale(1.5);
+    transform: rotate(338deg) scale(1);
   }
 
   &:nth-child(8) {
-    // transform: rotate(360deg) scale(1.3);
-    // transform: rotate(110deg) scale(1);
-    // transform: rotate(46deg) scale(2);
-    // transform: rotate(329deg) scale(4);
     // transform: rotate(87deg) scale(3);
     // transform: rotate(87deg) scale(3);
-    transform: rotate(317deg) scale(2);
+    // transform: rotate(317deg) scale(2);
+    transform: rotate(348deg) scale(2);
+    margin: 5%;
   }
 `;
 
