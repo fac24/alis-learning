@@ -17,9 +17,7 @@ export default function Adult({ setLearnerAge }) {
     <>
       <AdultLayout>
         <AdultProgress completed={55} />
-        <AdultText style={{ paddingTop: 80 }}>
-          How old is the learner?
-        </AdultText>
+        <AdultText>How old is the learner?</AdultText>
         <StyledForm onSubmit={getAge}>
           <label>
             <StyledInput
@@ -39,8 +37,10 @@ export default function Adult({ setLearnerAge }) {
 }
 
 const StyledInput = styled.input`
-  padding: 10px 5px;
-  margin: 5px;
+  box-shadow: inset 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-right: 1rem;
   border: 2px solid grey;
   border-radius: 5px;
   text-align: center;

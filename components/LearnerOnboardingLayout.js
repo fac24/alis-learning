@@ -30,7 +30,7 @@ export default function LearnerOnboardingLayout({
         passHref
       >
         {completed ? (
-          <LearnerBigCTAButton>Let's play a game</LearnerBigCTAButton>
+          <LearnerBigCTAButton>Let&apos;s play a game</LearnerBigCTAButton>
         ) : (
           <LearnerNextButton>Next</LearnerNextButton>
         )}
