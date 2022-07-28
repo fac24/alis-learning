@@ -29,6 +29,7 @@ export default function LearnerOnboardingProgressBar({
               alt="avatar"
               width="100"
               height="100"
+              layout="fixed"
             />
             {/* {i.toString()} */}
           </LearnerOnboardingProgressBarListItem>
@@ -36,7 +37,7 @@ export default function LearnerOnboardingProgressBar({
             key={(totalSteps + i + 1).toString()}
           >
             {/* {(totalSteps + i + 1).toString()} */}
-            <TiArrowRightThick size="5rem" />
+            <TiArrowRightThick size="80px" />
           </LearnerOnboardingProgressBarListItem>
         </>
       );
@@ -45,12 +46,13 @@ export default function LearnerOnboardingProgressBar({
         <>
           <LearnerOnboardingProgressBarListItemFinal key={i.toString()}>
             {/* {i.toString()} */}
-            <GiFinishLine size="8rem" />
+            <GiFinishLine size="120px" />
             <StyledImage
               src={avatars[avatarNameInLocalStorage] || "/avatars/mystery.svg"}
               alt="avatar"
               width="100"
               height="100"
+              layout="fixed"
             />
           </LearnerOnboardingProgressBarListItemFinal>
         </>
@@ -59,7 +61,7 @@ export default function LearnerOnboardingProgressBar({
       mySteps.push(
         <LearnerOnboardingProgressBarListItemFinal key={i.toString()}>
           {/* {i.toString()} */}
-          <GiFinishLine size="8rem" />
+          <GiFinishLine size="120px" />
           {/* <GiCheckeredFlag size="5rem" /> */}
           {/* <FaFlagCheckered size="5rem" /> */}
         </LearnerOnboardingProgressBarListItemFinal>
@@ -74,7 +76,7 @@ export default function LearnerOnboardingProgressBar({
             key={(totalSteps + i + 1).toString()}
           >
             {/* {(totalSteps + i + 1).toString()} */}
-            <TiArrowRightThick size="5rem" />
+            <TiArrowRightThick size="80px" />
           </LearnerOnboardingProgressBarListItem>
         </>
       );
