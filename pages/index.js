@@ -123,9 +123,7 @@ const Icon = styled.div`
   &:nth-child(3) {
     // // transform: rotate(360deg) scale(1.3);
     // transform: rotate(110deg) scale(1);
-    -webkit-transform: rotate(110deg) scale(1);
-    -ms-transform: rotate(110deg) scale(1);
-    transform: rotate(110deg) scale(1);
+    transform: rotate(17deg) scale(1.5);
   }
 
   &:nth-child(4) {
