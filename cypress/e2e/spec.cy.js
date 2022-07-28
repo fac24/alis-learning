@@ -4,7 +4,7 @@ describe("empty spec", () => {
   });
 });
 
-// ✅ --- PASSING ---
+// // ✅ --- PASSING ---
 describe("Get started route", () => {
   it("Visiting the Avatars Page", () => {
     cy.visit("/");
@@ -16,7 +16,7 @@ describe("Get started route", () => {
       url: "/avatars",
       hostname: "localhost",
     });
-    cy.get("main").contains("snail.svg");
+    // cy.get("main").find(".Comic");
   });
 });
 
@@ -66,5 +66,24 @@ describe("Location", () => {
         "http://localhost:3000/learner-onboarding/font-selection"
       );
     });
+  });
+});
+
+// ✅ --- PASSING ---
+describe("Checking the 404 page", () => {
+  it("should redirect to 404 page if clicks fake links", () => {
+    cy.visit("/child-landing");
+    cy.contains("Story Time").click();
+    cy.url().should("include", "/404");
+    cy.get("h1").should("not.contain", "Cinderella");
+  });
+});
+
+// ✅ --- PASSING ---
+describe("window properties", () => {
+  it("window should have a special properties", () => {
+    cy.window().should("have.property", "top");
+    cy.document().should("have.property", "charset").and("eq", "UTF-8");
+    cy.title().should("not.contain", "Reading App");
   });
 });
