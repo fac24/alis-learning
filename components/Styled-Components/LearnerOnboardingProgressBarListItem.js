@@ -11,7 +11,7 @@ const LearnerOnboardingProgressBarListItem = styled.li`
     border: 5px solid black;
     border-radius: 4rem;
     box-shadow: 5px 5px black;
-    margin-right: 0.6rem;
+    margin-right: 9px;
     width: 120px;
   }
 

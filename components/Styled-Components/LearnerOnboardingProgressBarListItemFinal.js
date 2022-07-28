@@ -6,7 +6,7 @@ const LearnerOnboardingProgressBarListItemFinal = styled.li`
   height: 120px;
   justify-content: center;
   position: relative;
-  margin-right: 0.6rem;
+  margin-right: 9px;
   width: 120px;
 `;
 
