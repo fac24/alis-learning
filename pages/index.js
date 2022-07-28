@@ -67,8 +67,9 @@ const Grid = styled.div`
   column-gap: 40%;
   // margin-left: 10%;
   position: absolute;
-  top: 10vw;
+  top: 5vw;
   left: 10vw;
+  margin: 5%;
   // overflow-x: hidden;
   z-index: -1;
 
@@ -164,13 +165,11 @@ const Icon = styled.div`
   }
 
   &:nth-child(8) {
-    // transform: rotate(360deg) scale(1.3);
-    // transform: rotate(110deg) scale(1);
-    // transform: rotate(46deg) scale(2);
-    // transform: rotate(329deg) scale(4);
     // transform: rotate(87deg) scale(3);
     // transform: rotate(87deg) scale(3);
-    transform: rotate(317deg) scale(2);
+    // transform: rotate(317deg) scale(2);
+    transform: rotate(322deg) scale(1.5);
+    margin: 10%;
   }
 `;
 
