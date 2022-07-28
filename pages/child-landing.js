@@ -24,35 +24,15 @@ export default function ChildLanding({ learnerName }) {
   );
 }
 
-const OneHundred = styled.a`
-  border: 5px solid #ccc;
-  border-radius: 1rem;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  font-weight: bold;
-  max-width: 16rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  margin: 0 auto;
-  text-decoration: none;
-  color: black;
-
-  &:hover {
-    opacity: 0.7;
-    border-color: #21a300;
-    background-color: #cccccc;
-    background-image: linear-gradient(#11d600, #21a300, darkorange);
-  }
-`;
 const GameTile = styled.a`
+  align-items: center;
+  justify-content: center;
   border: 5px solid #ccc;
   border-radius: 1rem;
   cursor: pointer;
-  display: block;
+  display: flex;
   text-align: center;
+  font-size: 2rem;
   font-weight: bold;
   max-width: 16rem;
   padding-top: 3rem;
@@ -71,22 +51,16 @@ const GameTile = styled.a`
   }
 `;
 
-const StoryTime = styled.a`
-  border: 5px solid #ccc;
-  border-radius: 1rem;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  font-weight: bold;
-  max-width: 16rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  margin: 0 auto;
-  text-decoration: none;
-  color: black;
+const OneHundred = styled(GameTile)`
+  &:hover {
+    opacity: 0.7;
+    border-color: #21a300;
+    background-color: #cccccc;
+    background-image: linear-gradient(#11d600, #21a300, darkorange);
+  }
+`;
 
+const StoryTime = styled(GameTile)`
   &:hover {
     opacity: 0.7;
     border-color: #21a300;
@@ -96,6 +70,7 @@ const StoryTime = styled.a`
 `;
 
 const SayHi = styled.h2`
+  font-size: 2.25rem;
   text-align: center;
 `;
 
@@ -104,4 +79,8 @@ const GameSelection = styled.div`
   flex-direction: row;
   justify-content: center;
   justify-content: space-evenly;
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
 `;
