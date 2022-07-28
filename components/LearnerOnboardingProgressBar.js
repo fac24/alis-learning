@@ -2,7 +2,7 @@ import LearnerOnboardingProgressBarList from "./Styled-Components/LearnerOnboard
 import LearnerOnboardingProgressBarListItem from "./Styled-Components/LearnerOnboardingProgressBarListItem";
 import LearnerOnboardingProgressBarListItemFinal from "./Styled-Components/LearnerOnboardingProgressBarListItemFinal";
 import { GiFinishLine, GiCheckeredFlag } from "react-icons/gi";
-import { FaFlagCheckered } from "react-icons/fa";
+import { FaFlagCheckered, FaCheck } from "react-icons/fa";
 import { TiArrowRightThick } from "react-icons/ti";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
@@ -29,6 +29,7 @@ export default function LearnerOnboardingProgressBar({
               alt="avatar"
               width="100"
               height="100"
+              layout="fixed"
             />
             {/* {i.toString()} */}
           </LearnerOnboardingProgressBarListItem>
@@ -36,7 +37,28 @@ export default function LearnerOnboardingProgressBar({
             key={(totalSteps + i + 1).toString()}
           >
             {/* {(totalSteps + i + 1).toString()} */}
-            <TiArrowRightThick size="5rem" />
+            <TiArrowRightThick size="80px" />
+          </LearnerOnboardingProgressBarListItem>
+        </>
+      );
+    } else if (i < stepNumber && i !== totalSteps) {
+      // The show the tick in the completed steps
+      mySteps.push(
+        <>
+          <LearnerOnboardingProgressBarListItem
+            style={{
+              backgroundColor: "lightGreen",
+            }}
+            key={i.toString()}
+          >
+            <FaCheck size="60px" />
+            {/* {i.toString()} */}
+          </LearnerOnboardingProgressBarListItem>
+          <LearnerOnboardingProgressBarListItem
+            key={(totalSteps + i + 1).toString()}
+          >
+            {/* {(totalSteps + i + 1).toString()} */}
+            <TiArrowRightThick size="80px" />
           </LearnerOnboardingProgressBarListItem>
         </>
       );
@@ -45,12 +67,13 @@ export default function LearnerOnboardingProgressBar({
         <>
           <LearnerOnboardingProgressBarListItemFinal key={i.toString()}>
             {/* {i.toString()} */}
-            <GiFinishLine size="8rem" />
+            <GiFinishLine size="120px" />
             <StyledImage
               src={avatars[avatarNameInLocalStorage] || "/avatars/mystery.svg"}
               alt="avatar"
               width="100"
               height="100"
+              layout="fixed"
             />
           </LearnerOnboardingProgressBarListItemFinal>
         </>
@@ -59,7 +82,7 @@ export default function LearnerOnboardingProgressBar({
       mySteps.push(
         <LearnerOnboardingProgressBarListItemFinal key={i.toString()}>
           {/* {i.toString()} */}
-          <GiFinishLine size="8rem" />
+          <GiFinishLine size="120px" />
           {/* <GiCheckeredFlag size="5rem" /> */}
           {/* <FaFlagCheckered size="5rem" /> */}
         </LearnerOnboardingProgressBarListItemFinal>
@@ -74,7 +97,7 @@ export default function LearnerOnboardingProgressBar({
             key={(totalSteps + i + 1).toString()}
           >
             {/* {(totalSteps + i + 1).toString()} */}
-            <TiArrowRightThick size="5rem" />
+            <TiArrowRightThick size="80px" />
           </LearnerOnboardingProgressBarListItem>
         </>
       );

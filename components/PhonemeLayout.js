@@ -16,27 +16,24 @@ export default function PhonemeLayout({
 }) {
   return (
     <>
-      <Link href="/child-landing" passHref>
-        {/* we can link to the map here in the future when we have it */}
-        <a>
-          <ImHome3
-            style={{
-              position: "absolute",
-              top: "20px",
-              left: "20px",
-            }}
-            size="50px"
-            cursor="pointer"
-            color="black"
-            aria-label="Link back to games selection"
-          />
-        </a>
-      </Link>
-      <ImageContainer>
-        <Image src={Star} alt="star" width={80} height={80} />
-      </ImageContainer>
-      {/* <Score suppressHydrationWarning={true}>{stars}</Score> */}
-      <Score>{stars}</Score>
+      <LearnerStatusContainer>
+        <Link href="/child-landing" passHref>
+          {/* we can link to the map here in the future when we have it */}
+          <a>
+            <ImHome3
+              size="4rem"
+              cursor="pointer"
+              color="black"
+              aria-label="Link back to games selection"
+            />
+          </a>
+        </Link>
+        <ImageContainer>
+          <Image src={Star} alt="star" width={80} height={80} />
+        </ImageContainer>
+        {/* <Score suppressHydrationWarning={true}>{stars}</Score> */}
+        <Score>{stars}</Score>
+      </LearnerStatusContainer>
       <Tts>{firstText}</Tts>
 
       {children}
@@ -46,16 +43,19 @@ export default function PhonemeLayout({
   );
 }
 
-const Score = styled.div`
-  font-weight: 700;
-  font-size: 60px;
-  position: absolute;
-  top: 10px;
-  left: 170px;
+const Score = styled.p`
+  font-size: 4rem;
+  margin: 0;
+  font-weight: 600;
 `;
 
 const ImageContainer = styled.div`
-  position: absolute;
-  top: 5px;
-  left: 80px;
+  padding: 0 10px;
+`;
+
+const LearnerStatusContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: -8rem;
+  padding-left: 10px;
 `;
