@@ -164,8 +164,8 @@ const Icon = styled.div`
     // transform: rotate(87deg) scale(3);
     // transform: rotate(87deg) scale(3);
     // transform: rotate(317deg) scale(2);
-    transform: rotate(322deg) scale(1.5);
-    margin: 10%;
+    transform: rotate(348deg) scale(2);
+    margin: 5%;
   }
 `;
 
