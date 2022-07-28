@@ -157,7 +157,8 @@ const Icon = styled.div`
     // transform: rotate(360deg) scale(1.3);
     // transform: rotate(110deg) scale(1);
     // transform: rotate(46deg) scale(2);
-    transform: rotate(322deg) scale(1.5);
+    // transform: rotate(322deg) scale(1.5);
+    transform: rotate(338deg) scale(1);
   }
 
   &:nth-child(8) {
