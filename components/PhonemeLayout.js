@@ -56,6 +56,9 @@ const ImageContainer = styled.div`
 const LearnerStatusContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: -8rem;
-  padding-left: 10px;
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  // margin-top: -8rem;
+  // padding-left: 10px;
 `;
