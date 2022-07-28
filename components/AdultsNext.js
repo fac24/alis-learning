@@ -14,7 +14,13 @@ export default function AdultsNext({ page, firstPage }) {
   };
 
   return (
-    <AdultNext onClick={navigateNext} type="submit">
+    <AdultNext
+      onClick={navigateNext}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") navigateNext();
+      }}
+      type="submit"
+    >
       {firstPage ? "Get a learner started" : "Next"}
     </AdultNext>
   );

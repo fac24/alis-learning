@@ -17,9 +17,7 @@ export default function Adult({ setLearnerGoal }) {
     <>
       <AdultLayout>
         <AdultProgress completed={80} />
-        <AdultText style={{ paddingTop: 80 }}>
-          Choose a daily goal for the learner.
-        </AdultText>
+        <AdultText>Choose a daily goal for the learner.</AdultText>
         <AdultForm onSubmit={getGoal}>
           <label>
             <StyledSelect type="select" name="time">

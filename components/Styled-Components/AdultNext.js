@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import LearnerNextButton from "./LearnerNextButton";
 
-const AdultNext = styled(LearnerNextButton)`
+const AdultNext = styled(LearnerNextButton).attrs({ tabIndex: 0 })`
   background: linear-gradient(#4316a3, #3d217a);
   font-size: 1.25rem;
   // font-weight: normal;

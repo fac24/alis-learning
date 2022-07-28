@@ -12,5 +12,14 @@ export default function AdultsBack({ page }) {
     }
   };
 
-  return <AdultBack onClick={navigateBack}>Back</AdultBack>;
+  return (
+    <AdultBack
+      onClick={navigateBack}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") navigateBack();
+      }}
+    >
+      Back
+    </AdultBack>
+  );
 }
