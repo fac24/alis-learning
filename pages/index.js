@@ -70,6 +70,7 @@ const Grid = styled.div`
   top: 10vw;
   left: 10vw;
   // overflow-x: hidden;
+  z-index: -1;
 
   @media only screen and (max-width: 600px) {
     column-gap: 25%;
