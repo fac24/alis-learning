@@ -5,6 +5,7 @@ import AdultProgress from "../components/AdultProgress";
 import AdultForm from "../components/Styled-Components/AdultForm";
 import styled from "styled-components";
 import AdultLayout from "../components/AdultLayout";
+import AdultInput from "../components/Styled-Components/AdultInput";
 
 export default function Adult({ setLearnerGoal }) {
   const getGoal = (e) => {
@@ -35,10 +36,14 @@ export default function Adult({ setLearnerGoal }) {
   );
 }
 
-const StyledSelect = styled.select`
-  padding: 10px 5px;
-  margin: 5px;
-  border: 2px solid grey;
-  border-radius: 5px;
-  text-align: center;
+// const StyledSelect = styled.select`
+//   padding: 10px 5px;
+//   margin: 5px;
+//   border: 2px solid grey;
+//   border-radius: 5px;
+//   text-align: center;
+// `;
+
+const StyledSelect = styled(AdultInput).attrs({ as: "select" })`
+  padding: 2rem 1.75rem;
 `;
