@@ -6,16 +6,22 @@ import styled, { keyframes } from "styled-components";
 import LearnerBigCTAButton from "../components/Styled-Components/LearnerBigCTAButton";
 import AdultBackButton from "../components/Styled-Components/AdultBackButton";
 import Tts from "../components/Tts";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 export default function Home({ onboarding, learnerName }) {
-  document.body.style.overflowX = "hidden";
-  // console.log(scrollHidden);
+  // const router = useRouter();
+  // const pathname = router.pathname;
   // if on landing page.
   // only show overflow hidden in landing page
   // else do not.
-  // const StyleHidden = (scrollHidden) => {
-  // };
+
+  // if the pathname leads to the landing/home page
+  // if (pathname === "/") {
+  document.body.style.overflowX = "hidden";
+  // }
+  // } else {
+  //   document.body.style.overflowX = "visible";
+  // }
   return (
     <>
       <Grid>
