@@ -168,7 +168,7 @@ export default function PhonemeFirstStep({
                 <Image src={trumpet} alt="trumpet" width={100} height={100} />
               </div>
               <div style={{ padding: "50px" }}>
-                <Image src={rainbow} alt="trumpet" width={100} height={100} />
+                <Image src={rainbow} alt="rainbow" width={100} height={100} />
               </div>
             </>
           ) : null}
@@ -182,10 +182,10 @@ export default function PhonemeFirstStep({
           {gameState === "correct" ? (
             <>
               <div style={{ padding: "50px", marginTop: "-100px" }}>
-                <Image src={bullseye} alt="trumpet" width={100} height={100} />
+                <Image src={bullseye} alt="bullseye" width={100} height={100} />
               </div>
               <div style={{ padding: "50px" }}>
-                <Image src={icecream} alt="trumpet" width={100} height={100} />
+                <Image src={icecream} alt="icecream" width={100} height={100} />
               </div>
             </>
           ) : null}
