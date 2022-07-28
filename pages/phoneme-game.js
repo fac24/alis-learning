@@ -6,6 +6,10 @@ import GameNext from "../components/Styled-Components/GameNext";
 import GameGoButton from "../components/Styled-Components/GameGoButton";
 import { ImMic } from "react-icons/im";
 import Star from "../public/decorations/star.svg";
+import trumpet from "../public/decorations/trumpet.svg";
+import icecream from "../public/decorations/icecream.svg";
+import bullseye from "../public/decorations/bullseye.svg";
+import rainbow from "../public/decorations/rainbow.svg";
 import Image from "next/image";
 
 export default function PhonemeFirstStep({
@@ -157,13 +161,35 @@ export default function PhonemeFirstStep({
         phonemeLevel={phonemeLevel}
         stars={stars}
       >
-        <TileContainer>
-          {phonemeTiles.map((tile, index) => (
-            <PhonemeTile className={gameState} key={index}>
-              {tile}
-            </PhonemeTile>
-          ))}
-        </TileContainer>
+        <GameContainer>
+          {gameState === "correct" ? (
+            <>
+              <div style={{ padding: "50px", marginTop: "-100px" }}>
+                <Image src={trumpet} alt="trumpet" width={100} height={100} />
+              </div>
+              <div style={{ padding: "50px" }}>
+                <Image src={rainbow} alt="trumpet" width={100} height={100} />
+              </div>
+            </>
+          ) : null}
+          <TileContainer>
+            {phonemeTiles.map((tile, index) => (
+              <PhonemeTile className={gameState} key={index}>
+                {tile}
+              </PhonemeTile>
+            ))}
+          </TileContainer>
+          {gameState === "correct" ? (
+            <>
+              <div style={{ padding: "50px", marginTop: "-100px" }}>
+                <Image src={bullseye} alt="trumpet" width={100} height={100} />
+              </div>
+              <div style={{ padding: "50px" }}>
+                <Image src={icecream} alt="trumpet" width={100} height={100} />
+              </div>
+            </>
+          ) : null}
+        </GameContainer>
       </PhonemeLayout>
 
       {gameState !== "correct" ? (
@@ -221,15 +247,15 @@ const PhonemeTile = styled.div`
   }
 
   &.correct {
-    // border-color: limeGreen;
-    border-image: linear-gradient(#11d600, #21a300) 5;
+    border-color: #11d600;
+    // border-image: linear-gradient(#11d600, #21a300) 5;
   }
 `;
 
 const TileContainer = styled.div`
   display: flex;
   text-align: center;
-  margin: 5rem auto;
+  margin: 0 auto;
   width: fit-content;
 `;
 
@@ -243,4 +269,8 @@ const NewStarContainer = styled.div`
 const StarPlusText = styled.p`
   font-weight: 600;
   font-size: 40px;
+`;
+
+const GameContainer = styled.div`
+  display: flex;
 `;
