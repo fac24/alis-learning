@@ -10,7 +10,7 @@ import Tts from "../components/Tts";
 export default function Home({ onboarding, learnerName }) {
   return (
     <>
-      {/* <Grid>
+      <Grid>
         {Object.entries(avatars).map(([avatar_name, avatar_file], index) => (
           <Icon key={avatar_name}>
             <LandingImage
@@ -21,7 +21,7 @@ export default function Home({ onboarding, learnerName }) {
             />
           </Icon>
         ))}
-      </Grid> */}
+      </Grid>
       <LandingMessage>
         {onboarding
           ? `Hi ${learnerName}, welcome back!`
@@ -65,7 +65,11 @@ const Grid = styled.div`
   // // column-gap: 80%;
   // column-gap: 70%;
   column-gap: 40%;
-  margin-left: 10%;
+  // margin-left: 10%;
+  position: absolute;
+  top: 10vw;
+  left: 10vw;
+  // overflow-x: hidden;
 
   @media only screen and (max-width: 600px) {
     column-gap: 25%;
