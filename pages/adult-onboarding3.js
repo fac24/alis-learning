@@ -5,29 +5,24 @@ import AdultProgress from "../components/AdultProgress";
 import StyledForm from "../components/Styled-Components/AdultForm";
 import styled from "styled-components";
 import AdultLayout from "../components/AdultLayout";
+import AdultInput from "../components/Styled-Components/AdultInput";
 
-export default function Adult({ setLearnerAge }) {
-  const getAge = (e) => {
-    e.preventDefault();
-    // picking up the age from the input and saving it to local storage via out custom hook
-    setLearnerAge(e.target.age.value);
-  };
-
+export default function Adult({ learnerAge, setLearnerAge }) {
   return (
     <>
       <AdultLayout>
         <AdultProgress completed={55} />
-        <AdultText style={{ paddingTop: 80 }}>
-          How old is the learner?
-        </AdultText>
-        <StyledForm onSubmit={getAge}>
+        <AdultText>How old is the learner?</AdultText>
+        <StyledForm onSubmit={(e) => e.preventDefault()}>
           <label>
-            <StyledInput
+            <AdultInput
               type="number"
               name="age"
               min="1"
               max="18"
-            ></StyledInput>
+              onInput={(e) => setLearnerAge(Number(e.target.value))}
+              value={learnerAge}
+            ></AdultInput>
             years
           </label>
           <AdultsNext page={3} />
@@ -37,11 +32,3 @@ export default function Adult({ setLearnerAge }) {
     </>
   );
 }
-
-const StyledInput = styled.input`
-  padding: 10px 5px;
-  margin: 5px;
-  border: 2px solid grey;
-  border-radius: 5px;
-  text-align: center;
-`;
