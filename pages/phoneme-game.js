@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PhonemeLayout from "../components/PhonemeLayout";
 import { phonemeData } from "../data/phoneme.js";
 import styled from "styled-components";
-import GameNext from "../components/Styled-Components/GameNext";
+import GameNext from "../components/Styled-Components/LearnerNextButton";
 import GameGoButton from "../components/Styled-Components/GameGoButton";
 import { ImMic } from "react-icons/im";
 import Star from "../public/decorations/star.svg";

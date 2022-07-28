@@ -7,6 +7,7 @@ const AdultNext = styled(LearnerNextButton).attrs({ tabIndex: 0 })`
   // font-weight: normal;
   letter-spacing: 0.15rem;
   padding: 1.25rem 4.5rem;
+  margin-top: 5rem;
 `;
 
 /*
