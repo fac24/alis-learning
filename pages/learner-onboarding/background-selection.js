@@ -22,7 +22,7 @@ export default function LearnerBackgroudSelection({
       avatarNameInLocalStorage={avatarNameInLocalStorage}
       background={background}
     >
-      <Grid>
+      <Grid data-testid="background">
         {colours.map((colour) => (
           <ColourButton
             style={{ backgroundColor: colour.hex }}
